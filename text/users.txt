@@ -1,0 +1,32 @@
+{
+    "juany2011": {
+        "name": "Juany",
+        "pin": "1719",
+        "token": "adkljfad397dfha31q89"
+    },
+    "franco1940": {
+        "name": "Franco",
+        "pin": "3457",
+        "token": "sdfkhdfw8932afadhdalj"
+    },
+    "ulises2011": {
+        "name": "Ulises",
+        "pin": "9245",
+        "token": "wefufhw39dkh1324fgd87"
+    },
+    "nicolas2009": {
+        "name": "Nicolás",
+        "pin": "7192",
+        "token": "efbkijweo8uqewfhb34"
+    },
+    "lautaro2007": {
+        "name": "Lautaro",
+        "pin": "0970",
+        "token": "23ku4g23lkyu352ygkhg"
+    },
+    "user": {
+        "name": "User",
+        "pin": "user",
+        "token": "4ug543iy3giyt3y7ergh389"
+    }
+}
