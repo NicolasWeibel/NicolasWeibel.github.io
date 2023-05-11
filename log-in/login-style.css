@@ -1,0 +1,123 @@
+/* ----VARIABLES---- */
+:root {
+    --main-color: #182D18;
+    --secondary-color: #294B29;
+    --white-color: rgba(245, 245, 245);
+    --match-color: #E5E5E5;
+}
+
+/* ----BODY---- */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--main-color);
+}
+
+/* ----CONTAINER---- */
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* ----LISTS---- */
+ul {
+    list-style: none;
+}
+
+/* ----BUTTONS---- */
+.button {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+	cursor: pointer;
+  	padding: 5px;
+    text-shadow: 1px 1px 1px #000;
+  	border:2px solid rgba(0,0,0,0.5);
+    border-radius: 5px;
+	font-size: 1em;
+    transition: background-color 0.25s ease;
+}
+
+.button:hover{
+	background-color: #164716;
+}
+
+.button:focus {
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
+    transition: transform 0s;
+}
+
+main .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+    min-height: 350px;
+}
+
+h1 {
+    font-size: clamp(1.3em, 4vw, 2em);
+    color: var(--white-color);
+    text-align: center;
+}
+
+#login-form {
+    display: grid;
+    gap: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+}
+
+.login-message-container {
+    display: grid;
+    gap: 10px;
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #000;
+}
+
+.login-message-container .msg-type {
+    font-size: 0.88em;
+    font-weight: 600;
+}
+
+.login-message-container .msg-info {
+    font-size: 0.75em;
+}
+
+.login-error-container {
+    background-color: #ffebe8;
+    border: 1px solid #dd3c10;
+}
+
+.logged-in-container {
+    background-color: #e8f0fe;
+    border: 1px solid #1877f2;
+}
+
+.login-input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: var(--main-color);
+    color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#login-button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 0;
+}
+
+#login-button:disabled {
+    cursor: not-allowed;
+}
