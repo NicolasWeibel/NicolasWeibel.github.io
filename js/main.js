@@ -125,7 +125,7 @@ const matchdayTextToCopy = () => {
     }
 
     if (scoreTeam1 !== '' && scoreTeam2 !== '') isPronostic = false;
-    copiedText += `\n\n${team1.toUpperCase()} ${scoreTeam1}-${scoreTeam2} ${team2.toUpperCase()}`;
+    copiedText += `\n\n${team1.toUpperCase()} ${scoreTeam1} - ${scoreTeam2} ${team2.toUpperCase()}`;
 
     for (const prediction of match['predictions']) {
       let predictionScoreTeam1 = prediction['scoreTeam1'];
@@ -161,7 +161,7 @@ const playerAlinedName = (playerName) => {
 }
 
 const leaderboardTextToCopy = () => {
-  let copiedText = '*TABLA*\nNombre | Pts | AT | AP | E | PJ';
+  let copiedText = '*TABLA*\n*Nombre* | *Pts* | AT | AP | E | PJ';
 
   for (const player of leaderboardPositions.leaderboardPlayers) {
     let playerName = playerAlinedName(player.name);
@@ -170,7 +170,7 @@ const leaderboardTextToCopy = () => {
     let playerPartialHits = player.partialHits.toString().padStart(2, '0');
     let playerIncorrect = player.incorrects.toString().padStart(2, '0');
     let playerPlayedMatches = player.playedMatches.toString().padStart(2, '0');
-    copiedText += `\n${playerName} | ${playerPoints} | ${playerExactHits} | ${playerPartialHits} | ${playerIncorrect} | ${playerPlayedMatches}`
+    copiedText += `\n*${playerName}* | *${playerPoints}* | ${playerExactHits} | ${playerPartialHits} | ${playerIncorrect} | ${playerPlayedMatches}`
   }
 
   return copiedText;
