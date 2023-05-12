@@ -8,14 +8,16 @@
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/headerfooter.css">
-    <link rel="stylesheet" href="leaderboard-style-month2.css">
+    <link rel="stylesheet" href="../css/leaderboard-style-month2.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <a class="logo" href="../">
-                <p>TORNEO SUPERLIGA</p>
-            </a>
+            <div class="logo">
+                <a href="../">
+                    TORNEO SUPERLIGA
+                </a>
+            </div>
             <div class="sesion">
                 <a href="../log-in/" class="login-required">Iniciar Sesión</a>
             </div>
@@ -32,18 +34,19 @@
         </div>
         <section id="matchday">
             <div class="choose-matchday">
-                <div id="previous-matchday" class="matchday-arrow">
+                <div id="previous-matchday" class="matchday-arrow no-display-arrow">
                     <div class="left-arrow"></div>
                 </div>
                 <div id="current-matchday"></div>
-                <div id="next-matchday" class="matchday-arrow">
+                <div id="next-matchday" class="matchday-arrow no-display-arrow">
                     <div class="right-arrow"></div>
                 </div>
             </div>
             <ul class="matchday-table"></ul>
             <div class="copy-edit-save-container">
-                <button class="copy button">Copiar</button>
+                <button id="matchday-copy-button" class="button">Copiar</button>
             </div>
+            <div id="copy-edit-save-matchday-info" class="copy-edit-save-info"></div>
         </section>
         <section id="leaderboard">
             <div class="leaderboard-container">
@@ -59,7 +62,7 @@
                             <th>AT</th>
                             <th>AP</th>
                             <th>E</th>
-                            <th>PT</th>
+                            <th>PJ</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
@@ -71,11 +74,16 @@
                     <p class="reference">- 4° paga el 40%</p>
                 </div>
             </div>
+            <div class="copy-edit-save-container">
+                <button id="leaderboard-copy-button" class="button">Copiar</button>
+            </div>
+            <div id="copy-leaderboard-info" class="copy-edit-save-info"></div>
         </section>
     </main>
     <footer>
         <p>Derechos reservados © 2023</p>
     </footer>
-    <script src="month2.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/month2.js"></script>
 </body>
 </html>

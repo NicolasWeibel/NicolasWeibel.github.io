@@ -19,7 +19,11 @@ header .logo {
     font-size: clamp(0.9em, 3.8vw, 2em);
     font-family: 'Roboto Slab', serif;
     text-shadow: 1px 1px 1px #000;
+}
+
+header .logo a {
     text-decoration: none;
+    color: var(--white-color);
 }
 
 header .sesion {
@@ -43,7 +47,6 @@ header .sesion {
 }
 
 .sesion .login-required {
-    display: block;
     color: var(--white-color);
     text-decoration: none;
 }

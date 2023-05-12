@@ -196,6 +196,7 @@ ul {
     height: 40px;
     padding: 1px;
     transition: all 0.25s ease;
+    user-select: none;
 }
 
 .match:hover {
@@ -360,12 +361,28 @@ ul {
 
 /* COPY EDIT SAVE BUTTON */
 .copy-edit-save-container {
-    /* display: flex; */
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: space-evenly;
     width: 80%;
     margin: 10px auto;
+}
+
+/* Copy Edit Save Info */
+.copy-edit-save-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 0.9em;
+}
+
+.green-info {
+    color: #0f0;
+}
+
+.red-info {
+    color: #f00;
 }
 
 /* ----LEADERBOARD---- */

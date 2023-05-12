@@ -2,50 +2,51 @@
 
 let showedMatchdayIndex;
 let matchdays;
+let leaderboardPositions;
 
-function Player(name) {
-  this.name = name;
-  this.points = 0;
-  this.exactHits = 0;
-  this.partialHits = 0;
-  this.incorrects = 0;
-  this.totalMatches = 0;
-
-  this.sumPoints = function(points) {
-    if (points === 3) {
-      this.points += 3;
-      this.exactHits += 1;
-    } else if (points === 1) {
-      this.points += 1;
-      this.partialHits += 1;
-    } else {
-      this.incorrects += 1;
-    };
-    this.totalMatches += 1;
-  };
-};
-
-function LeaderboardPositions(players) {
-  this.addPlayerObjects = function(players) {
-    let objectsArray = []
-    for (let playerName of players) objectsArray.push(new Player(playerName));
-    return objectsArray;
+class Player {
+  constructor(name) {
+    this.name = name;
+    this.points = 0;
+    this.exactHits = 0;
+    this.partialHits = 0;
+    this.incorrects = 0;
+    this.playedMatches = 0;
   }
 
-  this.leaderboardPlayers = this.addPlayerObjects(players);
+  sumPoints(points) {
+    switch (points) {
+      case 3:
+        this.points += 3;
+        this.exactHits += 1;
+        break;
+      case 1:
+        this.points += 1;
+        this.partialHits += 1;
+        break;
+      default:
+        this.incorrects += 1;
+        break;
+    }
+    this.playedMatches += 1;
+  }
+};
 
-  this.sortPositions = function() {
+class LeaderboardPositions {
+  constructor(players) {
+    this.leaderboardPlayers = players.map(name => new Player(name));
+  };
+
+  sortPositions() {
     this.leaderboardPlayers.sort((a, b) => {
-      if (a.points !== b.points) return b.points - a.points;
-      else if (a.exactHits !== b.exactHits) return b.exactHits - a.exactHits;
-      else return 0;
+      return b.points - a.points || b.exactHits - a.exactHits || 0;
     });
   };
 };
 
 const predictionHit = (scoreTeam1, scoreTeam2, predictionScoreTeam1, predictionScoreTeam2) => {
   if (scoreTeam1 === '' || scoreTeam2 === '') {
-    return "";
+    return '';
   };
   if (predictionScoreTeam1 === '' || predictionScoreTeam2 === '') {
     return 0;
@@ -59,12 +60,120 @@ const predictionHit = (scoreTeam1, scoreTeam2, predictionScoreTeam1, predictionS
   return 0;
 };
 
+const predictionEmoji = (scoreTeam1, scoreTeam2, predictionScoreTeam1, predictionScoreTeam2) => {
+  const points = predictionHit(scoreTeam1, scoreTeam2, predictionScoreTeam1, predictionScoreTeam2);
+
+  if (points === '') {
+    return '';
+  };
+  if (points === 3) {
+    return '✅';
+  };
+  if (points === 1) {
+    return '🟰';
+  };
+  return '❌';
+}
+
 const createAndAppendDiv = (classesArray, fatherDiv = '', text = '') => {
   const createdDiv = document.createElement('div');
   createdDiv.classList.add(...classesArray);
   createdDiv.textContent = text;
   if (fatherDiv) fatherDiv.appendChild(createdDiv);
   return createdDiv;
+};
+
+function dateFormatToCopyFormat(dateString) {
+  const date = new Date(dateString);
+
+  const weekdays = [
+    'DOMINGO',
+    'LUNES',
+    'MARTES',
+    'MIÉRCOLES',
+    'JUEVES',
+    'VIERNES',
+    'SÁBADO',
+  ];
+
+  const weekday = weekdays[date.getDay()];
+  const dayOfMonth = date.getDate();
+  const month = date.getMonth() + 1;
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+
+  const formattedDate = `${weekday} ${dayOfMonth}/${month} a las ${hours}:${minutes < 10 ? '0' : ''}${minutes}hs`;
+
+  return formattedDate;
+}
+
+
+const matchdayTextToCopy = () => {
+  let copiedText = '';
+  let isPronostic = true;
+  let matchIndex = 0;
+  let copyDateFormat = '';
+
+  for (const match of matchdays[showedMatchdayIndex]['matchdayMatchs']) {
+    let team1 = match['team1'];
+    let team2 = match['team2'];
+    let scoreTeam1 = match['scoreTeam1'];
+    let scoreTeam2 = match['scoreTeam2'];
+
+    if (matchIndex === 0) {
+      copyDateFormat = dateFormatToCopyFormat(match['matchDate']);
+    }
+
+    if (scoreTeam1 !== '' && scoreTeam2 !== '') isPronostic = false;
+    copiedText += `\n\n${team1.toUpperCase()} ${scoreTeam1}-${scoreTeam2} ${team2.toUpperCase()}`;
+
+    for (const prediction of match['predictions']) {
+      let predictionScoreTeam1 = prediction['scoreTeam1'];
+      let predictionScoreTeam2 = prediction['scoreTeam2'];
+      let emojiCode = predictionEmoji(scoreTeam1, scoreTeam2, predictionScoreTeam1, predictionScoreTeam2);
+      copiedText += `\n${prediction['name']}: ${predictionScoreTeam1} - ${predictionScoreTeam2} ${emojiCode}`;
+    };
+
+    matchIndex += 1;
+  };
+
+  if (isPronostic) copiedText = `*${matchdays[showedMatchdayIndex]['matchdayName'].toUpperCase()} PRONÓSTICO*\n\n*Decir resultados antes del ${copyDateFormat}*` + copiedText;
+  else copiedText = `*${matchdays[showedMatchdayIndex]['matchdayName'].toUpperCase()}*` + copiedText;
+
+  return copiedText;
+};
+
+const playerAlinedName = (playerName) => {
+  switch (playerName) {
+    case 'Juany':
+      return '••Juany';
+    case 'Franco':
+      return '•Franco';
+    case 'Ulises':
+      return '••Ulises';
+    case 'Lautaro':
+      return 'Lautaro';
+    case 'Nicolás':
+      return 'Nicolás';
+    default:
+      return '';
+  }
+}
+
+const leaderboardTextToCopy = () => {
+  let copiedText = '*TABLA*\nNombre | Pts | AT | AP | E | PJ';
+
+  for (const player of leaderboardPositions.leaderboardPlayers) {
+    let playerName = playerAlinedName(player.name);
+    let playerPoints = player.points.toString().padStart(2, '0');
+    let playerExactHits = player.exactHits.toString().padStart(2, '0');
+    let playerPartialHits = player.partialHits.toString().padStart(2, '0');
+    let playerIncorrect = player.incorrects.toString().padStart(2, '0');
+    let playerPlayedMatches = player.playedMatches.toString().padStart(2, '0');
+    copiedText += `\n${playerName} | ${playerPoints} | ${playerExactHits} | ${playerPartialHits} | ${playerIncorrect} | ${playerPlayedMatches}`
+  }
+
+  return copiedText;
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -81,6 +190,68 @@ document.addEventListener('DOMContentLoaded', () => {
   const monthSelectorSelect = document.getElementById('month-select-id');
   monthSelectorSelect.addEventListener('change', () => {
     window.location.href = monthSelectorSelect.value;
+  });
+
+  const matchdayCopyButton = document.getElementById('matchday-copy-button');
+  matchdayCopyButton.addEventListener('click', async () => {
+    const copyInfoDiv = document.getElementById('copy-edit-save-matchday-info');
+
+    try {
+      const permissionStatus = await navigator.permissions.query({
+        name: 'clipboard-write'
+      });
+
+      if (permissionStatus.state === 'granted' || permissionStatus.state === 'prompt') {
+        const copiedText = matchdayTextToCopy();
+        await navigator.clipboard.writeText(copiedText);
+        copyInfoDiv.textContent = '¡Texto copiado al portapapeles!';
+        copyInfoDiv.classList.add('green-info');
+        copyInfoDiv.classList.remove('red-info');
+      } else {
+        copyInfoDiv.textContent = 'No se otorgaron permisos para copiar al portapapeles.';
+        copyInfoDiv.classList.add('red-info');
+        copyInfoDiv.classList.remove('green-info');
+      }
+    } catch (error) {
+      copyInfoDiv.textContent = 'Ocurrió un error al copiar al portapapeles.';
+      copyInfoDiv.classList.add('red-info');
+      copyInfoDiv.classList.remove('green-info');
+    };
+
+    setTimeout(function() {
+      copyInfoDiv.textContent = '';
+    }, 1000);
+  });
+
+  const leaderboardCopyButton = document.getElementById('leaderboard-copy-button');
+  leaderboardCopyButton.addEventListener('click', async () => {
+    const copyInfoDiv = document.getElementById('copy-leaderboard-info');
+
+    try {
+      const permissionStatus = await navigator.permissions.query({
+        name: 'clipboard-write'
+      });
+
+      if (permissionStatus.state === 'granted' || permissionStatus.state === 'prompt') {
+        const copiedText = leaderboardTextToCopy();
+        await navigator.clipboard.writeText(copiedText);
+        copyInfoDiv.textContent = '¡Texto copiado al portapapeles!';
+        copyInfoDiv.classList.add('green-info');
+        copyInfoDiv.classList.remove('red-info');
+      } else {
+        copyInfoDiv.textContent = 'No se otorgaron permisos para copiar al portapapeles.';
+        copyInfoDiv.classList.add('red-info');
+        copyInfoDiv.classList.remove('green-info');
+      }
+    } catch (error) {
+      copyInfoDiv.textContent = 'Ocurrió un error al copiar al portapapeles.';
+      copyInfoDiv.classList.add('red-info');
+      copyInfoDiv.classList.remove('green-info');
+    };
+
+    setTimeout(function() {
+      copyInfoDiv.textContent = '';
+    }, 1000);
   });
 });
 
@@ -118,8 +289,10 @@ const setChooseMatchdayTitle = (matchdayName, isCurrentMatchday, isNextMatchday)
     rightArrowDiv.classList.remove('no-display-arrow');
     leftArrowDiv.classList.remove('no-display-arrow');
   } else if (showedMatchdayIndex === matchdays.length - 1) {
+    leftArrowDiv.classList.remove('no-display-arrow');
     rightArrowDiv.classList.add('no-display-arrow');
   } else if (showedMatchdayIndex === 0) {
+    rightArrowDiv.classList.remove('no-display-arrow');
     leftArrowDiv.classList.add('no-display-arrow');
   };
 };
@@ -295,7 +468,7 @@ const completeLeaderboard = (orderedLeaderboardPlayers) => {
 
     createAndAppendTd(trElement, playerObject.incorrects);
 
-    createAndAppendTd(trElement, playerObject.totalMatches);
+    createAndAppendTd(trElement, playerObject.playedMatches);
 
     tableBodyElement.appendChild(trElement);
 
@@ -319,9 +492,8 @@ const completeLeaderboardPositions = (iMatchdays, leaderboardPositions) => {
   };
 }
 
-const initializeMatchdayLeaderboardTable = (isCurrentMatchday) => {
-  const players = ['Juany', 'Franco', 'Ulises', 'Nicolás'];
-  const leaderboardPositions = new LeaderboardPositions(players);
+const initializeMatchdayLeaderboardTable = (isCurrentMatchday, players) => {
+  leaderboardPositions = new LeaderboardPositions(players);
 
   for (let iMatchdays in matchdays) {
     if ((isCurrentMatchday && matchdays[iMatchdays]['isCurrentMatchday']) || 
@@ -360,13 +532,11 @@ const fetchFiles = async (filePath) => {
   return data;
 };
 
-const initializeMainPage = async () => {
+const initializeMainPage = async (isCurrentMatchday, matchdayTextUrl, players) => {
   const users = await fetchFiles('../text/users.txt');
-  matchdays = await fetchFiles('../text/matchdays-month1.txt');
+  matchdays = await fetchFiles(matchdayTextUrl);
 
   checkLoginStatus(users);
 
-  initializeMatchdayLeaderboardTable(false);
+  initializeMatchdayLeaderboardTable(isCurrentMatchday, players);
 };
-
-initializeMainPage();
