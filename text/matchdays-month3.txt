@@ -255,8 +255,8 @@
             {
                 "team1": "Huracán",
                 "team2": "Godoy Cruz",
-                "scoreTeam1": "",
-                "scoreTeam2": "",
+                "scoreTeam1": 0,
+                "scoreTeam2": 0,
                 "matchDate": "2023-05-12T20:00:00.000-03:00",
                 "predictions": [
                     {
