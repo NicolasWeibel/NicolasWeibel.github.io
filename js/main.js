@@ -173,6 +173,8 @@ const leaderboardTextToCopy = () => {
     copiedText += `\n*${playerName}* | *${playerPoints}* | ${playerExactHits} | ${playerPartialHits} | ${playerIncorrect} | ${playerPlayedMatches}`
   }
 
+  copiedText += '\n\nhttps://nicolasweibel.github.io'
+
   return copiedText;
 };
 
