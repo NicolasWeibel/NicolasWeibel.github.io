@@ -411,8 +411,8 @@
             {
                 "team1": "Velez",
                 "team2": "Rosario Central",
-                "scoreTeam1": "",
-                "scoreTeam2": "",
+                "scoreTeam1": 0,
+                "scoreTeam2": 0,
                 "matchDate": "2023-05-15T20:30:00.000-03:00",
                 "predictions": [
                     {
