@@ -535,8 +535,8 @@
             {
                 "team1": "Argentinos",
                 "team2": "Boca",
-                "scoreTeam1": 1,
-                "scoreTeam2": 0,
+                "scoreTeam1": 0,
+                "scoreTeam2": 1,
                 "matchDate": "2023-05-19T21:30:00.000-03:00",
                 "predictions": [
                     {
