@@ -496,8 +496,8 @@
             {
                 "team1": "Estudiantes",
                 "team2": "Banfield",
-                "scoreTeam1": "",
-                "scoreTeam2": "",
+                "scoreTeam1": 1,
+                "scoreTeam2": 0,
                 "matchDate": "2023-05-19T19:00:00.000-03:00",
                 "predictions": [
                     {
@@ -535,8 +535,8 @@
             {
                 "team1": "Argentinos",
                 "team2": "Boca",
-                "scoreTeam1": "",
-                "scoreTeam2": "",
+                "scoreTeam1": 1,
+                "scoreTeam2": 0,
                 "matchDate": "2023-05-19T21:30:00.000-03:00",
                 "predictions": [
                     {
@@ -567,45 +567,6 @@
                         "name": "Lautaro",
                         "cleanName": "lautaro",
                         "scoreTeam1": 0,
-                        "scoreTeam2": 1
-                    }
-                ]
-            },
-            {
-                "team1": "Racing",
-                "team2": "Velez",
-                "scoreTeam1": "",
-                "scoreTeam2": "",
-                "matchDate": "2023-05-19T21:30:00.000-03:00",
-                "predictions": [
-                    {
-                        "name": "Juany",
-                        "cleanName": "juany",
-                        "scoreTeam1": 1,
-                        "scoreTeam2": 1
-                    },
-                    {
-                        "name": "Franco",
-                        "cleanName": "franco",
-                        "scoreTeam1": 0,
-                        "scoreTeam2": 1
-                    },
-                    {
-                        "name": "Ulises",
-                        "cleanName": "ulises",
-                        "scoreTeam1": 2,
-                        "scoreTeam2": 1
-                    },
-                    {
-                        "name": "Nicolás",
-                        "cleanName": "nicolas",
-                        "scoreTeam1": 0,
-                        "scoreTeam2": 0
-                    },
-                    {
-                        "name": "Lautaro",
-                        "cleanName": "lautaro",
-                        "scoreTeam1": 1,
                         "scoreTeam2": 1
                     }
                 ]
