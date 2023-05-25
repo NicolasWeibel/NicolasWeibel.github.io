@@ -620,8 +620,8 @@
             {
                 "team1": "Deportivo Pereyra",
                 "team2": "Boca",
-                "scoreTeam1": "",
-                "scoreTeam2": "",
+                "scoreTeam1": 1,
+                "scoreTeam2": 0,
                 "matchDate": "2023-05-24T21:00:00.000-03:00",
                 "predictions": [
                     {
