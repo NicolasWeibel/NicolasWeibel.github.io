@@ -627,32 +627,32 @@
                     {
                         "name": "Juany",
                         "cleanName": "juany",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
+                        "scoreTeam1": 1,
+                        "scoreTeam2": 2
                     },
                     {
                         "name": "Franco",
                         "cleanName": "franco",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
+                        "scoreTeam1": 1,
+                        "scoreTeam2": 2
                     },
                     {
                         "name": "Ulises",
                         "cleanName": "ulises",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
+                        "scoreTeam1": 1,
+                        "scoreTeam2": 2
                     },
                     {
                         "name": "Nicolás",
                         "cleanName": "nicolas",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
+                        "scoreTeam1": 0,
+                        "scoreTeam2": 1
                     },
                     {
                         "name": "Lautaro",
                         "cleanName": "lautaro",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
+                        "scoreTeam1": 0,
+                        "scoreTeam2": 2
                     }
                 ]
             },
@@ -666,32 +666,32 @@
                     {
                         "name": "Juany",
                         "cleanName": "juany",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
+                        "scoreTeam1": 0,
+                        "scoreTeam2": 3
                     },
                     {
                         "name": "Franco",
                         "cleanName": "franco",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
+                        "scoreTeam1": 1,
+                        "scoreTeam2": 3
                     },
                     {
                         "name": "Ulises",
                         "cleanName": "ulises",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
+                        "scoreTeam1": 0,
+                        "scoreTeam2": 2
                     },
                     {
                         "name": "Nicolás",
                         "cleanName": "nicolas",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
+                        "scoreTeam1": 0,
+                        "scoreTeam2": 4
                     },
                     {
                         "name": "Lautaro",
                         "cleanName": "lautaro",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
+                        "scoreTeam1": 0,
+                        "scoreTeam2": 2
                     }
                 ]
             },
@@ -705,32 +705,32 @@
                     {
                         "name": "Juany",
                         "cleanName": "juany",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
+                        "scoreTeam1": 1,
+                        "scoreTeam2": 3
                     },
                     {
                         "name": "Franco",
                         "cleanName": "franco",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
+                        "scoreTeam1": 1,
+                        "scoreTeam2": 2
                     },
                     {
                         "name": "Ulises",
                         "cleanName": "ulises",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
+                        "scoreTeam1": 0,
+                        "scoreTeam2": 2
                     },
                     {
                         "name": "Nicolás",
                         "cleanName": "nicolas",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
+                        "scoreTeam1": 1,
+                        "scoreTeam2": 2
                     },
                     {
                         "name": "Lautaro",
                         "cleanName": "lautaro",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
+                        "scoreTeam1": 1,
+                        "scoreTeam2": 2
                     }
                 ]
             }
