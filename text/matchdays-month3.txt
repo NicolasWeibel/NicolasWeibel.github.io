@@ -614,7 +614,7 @@
     },
     {
         "matchdayName": "Sud y Lib P4 Grupos",
-        "isCurrentMatchday": true,
+        "isCurrentMatchday": false,
         "isNextMatchday": false,
         "matchdayMatchs": [
             {
@@ -738,8 +738,8 @@
     },
     {
         "matchdayName": "Superliga Jornada 18",
-        "isCurrentMatchday": false,
-        "isNextMatchday": true,
+        "isCurrentMatchday": true,
+        "isNextMatchday": false,
         "matchdayMatchs": [
             {
                 "team1": "Boca",
