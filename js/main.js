@@ -83,7 +83,7 @@ const createAndAppendDiv = (classesArray, fatherDiv = '', text = '') => {
   return createdDiv;
 };
 
-function dateFormatToCopyFormat(dateString) {
+function dateFormatToCopyFormat(dateString, isMatchFormat) {
   const date = new Date(dateString);
 
   const weekdays = [
@@ -101,12 +101,16 @@ function dateFormatToCopyFormat(dateString) {
   const month = date.getMonth() + 1;
   const hours = date.getHours();
   const minutes = date.getMinutes();
+  let formattedDate;
 
-  const formattedDate = `${weekday} ${dayOfMonth}/${month} a las ${hours}:${minutes < 10 ? '0' : ''}${minutes}hs`;
+  if (isMatchFormat) {
+    formattedDate = `| ${dayOfMonth}/${month} | ${hours}:${minutes < 10 ? '0' : ''}${minutes}hs`;
+  } else {
+    formattedDate = `${weekday} ${dayOfMonth}/${month} a las ${hours}:${minutes < 10 ? '0' : ''}${minutes}hs`;
+  }
 
   return formattedDate;
 }
-
 
 const matchdayTextToCopy = () => {
   let copiedText = '';
@@ -119,13 +123,19 @@ const matchdayTextToCopy = () => {
     let team2 = match['team2'];
     let scoreTeam1 = match['scoreTeam1'];
     let scoreTeam2 = match['scoreTeam2'];
+    let matchdayDate = dateFormatToCopyFormat(match['matchDate'], true);
 
     if (matchIndex === 0) {
-      copyDateFormat = dateFormatToCopyFormat(match['matchDate']);
+      copyDateFormat = dateFormatToCopyFormat(match['matchDate'], false);
     }
 
-    if (scoreTeam1 !== '' && scoreTeam2 !== '') isPronostic = false;
-    copiedText += `\n\n${team1.toUpperCase()} ${scoreTeam1} - ${scoreTeam2} ${team2.toUpperCase()}`;
+    copiedText += `\n\n${team1.toUpperCase()} ${scoreTeam1} - ${scoreTeam2} ${team2.toUpperCase()} `;
+
+    if (scoreTeam1 !== '' && scoreTeam2 !== '') {
+      isPronostic = false
+    } else {
+      copiedText += matchdayDate
+    }
 
     for (const prediction of match['predictions']) {
       let predictionScoreTeam1 = prediction['scoreTeam1'];
@@ -178,6 +188,11 @@ const leaderboardTextToCopy = () => {
   return copiedText;
 };
 
+const matchdayAndLeaderboardTextToCopy = () => {
+  let copiedText = matchdayTextToCopy() + '\n\n' + leaderboardTextToCopy();
+  return copiedText;
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   const previusMatchdayDiv = document.getElementById('previous-matchday');
   previusMatchdayDiv.addEventListener('click', () => {
@@ -194,9 +209,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = monthSelectorSelect.value;
   });
 
-  const matchdayCopyButton = document.getElementById('matchday-copy-button');
-  matchdayCopyButton.addEventListener('click', async () => {
-    const copyInfoDiv = document.getElementById('copy-edit-save-matchday-info');
+  const matchdayAndLeaderboardCopyButton = document.getElementById('matchday-and-leaderboard-copy-button');
+  matchdayAndLeaderboardCopyButton.addEventListener('click', async () => {
+    const copyInfoDiv = document.getElementById('copy-edit-save-info');
 
     try {
       const permissionStatus = await navigator.permissions.query({
@@ -204,38 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (permissionStatus.state === 'granted' || permissionStatus.state === 'prompt') {
-        const copiedText = matchdayTextToCopy();
-        await navigator.clipboard.writeText(copiedText);
-        copyInfoDiv.textContent = '¡Texto copiado al portapapeles!';
-        copyInfoDiv.classList.add('green-info');
-        copyInfoDiv.classList.remove('red-info');
-      } else {
-        copyInfoDiv.textContent = 'No se otorgaron permisos para copiar al portapapeles.';
-        copyInfoDiv.classList.add('red-info');
-        copyInfoDiv.classList.remove('green-info');
-      }
-    } catch (error) {
-      copyInfoDiv.textContent = 'Ocurrió un error al copiar al portapapeles.';
-      copyInfoDiv.classList.add('red-info');
-      copyInfoDiv.classList.remove('green-info');
-    };
-
-    setTimeout(function() {
-      copyInfoDiv.textContent = '';
-    }, 1000);
-  });
-
-  const leaderboardCopyButton = document.getElementById('leaderboard-copy-button');
-  leaderboardCopyButton.addEventListener('click', async () => {
-    const copyInfoDiv = document.getElementById('copy-leaderboard-info');
-
-    try {
-      const permissionStatus = await navigator.permissions.query({
-        name: 'clipboard-write'
-      });
-
-      if (permissionStatus.state === 'granted' || permissionStatus.state === 'prompt') {
-        const copiedText = leaderboardTextToCopy();
+        const copiedText = matchdayAndLeaderboardTextToCopy();
         await navigator.clipboard.writeText(copiedText);
         copyInfoDiv.textContent = '¡Texto copiado al portapapeles!';
         copyInfoDiv.classList.add('green-info');

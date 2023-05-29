@@ -1,7 +1,7 @@
 /* ----VARIABLES---- */
 :root {
-    --main-color: #182D18;
-    --secondary-color: #294B29;
+    --main-color: #091109;
+    --secondary-color: #162916;
     --white-color: rgba(245, 245, 245);
     --match-color: #E5E5E5;
 }
@@ -176,16 +176,16 @@ ul {
 
 /* MATCHDAY TABLE */
 .matchday-table {
-    background-color: var(--secondary-color);
     display: grid;
     width: 90%;
     margin: 30px auto;
     margin-bottom: 0px;
     padding: 3px;
+    border-radius: 5px;
 }
 
 .matchday-table li {
-    margin: 1px 0;
+    margin: 2px 0;
 }
 
 /* Single Match */
@@ -197,6 +197,7 @@ ul {
     padding: 1px;
     transition: all 0.25s ease;
     user-select: none;
+    border-radius: 10px;
 }
 
 .match:hover {
@@ -207,10 +208,12 @@ ul {
 /* Match Date */
 .match-date {
     display: grid;
-    background-color: var(--main-color);
+    background-color: var(--secondary-color);
     color: var(--match-color);
     font-size: 0.6em;
     text-align: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .match-day, .match-time {
@@ -248,6 +251,7 @@ ul {
     align-items: center;
     justify-content: center;
     background-color: var(--white-color);
+    border-radius: 5px;
 }
 
 /* Extend Prediction */
@@ -288,6 +292,7 @@ ul {
     font-weight: 600;
     font-size: 0.85em;
     text-align: center;
+    border-radius: 10px;
 }
 
 .single-prediction {
@@ -295,6 +300,7 @@ ul {
     grid-template-columns: 1.8fr 3fr 1.7fr 3fr 0.5fr;
     background-color: var(--white-color);
     height: 25px;
+    border-radius: 10px;
 }
 
 .prediction-name {
@@ -345,6 +351,8 @@ ul {
     font-weight: 600;
     font-size: 0.8em;
     color: var(--white-color);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .exact-hit {
@@ -392,19 +400,21 @@ ul {
 }
 
 .leaderboard-container {
-    background-color: var(--secondary-color);
     width: 80%;
     margin: auto;
 }
 
 /* LEADERBOARD TITLE */
 .leaderboard-title {
+    background-color: var(--secondary-color);
     text-align: center;
     color: var(--white-color);
     font-size: clamp(0.75em, 3.8vw, 1em);
     border: 1px solid black;
     text-shadow: 1px 1px 1px #000;
     padding: 5px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .leaderboard-container h2 {
