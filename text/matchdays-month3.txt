@@ -783,8 +783,8 @@
             {
                 "team1": "Newell's",
                 "team2": "Godoy Cruz",
-                "scoreTeam1": "",
-                "scoreTeam2": "",
+                "scoreTeam1": 2,
+                "scoreTeam2": 0,
                 "matchDate": "2023-05-28T21:30:00.000-03:00",
                 "predictions": [
                     {
