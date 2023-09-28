@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+h1 a{
+  font-size: 2rem;
+  font-style: normal;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color:rgb(154, 233, 229);
+  font-weight: 800;
+  text-align: center;
+}
+
+h2{
+  font-size: 1.5rem;
+  font-style:normal;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color:rgb(154, 233, 229);
+  font-weight: 800;
+  background-color: rgba(0, 0, 255, 0.5);
+  text-align: center;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  height: 10vh;
+  background-color: rgba(0, 0, 255, 0.5);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav{
+  color:rgb(0, 0, 0);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+a:hover {
+  background-color: rgba(128, 128, 193, 0.5);
+}
+
+main {
+  margin: auto;
+}
+
+.mensaje-principal{
+  width: 750px;
+  margin: 10px auto;
+  padding: 5px;
+  border: 3px solid black; 
+}
+
+.mensaje-principal img{
+  width: 100%;
+}
+
+.mensaje-animado{
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+@keyframes example {
+  from {background-color: rgb(8, 0, 255);}
+  to {background-color: rgb(212, 36, 177);}
+}
+
+footer{
+  padding: 4px;
+  background-color: rgba(0, 0, 255, 0.5);
+  color:rgb(0, 0, 0);
+  text-decoration: none;
+  text-align: center;
+}
+
+.icono{
+    width:40px;
+}
+
+   
