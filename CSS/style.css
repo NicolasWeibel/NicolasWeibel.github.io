@@ -6,6 +6,16 @@
   font-family: sans-serif;
 }
 
+body { 
+  display: grid; 
+  grid-template-areas:  
+      "header header header"  
+      "main main main"  
+      "footer footer footer";
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 10vh 75vh 15vh;
+}
+
 h1 a{
   font-size: 2rem;
   font-style: normal;
@@ -30,12 +40,17 @@ header {
   grid-template-columns: 1fr 4fr;
   height: 10vh;
   background-color: rgba(0, 0, 255, 0.5);
+  grid-area: header;
 }
 
 .logo {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.logo a {
+  text-decoration: none;
 }
 
 nav{
@@ -59,6 +74,7 @@ a:hover {
 
 main {
   margin: auto;
+  grid-area: main;
 }
 
 .mensaje-principal{
@@ -88,6 +104,7 @@ footer{
   color:rgb(0, 0, 0);
   text-decoration: none;
   text-align: center;
+  grid-area: footer;
 }
 
 .icono{
