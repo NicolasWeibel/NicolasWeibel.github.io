@@ -1,0 +1,228 @@
+h1 {
+  font-size: 40px;
+  font-style: normal;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: rgb(154, 233, 229);
+  font-weight: 800;
+  margin-top: none;
+  padding: 30px;
+  background-color: blue;
+  text-align: center;
+}
+
+
+h3 {
+  font: size 10px;
+  font-style: normal;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: rgb(154, 233, 229);
+  font-weight: 800;
+  background-color: blue;
+  text-align: center;
+}
+
+.navheader {
+  display: inline-flexbox;
+  padding: 10px;
+  background-color: rgba(0, 0, 255, 0.5);
+  border: 2px solid rgba(0, 13, 16, 1);
+  margin-left: 290px;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  text-align: center;
+
+}
+
+
+a:hover {
+  background-color: rgba(128, 128, 193, 0.5);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+}
+
+::before,
+::after {
+  box-sizing: inherit;
+
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  line-height: 1.6;
+}
+
+#galeria {
+  position: fixed;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2px;
+  max-width: 500px;
+  min-width: 200px;
+  padding: 0 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+#galeria img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#imagen-activa {
+  width: 100%;
+  height: auto;
+}
+
+#contenedorprincipal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba (0, 0, 0, 0.65);
+
+}
+
+#contenerdorinterno {
+  height: 500px;
+  width: 400px;
+  border: 2px #f3f3f3 solid; 
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+}
+
+button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+color: #f3f3f3;
+
+}
+
+#btn-cierra {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 3rem;
+
+}
+
+#btn-retrocede {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  font-size: 3rem;
+}
+
+#btn-adelanta {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  font-size: 3rem;
+}
+
+.imagencard {
+  width: 50%;
+}
+
+.pie {
+  padding: 4px;
+  background-color: rgba(0, 0, 255, 0.5);
+  border: 3px solid rgba(0, 13, 16, 1);
+  margin-left: 0px;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  text-align: center;
+}
+
+
+:host {
+  display: inline-block;
+  overflow: hidden;
+  text-align: initial;
+  white-space: nowrap;
+}
+
+.term,
+.priv {
+  font-size: 15px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+  margin-bottom: 0px;
+  padding: 15px;
+
+}
+
+
+#card {
+  margin-top: 50px;
+  margin-left: 30px;
+
+}
+
+#card2 {
+  margin-top: -338px;
+  margin-left: 690px;
+}
+
+#card3 {
+  margin-top: -339px;
+  margin-left: 1430px;
+}
+
+#destinos {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+h4 {
+  background-color: #fff;
+  padding: 1rem;
+}
+
+#anim {
+  animation-name: example;
+  animation-duration: 14s;
+}
+
+@keyframes example {
+  from {
+      background-color: rgb(8, 0, 255);
+  }
+
+  to {
+      background-color: rgb(212, 36, 177);
+  }
+}
+
+#ico {
+  width: 40px;
+}
+
+div8 {
+  background-color: lightgrey;
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+}
