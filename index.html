@@ -1,43 +1,140 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aventur - Viajes y Turismo</title>
-    <!-- Agrega la referencia a los archivos CSS   -->  
-    <link rel="stylesheet" href="./CSS/style.css">
+<html lang="en">
 
-  </head>
-  <body>
-    <!-- Encabezado -->
-    <header>
-      <div class="logo">
-        <h1><a href="index.html">AVENTUR</a></h1>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">     Home          </a></li>
-          <li><a href="contacto.html">  Contacto      </a></li>
-          <li><a href="registro.html">  Registro      </a></li>
-          <li><a href="nosotros.html">  Quiénes somos </a></li>   
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section>
-        <div class="mensaje-principal"> 
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbwmrLZdWjHP40h3Efe0yNcfGNh7FzvBmPBQ&usqp=CAU" alt="Playa">
-          <h2 class="mensaje-animado" >Conozca los mejores sitios de turismo</h2>
-        </div>   
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../imgs/carta-a.png" />
+
+  <title>aventur</title>
+
+  <!-- Agrega la referencia a los archivos CSS   -->
+  <link rel="stylesheet" href="../css/estilostp.css">
+
+</head>
+
+<body>
+  <!-- Encabezado -->
+  <header>
+    <link href="../../jslb/lightbox.js" rel="stylesheet" />
+    <h1>AVENTUR</h1>
+    <nav>
+
+      <a class="navheader" href="index.html"> Home </a>
+      <a class="navheader" href="contacto.html"> Contacto </a>
+      <a class="navheader" href="registro.html"> Registro </a>
+      <a class="navheader" href="nosotros"> Quienes somos</a>
+
+    </nav>
+  </header>
+  <br><br>
+  <main>
+    <script src="../js/prueba.js"> </script>
+    <div>
+      <section id="destinos">
+        <div class="container">
+          <h2 class="text-center">Destinos Turísticos</h2>
+          <!-- agregar información sobre los destinos turísticos -->
+        </div>
       </section>
-    </main>
-    <!-- Pie de página -->
-    <footer>
-      <p>Encontranos en todas las redes sociales</p> 
-      <img class="icono" src="./img/facebook.jpeg" alt="Facebook">
-      <img class="icono" src="./img/instagram.jpeg" alt="Instagram">
-      <img class="icono" src="./img/twitter.jpeg" alt="Twitter">
-      <p>&copy; 2023 Sitio desarrollado por Grupo 8 - Codo a Codo </p>
+      <section id="galeria">
+        <img src="../imgs/a_Machu-Picch-a.jpg" alt="galeriadeimagenes">
+        <img src="../imgs/bora-bora.webp" alt="galeriadeimagenes">
+        <img src="../imgs/brazil-tourist-destinations-2048x1090.png" alt="galeriadeimagenes">
+        <img src="../imgs/calafate-perito-moreno-unaideaunviaje-9.jpg.webp" alt="galeriadeimagenes">
+        <img src="../imgs/a_Machu-Picch-a.jpg" alt="galeriadeimagenes">
+        <img src="../imgs/bora-bora.webp" alt="galeriadeimagenes">
+        <img src="../imgs/brazil-tourist-destinations-2048x1090.png" alt="galeriadeimagenes">
+        <img src="../imgs/calafate-perito-moreno-unaideaunviaje-9.jpg.webp" alt="galeriadeimagenes">
+        <img src="../imgs/calafate-perito-moreno-unaideaunviaje-9.jpg.webp" alt="galeriadeimagenes">
+
+
+        <section id="contenedorprincipal">
+          <div id="contenedorinterno">
+            <img id="imagen-activa" src="../imgs/a_Machu-Picch-a.jpg" alt="galeriadeimagenes">
+            <button id="btn-cierra" type="button">X</button>
+            <button id="btn-retrocede" type="button">&lt;</button>
+            <button id="btn-adelanta" type="button">&gt;</button>
+
+          </div>
+
+        </section>
+      </section>
+
+
+
+
+      <div id="card">
+        <img class="imagencard"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbwmrLZdWjHP40h3Efe0yNcfGNh7FzvBmPBQ&usqp=CAU"
+          alt="Playa">
+        <h3 id="anim">Conozca los mejores sitios de turismo</h3>
+      </div>
+      <div>
+        <div id="card2">
+          <img class="imagencard"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbwmrLZdWjHP40h3Efe0yNcfGNh7FzvBmPBQ&usqp=CAU"
+            alt="Playa">
+          <h3 id="anim">Conozca los mejores sitios de turismo</h3>
+        </div>
+
+        </nav>
+
+        <!-- Sección de Destinos -->
+        <section id="destinos">
+          <div class="container">
+            <h2 class="text-center">Destinos Turísticos</h2>
+            <!-- agregar información sobre los destinos turísticos -->
+          </div>
+        </section>
+
+        <div id="info-destino">
+          <h4>Información del Destino</h4>
+          <p>Selecciona un destino para obtener información.</p>
+        </div>
+        </section>
+
+      </div>
+
+
+
+
+
+  </main>
+
+
+
+  <!-- Pie de página -->
+  <footer class="pie">
+
+    <a class="term" href="/terminos-condiciones">Términos y Condiciones</a></li>
+    <a class="priv" href="/aviso-privacidad">Aviso de privacidad</a></li>
+
+    <p>Encontranos en todas las redes sociales</p>
+    <img id="ico" src="../imgs/face.jpeg" alt="FB">
+    <img id="ico" src="../imgs/insta.jpeg" alt="IG">
+    <img id="ico" src="../imgs/twitter.jpeg" alt="tw">
+    <p>&copy; "2023 Stio desarrollado por Grupo 8 - Codo a Codo </p>
+  </footer>
+
+
+
+  <!----
+
+      Contenido principal  
+    <div class="container mt-5">
+        <h2>Bienvenido a mi página web</h2>
+        <p>párrafo aquí</p>
+    </div>
+
+    <!-- Pie de página  
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2023 creado por grupo 8 --colocar nombres de nosotros-- </p>
     </footer>
-  </body>
+
+    <!-- Agregar la referencia a los archivos JavaScript de Bootstrap 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.min.js"></script> 
+  --->
+</body>
+
 </html>
