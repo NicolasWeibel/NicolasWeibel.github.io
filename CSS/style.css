@@ -88,16 +88,6 @@ main {
   width: 100%;
 }
 
-.mensaje-animado{
-  animation-name: example;
-  animation-duration: 4s;
-}
-
-@keyframes example {
-  from {background-color: rgb(8, 0, 255);}
-  to {background-color: rgb(212, 36, 177);}
-}
-
 footer{
   padding: 4px;
   background-color: rgba(0, 0, 255, 0.5);
@@ -111,4 +101,52 @@ footer{
     width:40px;
 }
 
-   
+.boton-whatsapp {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 9999;
+  transition: scale 1s ease;
+}
+
+.boton-whatsapp:hover {
+  animation: whatsapp-animation 1s ease 0s 1 normal forwards;
+  scale: 1.2;
+
+}
+
+.boton-whatsapp img {
+  height: 70px;
+}
+
+@keyframes whatsapp-animation {
+	0%,
+	100% {
+		transform: rotate(0deg);
+		transform-origin: 50% 50%;
+	}
+
+	10% {
+		transform: rotate(8deg);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: rotate(-10deg);
+	}
+
+	30%,
+	50%,
+	70% {
+		transform: rotate(10deg);
+	}
+
+	80% {
+		transform: rotate(-8deg);
+	}
+
+	90% {
+		transform: rotate(8deg);
+	}
+}
