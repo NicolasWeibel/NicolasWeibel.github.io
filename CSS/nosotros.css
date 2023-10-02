@@ -1,0 +1,27 @@
+@import "./normalize.css";
+@import "./general.css";
+@import "./header.css";
+@import "./footer.css";
+@import "./boton-whatsapp.css";
+
+/* Estilo para la sección "Nosotros" */
+#nosotros {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Estilo para el encabezado h1 */
+#nosotros h1 {
+  margin-bottom: 10px;
+}
+
+/* Estilo para el párrafo p */
+#nosotros p {
+  margin-bottom: 20px;
+}
+
+/* Estilo para las imágenes */
+#nosotros img {
+  width: 500px;
+  margin: 10px;
+}

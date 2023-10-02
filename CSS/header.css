@@ -1,0 +1,48 @@
+.logo a {
+  font-size: 2rem;
+  font-family: "Lucida Sans", sans-serif;
+  color: rgb(13, 19, 26);
+  font-weight: 800;
+  text-align: center;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  min-height: 50px;
+  grid-area: header;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 20px;
+}
+
+.logo a {
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  white-space: nowrap;
+}
+
+nav li a {
+  margin: 0 15px;
+  color: rgb(13, 19, 26);
+  text-decoration: none;
+}
+
+nav li a:hover {
+  border-bottom: 2px solid #000;
+}

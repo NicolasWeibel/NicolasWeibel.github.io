@@ -1,0 +1,21 @@
+footer {
+  min-height: 200px;
+  background-color: #0d1b2b;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  grid-area: footer;
+}
+
+.redes-sociales {
+  margin: 30px;
+}
+
+.iconos-redes-sociales {
+  margin: 20px;
+}
+
+.iconos-redes-sociales img {
+  width: 40px;
+  margin: 0 10px;
+}
