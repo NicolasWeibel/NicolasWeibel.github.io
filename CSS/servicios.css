@@ -1,0 +1,54 @@
+@import "./normalize.css";
+@import "./general.css";
+@import "./header.css";
+@import "./footer.css";
+@import "./boton-whatsapp.css";
+
+/* Estilo para la sección de servicios */
+.servicios-section {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.servicios-section h1 {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Estilo para los contenedores de servicios */
+.servicio-container {
+  width: 50%;
+  text-align: center;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+
+/* Estilo para cada servicio individual */
+.servicio {
+  text-align: center;
+  padding: 10px;
+  margin: 20px;
+}
+
+/* Estilo para las imágenes de servicio */
+.servicio img {
+  max-width: 100%;
+}
+
+/* Estilo para los títulos de servicio */
+.servicio h2 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+/* Estilo para los párrafos de servicio */
+.servicio p {
+  font-size: 16px;
+  margin-top: 5px;
+}

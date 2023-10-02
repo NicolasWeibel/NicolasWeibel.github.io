@@ -4,10 +4,6 @@
 @import "./footer.css";
 @import "./boton-whatsapp.css";
 
-main {
-  grid-area: main;
-}
-
 .carousel {
   display: flex;
   align-items: center;
