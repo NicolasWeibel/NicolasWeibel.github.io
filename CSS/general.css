@@ -12,14 +12,22 @@ body {
   grid-template-columns: auto auto auto;
   grid-template-rows: 10vh auto 15vh;
   background-color: rgb(236, 239, 243);
+  min-height: 100vh;
 }
 
 main {
   grid-area: main;
 }
 
-h2 {
+h1 {
   font-size: 2rem;
+  color: rgb(13, 19, 26);
+  font-weight: 800;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5rem;
   color: rgb(13, 19, 26);
   font-weight: 800;
   text-align: center;

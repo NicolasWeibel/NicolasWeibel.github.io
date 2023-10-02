@@ -7,7 +7,6 @@
 /* Estilo para la sección de servicios */
 .servicios-section {
   width: 100%;
-  height: auto;
   text-align: center;
   padding: 20px;
   display: flex;
@@ -16,9 +15,8 @@
 }
 
 .servicios-section h1 {
-  font-size: 24px;
-  text-align: center;
-  margin-top: 20px;
+  margin: auto;
+  margin-bottom: 10px;
 }
 
 /* Estilo para los contenedores de servicios */
@@ -43,12 +41,11 @@
 
 /* Estilo para los títulos de servicio */
 .servicio h2 {
-  font-size: 20px;
   margin-top: 10px;
 }
 
 /* Estilo para los párrafos de servicio */
 .servicio p {
-  font-size: 16px;
   margin-top: 5px;
+  margin-bottom: 20px;
 }
