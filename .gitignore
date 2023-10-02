@@ -1,0 +1,9 @@
+# Archivos y directorios específicos de IDEs y editores de texto
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos y directorios generados por el sistema operativo
+.DS_Store
+Thumbs.db
