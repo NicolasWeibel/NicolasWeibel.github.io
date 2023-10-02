@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aventur - Viajes y Turismo</title>
-    <!-- Agrega la referencia a los archivos CSS   -->  
-    <link rel="stylesheet" href="./CSS/style.css">
-
+    <!-- Agrega la referencia a los archivos CSS   -->
+    <link rel="stylesheet" href="./CSS/style.css" />
   </head>
   <body>
     <!-- Encabezado -->
@@ -16,34 +15,55 @@
       </div>
       <nav>
         <ul>
-          <li><a href="index.html">     Home          </a></li>
-          <li><a href="contacto.html">  Contacto      </a></li>
-          <li><a href="registro.html">  Registro      </a></li>
-          <li><a href="nosotros.html">  Quiénes somos </a></li>   
+          <li><a href="index.html"> Home </a></li>
+          <li><a href="servicios.html"> Servicios </a></li>
+          <li><a href="nosotros.html"> Quiénes somos </a></li>
+          <li><a href="contacto.html"> Contacto </a></li>
         </ul>
       </nav>
     </header>
     <main>
+      <div class="carousel">
+        <button id="retroceder" class="controles"></button>
+        <!-- <img
+          src="https://programadorwebvalencia.com/img/blog/2017/02/javascript.jpg"
+          style="display: none"
+        />
+        <img
+          src="https://img.freepik.com/psd-gratis/plantilla-banner-web-o-facebook-marketing-digital_237398-216.jpg"
+          style="display: none"
+        />
+        <img
+          src="https://static.vecteezy.com/system/resources/thumbnails/003/226/128/small/social-media-marketing-web-banner-digital-marketing-cover-banner-free-vector.jpg"
+          style="display: none"
+        /> -->
+        <button id="avanzar" class="controles"></button>
+      </div>
       <section>
-        <div class="mensaje-principal"> 
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbwmrLZdWjHP40h3Efe0yNcfGNh7FzvBmPBQ&usqp=CAU" alt="Playa">
+        <div class="mensaje-principal">
           <h2>Conozca los mejores sitios de turismo</h2>
-        </div>   
+          <img src="./img/playa-tropical.jpg" alt="Playa" />
+        </div>
       </section>
     </main>
     <!-- Pie de página -->
     <footer>
-      <p>Encontranos en todas las redes sociales</p> 
-      <img class="icono" src="./img/facebook.jpeg" alt="Facebook">
-      <img class="icono" src="./img/instagram.jpeg" alt="Instagram">
-      <img class="icono" src="./img/twitter.jpeg" alt="Twitter">
-      <p>&copy; 2023 Sitio desarrollado por Grupo 8 - Codo a Codo </p>
+      <section class="redes-sociales">
+        <p>Encontranos en todas las redes sociales</p>
+        <div class="iconos-redes-sociales">
+          <img src="./img/facebook.png" alt="Facebook" />
+          <img src="./img/instagram.png" alt="Instagram" />
+          <img src="./img/twitter.png" alt="Twitter" />
+        </div>
+      </section>
+      <p>&copy; 2023 Sitio desarrollado por Grupo 8 - Codo a Codo</p>
     </footer>
     <!-- Boton de Whatsapp -->
     <div class="boton-whatsapp">
       <a href="https://wa.me/542634328609" target="_blank">
-        <img src="./img/whatsapp-logo.png" alt="WhatsApp">
+        <img src="./img/whatsapp-logo.png" alt="WhatsApp" />
       </a>
     </div>
+    <script src="./JS/script.js"></script>
   </body>
 </html>
