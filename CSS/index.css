@@ -1,0 +1,53 @@
+@import "./normalize.css";
+@import "./general.css";
+@import "./header.css";
+@import "./footer.css";
+@import "./boton-whatsapp.css";
+
+main {
+  grid-area: main;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out;
+  height: 500px;
+}
+
+.controles {
+  height: 30px;
+  width: 30px;
+  margin: 30px;
+  background-color: transparent;
+  border: none;
+  border-left: 10px solid rgba(230, 230, 230, 1);
+  border-top: 10px solid rgba(230, 230, 230, 1);
+  cursor: pointer;
+  transition: border-color 0.3s ease-in-out;
+}
+
+#retroceder {
+  transform: rotate(-45deg);
+}
+
+#avanzar {
+  transform: rotate(135deg);
+}
+
+.controles:hover {
+  border-color: #777;
+}
+
+.mensaje-principal {
+  width: 80%;
+  margin: 10px auto;
+  padding: 5px;
+}
+
+.mensaje-principal img {
+  width: 100%;
+}
