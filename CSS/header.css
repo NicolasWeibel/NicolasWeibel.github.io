@@ -43,6 +43,10 @@ nav li a {
   text-decoration: none;
 }
 
+nav li .active {
+  border-bottom: 2px solid #000;
+}
+
 nav li a:hover {
   border-bottom: 2px solid #000;
 }
