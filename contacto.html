@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aventur - Viajes y Turismo</title>
+    <!-- Agrega la referencia a los archivos CSS   -->
+    <link rel="stylesheet" href="./CSS/contacto.css" />
+  </head>
+  <body>
+    <!-- Encabezado -->
+    <header>
+      <div class="logo">
+        <a href="index.html">AVENTUR</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html"> Home </a></li>
+          <li><a href="servicios.html"> Servicios </a></li>
+          <li><a href="nosotros.html"> Quiénes somos </a></li>
+          <li><a href="contacto.html"> Contacto </a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Contacto</h1>
+      <div class="contact_form">
+        <section id="formulario">
+          <form>
+            <ul>
+              <li>
+                <label for="nombre" class="colocar_nombre"
+                  >Nombre
+                  <span class="obligatorio">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="introducir_nombre"
+                  id="nombre"
+                  required
+                  placeholder="Escribe tu nombre.."
+                />
+              </li>
+
+              <li>
+                <label for="email" class="colocar_email"
+                  >Email
+                  <span class="obligatorio">*</span>
+                </label>
+                <input
+                  type="email"
+                  name="introducir_email"
+                  id="email"
+                  required
+                  placeholder="Escribe tu Email.."
+                />
+              </li>
+
+              <li>
+                <label for="telefone" class="colocar_telefono">Teléfono </label>
+                <input
+                  type="tel"
+                  name="introducir_telefono"
+                  id="telefono"
+                  placeholder="Escribe tu teléfono.."
+                />
+              </li>
+
+              <li>
+                <label for="asunto" class="colocar_asunto"
+                  >Asunto
+                  <span class="obligatorio">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="introducir_asunto"
+                  id="assunto"
+                  required="obligatorio"
+                  placeholder="Escribe un asunto.."
+                />
+              </li>
+
+              <li>
+                <label for="mensaje" class="colocar_mensaje"
+                  >Mensaje
+                  <span class="obligatorio">*</span>
+                </label>
+                <textarea
+                  name="introducir_mensaje"
+                  class="texto_mensaje"
+                  id="mensaje"
+                  required="obligatorio"
+                  placeholder="Deja aquí tu comentario.."
+                ></textarea>
+              </li>
+
+              <li>
+                <button type="submit" name="enviar_formulario" id="enviar">
+                  Enviar
+                </button>
+              </li>
+
+              <li class="aviso">
+                <span class="obligatorio"> * </span>los campos son obligatorios.
+              </li>
+            </ul>
+          </form>
+        </div>
+      </div>
+    </main>
+    <!-- Pie de página -->
+    <footer>
+      <section class="redes-sociales">
+        <p>Encontranos en todas las redes sociales</p>
+        <div class="iconos-redes-sociales">
+          <a href="https://www.facebook.com/" target="_blank">
+            <img src="./img/facebook.png" alt="Facebook" />
+          </a>
+          <a href="https://www.instagram.com/" target="_blank">
+            <img src="./img/instagram.png" alt="Instagram" />
+          </a>
+          <a href="https://twitter.com/" target="_blank">
+            <img src="./img/twitter.png" alt="Twitter" />
+          </a>
+        </div>
+      </section>
+      <p>&copy; 2023 Sitio desarrollado por Grupo 8 - Codo a Codo</p>
+    </footer>
+    <!-- Boton de Whatsapp -->
+    <div class="boton-whatsapp">
+      <a href="https://wa.link/zfx7oj" target="_blank">
+        <img src="./img/whatsapp-logo.png" alt="WhatsApp" />
+      </a>
+    </div>
+    <script src="./JS/script.js"></script>
+  </body>
+</html>
