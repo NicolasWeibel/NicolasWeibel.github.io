@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
       img.src = imagenSrc;
     });
   };
-
+  
   // Funcion que cambia la foto en la siguiente posicion
   function pasarFoto() {
     if (posicionActual >= IMAGENES.length - 1) {
