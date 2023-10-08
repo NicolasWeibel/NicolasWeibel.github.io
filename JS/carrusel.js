@@ -1,4 +1,4 @@
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function () {
   // Variables
   const IMAGENES = [
     "../img/avion.jpg",
@@ -64,4 +64,4 @@ window.onload = function () {
   precargaImagenes();
   renderizarImagen();
   playIntervalo();
-};
+});
