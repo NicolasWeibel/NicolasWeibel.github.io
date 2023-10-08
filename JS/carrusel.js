@@ -1,4 +1,4 @@
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function () {
   // Variables
   const IMAGENES = [
     "../img/avion.jpg",
@@ -16,6 +16,14 @@ window.onload = function () {
 
   // Funciones
 
+  // Funcion que precarga imagenes
+  const precargaImagenes = () => {
+    IMAGENES.forEach((imagenSrc) => {
+      const img = new Image();
+      img.src = imagenSrc;
+    });
+  };
+  
   // Funcion que cambia la foto en la siguiente posicion
   function pasarFoto() {
     if (posicionActual >= IMAGENES.length - 1) {
@@ -53,6 +61,7 @@ window.onload = function () {
   $botonAvanzar.addEventListener("click", pasarFoto);
   $botonRetroceder.addEventListener("click", retrocederFoto);
   // Iniciar
+  precargaImagenes();
   renderizarImagen();
   playIntervalo();
-};
+});
