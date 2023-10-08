@@ -56,7 +56,7 @@ const precargaImagenes = (iniciarCarrusel) => {
     img.src = url;
     img.onload = () => {
       imagenesCargadas++;
-      if (imagenesCargadas === IMAGENES.length) {
+      if (imagenesCargadas === 2) {
         iniciarCarrusel();
       }
     };
