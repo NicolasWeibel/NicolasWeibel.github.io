@@ -13,6 +13,7 @@
 
 .boton-whatsapp img {
   height: 70px;
+  filter: drop-shadow(0 6px 14px #0000005a);
 }
 
 @keyframes whatsapp-animation {
