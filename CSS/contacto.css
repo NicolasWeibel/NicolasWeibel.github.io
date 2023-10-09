@@ -9,6 +9,7 @@
 #formulario {
   width: 460px;
   background-color: #fbfbfb;
+  border: 1px solid #0d1b2b;
   margin: 20px auto;
   padding: 20px 0;
   border-radius: 10px;
