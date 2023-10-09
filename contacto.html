@@ -24,85 +24,91 @@
     </header>
     <main>
       <h1>Contacto</h1>
-      <div class="contact_form">
-        <section id="formulario">
-          <form>
-            <ul>
-              <li>
-                <label for="nombre" class="colocar_nombre"
-                  >Nombre
-                  <span class="obligatorio">*</span>
-                </label>
-                <input
-                  type="text"
-                  name="introducir_nombre"
-                  id="nombre"
-                  placeholder="Escribe tu nombre.."
-                />
-              </li>
+      <section id="formulario">
+        <form>
+          <ul>
+            <li>
+              <label for="nombre" class="colocar_nombre"
+                >Nombre
+                <span class="obligatorio">*</span>
+              </label>
+              <input
+                type="text"
+                name="introducir_nombre"
+                id="nombre"
+                placeholder="Escribe tu nombre.."
+              />
+            </li>
 
-              <li>
-                <label for="email" class="colocar_email"
-                  >Email
-                  <span class="obligatorio">*</span>
-                </label>
-                <input
-                  type="email"
-                  name="introducir_email"
-                  id="email"
-                  placeholder="Escribe tu Email.."
-                />
-              </li>
+            <li>
+              <label for="email" class="colocar_email"
+                >Email
+                <span class="obligatorio">*</span>
+              </label>
+              <input
+                type="email"
+                name="introducir_email"
+                id="email"
+                placeholder="Escribe tu Email.."
+              />
+            </li>
 
-              <li>
-                <label for="telefone" class="colocar_telefono">Teléfono </label>
-                <input
-                  type="tel"
-                  name="introducir_telefono"
-                  id="telefono"
-                  placeholder="Escribe tu teléfono.."
-                />
-              </li>
+            <li>
+              <label for="telefono" class="colocar_telefono">Teléfono </label>
+              <input
+                type="tel"
+                name="introducir_telefono"
+                id="telefono"
+                placeholder="Escribe tu teléfono.."
+              />
+            </li>
 
-              <li>
-                <label for="asunto" class="colocar_asunto"
-                  >Asunto
-                  <span class="obligatorio">*</span>
-                </label>
-                <input
-                  type="text"
-                  name="introducir_asunto"
-                  id="assunto"
-                  placeholder="Escribe un asunto.."
-                />
-              </li>
+            <li>
+              <label for="asunto" class="colocar_asunto"
+                >Asunto
+                <span class="obligatorio">*</span>
+              </label>
+              <input
+                type="text"
+                name="introducir_asunto"
+                id="asunto"
+                placeholder="Escribe un asunto.."
+              />
+            </li>
 
-              <li>
-                <label for="mensaje" class="colocar_mensaje"
-                  >Mensaje
-                  <span class="obligatorio">*</span>
-                </label>
-                <textarea
-                  name="introducir_mensaje"
-                  class="texto_mensaje"
-                  id="mensaje"
-                  placeholder="Deja aquí tu comentario.."
-                ></textarea>
-              </li>
+            <li>
+              <label for="mensaje" class="colocar_mensaje"
+                >Mensaje
+                <span class="obligatorio">*</span>
+              </label>
+              <textarea
+                name="introducir_mensaje"
+                class="texto_mensaje"
+                id="mensaje"
+                placeholder="Deja aquí tu comentario.."
+              ></textarea>
+            </li>
 
-              <li>
-                <button type="submit" name="enviar_formulario" id="enviar">
-                  Enviar
-                </button>
-              </li>
+            <li>
+              <button
+                type="submit"
+                onclick="validarFormulario(event)"
+                name="enviar_formulario"
+                id="enviar"
+              >
+                Enviar
+              </button>
+            </li>
 
-              <li class="aviso">
-                <span class="obligatorio"> * </span>los campos son obligatorios.
-              </li>
-            </ul>
-          </form>
-        </div>
-      </div>
+            <li class="aviso">
+              <span class="obligatorio"> * </span>los campos son obligatorios.
+            </li>
+          </ul>
+          <div class="envio-exitoso">
+            El formulario ha sido enviado correctamente.
+          </div>
+        </form>
+      </section>
     </main>
     <!-- Pie de página -->
     <footer>
@@ -129,5 +135,6 @@
       </a>
     </div>
     <script src="./JS/sticky-header.js"></script>
+    <script src="./JS/form.js"></script>
   </body>
 </html>
