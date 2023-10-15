@@ -25,7 +25,7 @@
     <main>
       <h1>Contacto</h1>
       <section id="formulario">
-        <form>
+        <form onsubmit="return validarFormulario()">
           <ul>
             <li>
               <label for="nombre" class="colocar_nombre"
@@ -38,6 +38,7 @@
                 id="nombre"
                 placeholder="Escribe tu nombre.."
               />
+              <div class="error" id="validar-nombre"></div>
             </li>
 
             <li>
@@ -51,6 +52,7 @@
                 id="email"
                 placeholder="Escribe tu Email.."
               />
+              <div class="error" id="validar-email"></div>
             </li>
 
             <li>
@@ -61,6 +63,7 @@
                 id="telefono"
                 placeholder="Escribe tu teléfono.."
               />
+              <div class="error" id="validar-telefono"></div>
             </li>
 
             <li>
@@ -74,6 +77,7 @@
                 id="asunto"
                 placeholder="Escribe un asunto.."
               />
+              <div class="error" id="validar-asunto"></div>
             </li>
 
             <li>
@@ -87,15 +91,11 @@
                 id="mensaje"
                 placeholder="Deja aquí tu comentario.."
               ></textarea>
+              <div class="error" id="validar-mensaje"></div>
             </li>
 
             <li>
-              <button
-                type="submit"
-                onclick="validarFormulario(event)"
-                name="enviar_formulario"
-                id="enviar"
-              >
+              <button type="submit" name="enviar_formulario" id="enviar">
                 Enviar
               </button>
             </li>
