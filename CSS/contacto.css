@@ -4,8 +4,7 @@
 @import "./footer.css";
 @import "./boton-whatsapp.css";
 
-/* Estilo para la sección de contacto */
-
+/* Estilo para la sección formulario */
 #formulario {
   width: 460px;
   background-color: #fbfbfb;
@@ -99,4 +98,16 @@ button[type="submit"]:hover {
   opacity: 1;
   width: 250px;
   transition: width 0s 0s, opacity 0.6s 0s;
+}
+
+/* Estilo para la sección ubicacion */
+#ubicacion {
+  width: 600px;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.google-map {
+  width: 100%;
+  height: 450px;
 }
