@@ -4,24 +4,50 @@
 @import "./footer.css";
 @import "./boton-whatsapp.css";
 
-/* Estilo para la sección "Nosotros" */
-#nosotros {
+main {
   text-align: center;
-  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 1500px;
 }
 
-/* Estilo para el encabezado h1 */
-#nosotros h1 {
-  margin-bottom: 10px;
+main img {
+  width: 40%;
+  margin: 10px;
 }
 
-/* Estilo para el párrafo p */
-#nosotros p {
+#nosotros-principal {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: left;
   margin-bottom: 20px;
 }
 
-/* Estilo para las imágenes */
-#nosotros img {
-  width: 500px;
-  margin: 10px;
+.contenedor-nosotros {
+  width: 50%;
+}
+
+.contenedor-nosotros p {
+  margin: 10px 0;
+}
+
+#nosotros-mision {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: left;
+}
+
+.contenedor-mision {
+  width: 50%;
+}
+
+.contenedor-mision h2 {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.contenedor-mision p {
+  margin: 10px 0;
 }
