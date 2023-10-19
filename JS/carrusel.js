@@ -1,10 +1,10 @@
 // Variables
 const IMAGENES = [
-  "../img/avion.jpg",
-  "../img/ciudad-turistica-mapa.jpg",
-  "../img/mujer-mapa.jpg",
-  "../img/roca-atardecer.jpg",
-  "../img/viaje-pareja.jpg",
+  "../img/avion.webp",
+  "../img/ciudad-turistica-mapa.webp",
+  "../img/mujer-mapa.webp",
+  "../img/roca-atardecer.webp",
+  "../img/viaje-pareja.webp",
 ];
 const TIEMPO_INTERVALO_MILESIMAS_SEG = 3000;
 let posicionActual = 0;
