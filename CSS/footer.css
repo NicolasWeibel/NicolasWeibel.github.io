@@ -17,5 +17,11 @@ footer {
 
 .iconos-redes-sociales img {
   width: 40px;
+  margin: auto;
+}
+
+.iconos-redes-sociales a {
+  text-decoration: none;
+  display: inline-block;
   margin: 0 10px;
 }
