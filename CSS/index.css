@@ -72,6 +72,12 @@
   color: #434343;
   min-width: 220px;
   max-width: 350px;
+  transition: box-shadow 0.3s ease-out;
+}
+
+.paquete:hover {
+  box-shadow: 0 0 15px rgba(84, 89, 98, 0.3);
+  cursor: pointer;
 }
 
 .paquete img {
