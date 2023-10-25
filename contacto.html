@@ -24,100 +24,103 @@
     </header>
     <main>
       <h1>Contacto</h1>
-      <section id="formulario">
-        <form method="post" onsubmit="return validarFormulario()">
-          <ul>
-            <li>
-              <label for="nombre" class="colocar_nombre"
-                >Nombre
-                <span class="obligatorio">*</span>
-              </label>
-              <input
-                type="text"
-                name="introducir_nombre"
-                id="nombre"
-                placeholder="Escribe tu nombre.."
-              />
-              <div class="error" id="validar-nombre"></div>
-            </li>
+      <div class="contenedor-contacto">
+        <div id="formulario">
+          <form method="post" onsubmit="return validarFormulario()">
+            <ul>
+              <li>
+                <label for="nombre" class="colocar_nombre"
+                  >Nombre
+                  <span class="obligatorio">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="introducir_nombre"
+                  id="nombre"
+                  placeholder="Escribe tu nombre.."
+                />
+                <div class="error" id="validar-nombre"></div>
+              </li>
 
-            <li>
-              <label for="email" class="colocar_email"
-                >Email
-                <span class="obligatorio">*</span>
-              </label>
-              <input
-                type="email"
-                name="introducir_email"
-                id="email"
-                placeholder="Escribe tu Email.."
-              />
-              <div class="error" id="validar-email"></div>
-            </li>
+              <li>
+                <label for="email" class="colocar_email"
+                  >Email
+                  <span class="obligatorio">*</span>
+                </label>
+                <input
+                  type="email"
+                  name="introducir_email"
+                  id="email"
+                  placeholder="Escribe tu Email.."
+                />
+                <div class="error" id="validar-email"></div>
+              </li>
 
-            <li>
-              <label for="telefono" class="colocar_telefono">Teléfono </label>
-              <input
-                type="tel"
-                name="introducir_telefono"
-                id="telefono"
-                placeholder="Escribe tu teléfono.."
-              />
-              <div class="error" id="validar-telefono"></div>
-            </li>
+              <li>
+                <label for="telefono" class="colocar_telefono">Teléfono </label>
+                <input
+                  type="tel"
+                  name="introducir_telefono"
+                  id="telefono"
+                  placeholder="Escribe tu teléfono.."
+                />
+                <div class="error" id="validar-telefono"></div>
+              </li>
 
-            <li>
-              <label for="asunto" class="colocar_asunto"
-                >Asunto
-                <span class="obligatorio">*</span>
-              </label>
-              <input
-                type="text"
-                name="introducir_asunto"
-                id="asunto"
-                placeholder="Escribe un asunto.."
-              />
-              <div class="error" id="validar-asunto"></div>
-            </li>
+              <li>
+                <label for="asunto" class="colocar_asunto"
+                  >Asunto
+                  <span class="obligatorio">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="introducir_asunto"
+                  id="asunto"
+                  placeholder="Escribe un asunto.."
+                />
+                <div class="error" id="validar-asunto"></div>
+              </li>
 
-            <li>
-              <label for="mensaje" class="colocar_mensaje"
-                >Mensaje
-                <span class="obligatorio">*</span>
-              </label>
-              <textarea
-                name="introducir_mensaje"
-                class="texto_mensaje"
-                id="mensaje"
-                placeholder="Deja aquí tu comentario.."
-              ></textarea>
-              <div class="error" id="validar-mensaje"></div>
-            </li>
+              <li>
+                <label for="mensaje" class="colocar_mensaje"
+                  >Mensaje
+                  <span class="obligatorio">*</span>
+                </label>
+                <textarea
+                  name="introducir_mensaje"
+                  class="texto_mensaje"
+                  id="mensaje"
+                  placeholder="Deja aquí tu comentario.."
+                ></textarea>
+                <div class="error" id="validar-mensaje"></div>
+              </li>
 
-            <li>
-              <button type="submit" name="enviar_formulario" id="enviar">
-                Enviar
-              </button>
-            </li>
+              <li>
+                <button type="submit" name="enviar_formulario" id="enviar">
+                  Enviar
+                </button>
+              </li>
 
-            <li class="aviso">
-              <span class="obligatorio"> * </span>los campos son obligatorios.
-            </li>
-          </ul>
-          <div class="envio-exitoso">
-            El formulario ha sido enviado correctamente.
-          </div>
-        </form>
-      </section>
-      <section id="ubicacion">
-        <iframe
-          class="google-map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105073.45340434344!2d-58.51569938879747!3d-34.6156547684446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e87!2sBuenos%20Aires%2C%20CABA!5e0!3m2!1ses-419!2sar!4v1697329783436!5m2!1ses-419!2sar"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </section>
+              <li class="aviso">
+                <span class="obligatorio"> * </span>los campos son obligatorios.
+              </li>
+            </ul>
+            <div class="envio-exitoso">
+              El formulario ha sido enviado correctamente.
+            </div>
+          </form>
+        </div>
+        <div id="ubicacion">
+          <h2>¿Donde nos encontramos ubicados?</h2>
+          <iframe
+            class="google-map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105073.45340434344!2d-58.51569938879747!3d-34.6156547684446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e87!2sBuenos%20Aires%2C%20CABA!5e0!3m2!1ses-419!2sar!4v1697329783436!5m2!1ses-419!2sar"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
     </main>
     <!-- Pie de página -->
     <footer>
