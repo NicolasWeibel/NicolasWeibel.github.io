@@ -16,7 +16,7 @@ header {
   background-color: rgb(236, 239, 243);
   display: grid;
   grid-template-columns: 3fr 2fr;
-  min-height: 50px;
+  min-height: 10vh;
   grid-area: header;
   transition: box-shadow 0.3s ease-in;
 }
