@@ -109,30 +109,31 @@
 .paquete-titulo h3 {
   margin-top: 8px;
   font-weight: 500;
+  font-size: 1.1rem; /* Tamaño de fuente para h3 */
 }
 
 .paquete-fecha {
   margin-top: 8px;
   margin-bottom: 16px;
-  font-size: 0.65rem;
+  font-size: 0.75rem; /* Tamaño de fuente para fechas en p */
 }
 
 .paquete-fecha em {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 500;
   font-style: normal;
 }
 
 .paquete-destinos em,
 .paquete-salida em {
-  font-size: 0.7rem;
+  font-size: 0.8rem; /* Tamaño de fuente para destinos y salida en p */
   font-weight: 500;
   font-style: normal;
 }
 
 .paquete-destinos span,
 .paquete-salida span {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 
 .paquete-precio {
@@ -145,7 +146,7 @@
 }
 
 .precio-leyenda {
-  font-size: 0.6rem;
+  font-size: 0.65rem; /* Tamaño de fuente para leyendas en p */
 }
 
 .precio {
@@ -153,15 +154,15 @@
 }
 
 .precio .simbolo {
-  font-size: 0.65rem;
+  font-size: 0.7rem; /* Tamaño de fuente para símbolos en p */
 }
 
 .precio .cantidad {
-  font-size: 1.1rem;
+  font-size: 1.2rem; /* Tamaño de fuente para cantidades en p */
 }
 
 .precio-detalle {
-  font-size: 0.6rem;
+  font-size: 0.7rem;
 }
 
 @media (min-width: 768px) {
