@@ -6,7 +6,9 @@
 
 /* Estilo para la sección formulario */
 #formulario {
-  width: 460px;
+  width: 80%;
+  max-width: 500px;
+  min-width: 300px;
   background-color: #fbfbfb;
   border: 1px solid #0d1b2b;
   margin: 20px auto;

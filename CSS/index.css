@@ -60,18 +60,19 @@
 .contenedor-paquetes {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(1, 1fr);
 }
 
 .paquete {
+  min-width: 220px;
+  max-width: 350px;
+  width: 80%;
   display: flex;
   flex-direction: column;
+  margin: 10px auto;
   background-color: #fff;
   border-radius: 8px;
   color: #434343;
-  min-width: 220px;
-  max-width: 350px;
   transition: box-shadow 0.3s ease-out;
 }
 
@@ -165,7 +166,7 @@
 
 @media (min-width: 768px) {
   .contenedor-paquetes {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -179,5 +180,9 @@
 
   .mensaje-principal img {
     width: 50%;
+  }
+
+  .contenedor-paquetes {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
