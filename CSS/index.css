@@ -4,6 +4,7 @@
 @import "./footer.css";
 @import "./boton-whatsapp.css";
 
+/* CARRUSEL */
 .carousel {
   display: flex;
   align-items: center;
@@ -38,6 +39,7 @@
   border-color: #777;
 }
 
+/* SECCION PRINCIPAL */
 .mensaje-principal {
   width: 80%;
   margin: 10px auto;
@@ -46,4 +48,136 @@
 
 .mensaje-principal img {
   width: 100%;
+}
+
+/* SECCION PAQUETES TURISTICOS */
+#paquetes-turisticos {
+  margin: 20px auto;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.contenedor-paquetes {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.paquete {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 8px;
+  color: #434343;
+  min-width: 220px;
+  max-width: 350px;
+  transition: box-shadow 0.3s ease-out;
+}
+
+.paquete:hover {
+  box-shadow: 0 0 15px rgba(84, 89, 98, 0.3);
+  cursor: pointer;
+}
+
+.paquete img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px 8px 0 0;
+}
+
+.contenedor-paquete-texto {
+  width: 90%;
+  margin: 8px auto;
+}
+
+.paquete-dias-noches {
+  background-color: #3f95fa;
+  border-radius: 4px;
+  width: 50%;
+  min-width: 145px;
+  padding: 4px;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.paquete-titulo h3 {
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.paquete-fecha {
+  margin-top: 8px;
+  margin-bottom: 16px;
+  font-size: 0.65rem;
+}
+
+.paquete-fecha em {
+  font-size: 0.65rem;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.paquete-destinos em,
+.paquete-salida em {
+  font-size: 0.7rem;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.paquete-destinos span,
+.paquete-salida span {
+  font-size: 0.7rem;
+}
+
+.paquete-precio {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  border-top: 1px solid #dde1e8;
+  padding-top: 8px;
+  margin-bottom: 8px;
+}
+
+.precio-leyenda {
+  font-size: 0.6rem;
+}
+
+.precio {
+  margin: 3px 0;
+}
+
+.precio .simbolo {
+  font-size: 0.65rem;
+}
+
+.precio .cantidad {
+  font-size: 1.1rem;
+}
+
+.precio-detalle {
+  font-size: 0.6rem;
+}
+
+@media (min-width: 768px) {
+  .contenedor-paquetes {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .mensaje-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1500px;
+  }
+
+  .mensaje-principal img {
+    width: 50%;
+  }
 }
