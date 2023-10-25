@@ -1,3 +1,21 @@
+const convertirFormatoFecha = (fechaString) => {
+  // Divide la cadena original en componentes capitalizados (día de la semana, día y mes)
+  const componentes = fechaString.split(" ");
+
+  if (componentes.length === 3) {
+    const diaSemana =
+      componentes[0][0].toUpperCase() +
+      componentes[0].slice(1).replace(",", "");
+    const numeroDia = componentes[1];
+    const mes = componentes[2][0].toUpperCase() + componentes[2].slice(1);
+
+    return `${diaSemana} ${numeroDia} ${mes}`;
+  }
+
+  // Si el formato de entrada es incorrecto, devuelve la cadena original
+  return fechaString;
+};
+
 const crearPaquete = (
   titulo,
   rutaImg,
@@ -39,11 +57,13 @@ const crearPaquete = (
   $contenedorTexto.appendChild($titulo);
 
   // Crear Div Fecha
-  const opciones = { weekday: "long", day: "numeric", month: "short" };
-  let fecha = new Date(fechaIda);
-  let formFechaIda = fecha.toLocaleString("es-ES", opciones);
-  fecha = new Date(fechaVuelta);
-  let formFechaVuelta = fecha.toLocaleString("es-ES", opciones);
+  const opciones = { weekday: "short", day: "numeric", month: "short" };
+  let formFechaIda = convertirFormatoFecha(
+    new Date(fechaIda).toLocaleString("es-ES", opciones)
+  );
+  let formFechaVuelta = convertirFormatoFecha(
+    new Date(fechaVuelta).toLocaleString("es-ES", opciones)
+  );
 
   const $fecha = document.createElement("div");
   $fecha.className = "paquete-fecha";
