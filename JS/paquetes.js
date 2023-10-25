@@ -73,7 +73,7 @@ const crearPaquete = (
   $vuelta.textContent = formFechaVuelta;
   $fecha.appendChild(document.createTextNode("Desde "));
   $fecha.appendChild($ida);
-  $fecha.appendChild(document.createTextNode(" hasta "));
+  $fecha.appendChild(document.createTextNode(" Hasta "));
   $fecha.appendChild($vuelta);
   $contenedorTexto.appendChild($fecha);
 
