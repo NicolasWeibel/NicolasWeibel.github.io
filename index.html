@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aventur - Viajes y Turismo</title>
     <!-- Agrega la referencia a los archivos CSS   -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
     <link rel="stylesheet" href="./CSS/index.css" />
   </head>
   <body>
@@ -13,7 +17,9 @@
       <div class="logo">
         <a href="index.html">AVENTUR</a>
       </div>
+      <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
       <nav>
+        <button class="cerrar-menu" id="cerrar"><i class="bi bi-x"></i></button>
         <ul>
           <li><a class="active" href="index.html"> Inicio </a></li>
           <li><a href="servicios.html"> Servicios </a></li>
@@ -64,6 +70,7 @@
     </div>
     <script src="./JS/carrusel.js"></script>
     <script src="./JS/sticky-header.js"></script>
+    <script src="./JS/responsive-header.js"></script>
     <script src="./JS/paquetes.js"></script>
   </body>
 </html>

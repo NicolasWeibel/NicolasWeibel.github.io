@@ -9,6 +9,7 @@
 }
 
 header {
+  padding: 0 20px;
   position: sticky;
   top: 0;
   z-index: 9999;
@@ -28,14 +29,12 @@ header {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-left: 20px;
 }
 
 nav {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-right: 20px;
 }
 
 nav ul {
@@ -56,4 +55,85 @@ nav li .active {
 
 nav li a:hover {
   border-bottom: 2px solid #000;
+}
+
+.abrir-menu,
+.cerrar-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 0 20px;
+  }
+
+  .abrir-menu,
+  .cerrar-menu {
+    display: block;
+    border: 0;
+    font-size: 1.25rem;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .abrir-menu {
+    color: #1c1c1c;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .cerrar-menu {
+    color: #ececec;
+  }
+
+  nav {
+    justify-content: flex-start;
+    height: 100vh;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1c1c1c;
+    padding: 2rem;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+  }
+
+  nav.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: end;
+  }
+
+  nav li {
+    margin: 10px 0;
+  }
+
+  nav li .active {
+    border-bottom: 2px solid #ecececec;
+  }
+
+  nav li a:hover {
+    border-bottom: 2px solid #ecececec;
+  }
+
+  nav ul li a {
+    color: #ecececec;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  header {
+    padding: 0 5px;
+  }
 }
