@@ -59,14 +59,21 @@
 
 .contenedor-paquetes {
   margin-top: 20px;
+  margin-bottom: 50px;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
+}
+
+.paquete-link {
+  text-decoration: none;
 }
 
 .paquete {
   min-width: 220px;
   max-width: 350px;
-  width: 80%;
+  width: 90%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   margin: 10px auto;

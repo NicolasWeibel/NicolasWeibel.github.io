@@ -48,8 +48,56 @@
         </div>
       </section>
       <section id="paquetes-turisticos">
-        <h2>Nuestros paquetes turísticos más recomendados</h2>
-        <div class="contenedor-paquetes"></div>
+        <div id="app" v-if="!error && !cargando">
+          <h2>Nuestros paquetes turísticos más recomendados</h2>
+          <div class="contenedor-paquetes">
+            <div v-for="ind in 6">
+              <a
+                class="paquete-link"
+                href="servicios.html"
+                v-if="paquetes[ind - 1]"
+              >
+                <div class="paquete">
+                  <img
+                    :src="paquetes[ind - 1].imagen"
+                    :alt="paquetes[ind - 1].titulo"
+                  />
+                  <div class="contenedor-paquete-texto">
+                    <div class="paquete-dias-noches">
+                      {{paquetes[ind - 1].dias}} Días / {{paquetes[ind -
+                      1].noches}} Noches
+                    </div>
+                    <div class="paquete-titulo">
+                      <h3>{{paquetes[ind - 1].titulo}}</h3>
+                    </div>
+                    <div class="paquete-fecha">
+                      Desde <em>{{paquetes[ind - 1].fecha_salida}}</em> Hasta
+                      <em>{{paquetes[ind - 1].fecha_regreso}}</em>
+                    </div>
+                    <div class="paquete-destinos">
+                      <em>Destinos: </em
+                      ><span>{{paquetes[ind - 1].destinos}}</span>
+                    </div>
+                    <div class="paquete-salida">
+                      <em>Saliendo desde: </em
+                      ><span>{{paquetes[ind - 1].lugar_partida}}</span>
+                    </div>
+                  </div>
+                  <div class="paquete-precio">
+                    <div class="precio-leyenda">Precio por persona</div>
+                    <div class="precio">
+                      <span class="simbolo">$ </span
+                      ><span class="cantidad"
+                        >{{paquetes[ind - 1].precio}}</span
+                      >
+                    </div>
+                    <div class="precio-detalle">Incl. imp. PAIS + AFIP</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
     <!-- Pie de página -->
@@ -76,6 +124,10 @@
         <img src="./img/whatsapp-logo.png" alt="WhatsApp" />
       </a>
     </div>
+
+    <!--Link de VUE-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
     <script src="./JS/carrusel.js"></script>
     <script src="./JS/sticky-header.js"></script>
     <script src="./JS/responsive-header.js"></script>
