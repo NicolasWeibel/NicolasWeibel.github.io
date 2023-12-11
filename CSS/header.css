@@ -41,6 +41,8 @@ nav ul {
   list-style: none;
   display: flex;
   white-space: nowrap;
+  margin: 0;
+  padding: 0;
 }
 
 nav li a {
