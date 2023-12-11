@@ -1,0 +1,251 @@
+@import "./normalize.css";
+@import "./general.css";
+@import "./header.css";
+@import "./footer.css";
+@import "./boton-whatsapp.css";
+
+/* Imagen */
+.paquete-imagen {
+  width: 95%;
+  max-width: 1700px;
+  height: 350px;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* SECCION RESUMEN */
+#resumen {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: 90%;
+  max-width: 1500px;
+}
+
+.inf-importante {
+  margin: 10px auto;
+  color: #434343;
+}
+
+.paquete-dias-noches {
+  display: inline-block;
+  background-color: #204268;
+  border-radius: 4px;
+  padding: 8px 15px;
+  margin-left: 5px;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.paquete-titulo h1 {
+  color: #343a3d;
+  margin-top: 8px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.paquete-fecha {
+  margin-top: 8px;
+  margin-bottom: 16px;
+  font-size: 0.9rem; /* Tamaño de fuente para fechas en p */
+}
+
+.paquete-fecha em {
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.paquete-destinos em,
+.paquete-salida em {
+  font-size: 0.9rem; /* Tamaño de fuente para destinos y salida en p */
+  font-weight: 500;
+  font-style: normal;
+}
+
+.paquete-destinos span,
+.paquete-salida span {
+  font-size: 0.9rem;
+}
+
+.compra {
+  min-width: 280px;
+  max-width: 500px;
+  background-color: #fff;
+  border-radius: 8px;
+  color: #434343;
+  margin: 30px auto;
+  text-align: center;
+  padding-top: 8px;
+  margin-bottom: 8px;
+}
+
+.precio-persona {
+  padding-top: 8px;
+  margin-bottom: 16px;
+}
+
+.precio-leyenda {
+  font-size: 0.65rem; /* Tamaño de fuente para leyendas en p */
+}
+
+.precio {
+  margin: 3px 0;
+}
+
+.precio .simbolo {
+  font-size: 0.7rem; /* Tamaño de fuente para símbolos en p */
+}
+
+.precio .cantidad {
+  font-size: 1.2rem; /* Tamaño de fuente para cantidades en p */
+}
+
+form {
+  border-top: 1px solid #dde1e8;
+  width: 90%;
+  margin: auto;
+  padding: 15px;
+}
+
+.stock {
+  font-size: 0.8rem;
+}
+
+.input-personas {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  color: #343a3d;
+  margin-top: 5px;
+}
+
+input[type="number"] {
+  width: 65px;
+  background-color: #fbfbfb;
+  color: #343a3d;
+  border: 1px solid #0d1b2b;
+  border-radius: 5px;
+  padding-left: 5px;
+}
+
+.error {
+  color: #ab2e46;
+  margin: 3px;
+  font-size: 0.8rem;
+}
+
+.contenedor-precio-total {
+  margin: 15px;
+  color: #343a3d;
+}
+
+.precio-total-leyenda {
+  font-size: 1rem; /* Tamaño de fuente para leyendas en p */
+}
+
+.precio-total {
+  margin: 3px 0;
+}
+
+.precio-total .simbolo {
+  font-size: 0.9rem; /* Tamaño de fuente para símbolos en p */
+}
+
+.precio-total .cantidad {
+  font-size: 1.4rem; /* Tamaño de fuente para cantidades en p */
+}
+
+.precio-detalle {
+  font-size: 0.8rem;
+}
+
+button[type="button"] {
+  width: 70%;
+  margin-top: 10px;
+  padding: 10px 0px;
+  background-color: #0d1b2b;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* SECCION SERVICIOS */
+#servicios {
+  margin: 50px auto;
+  width: 90%;
+  max-width: 1500px;
+}
+
+#servicios h3 {
+  color: #343a3d;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: left;
+}
+
+.contenedor-servicios {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin: 40px;
+}
+
+.contenedor-servicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  color: #434343;
+}
+
+.contenedor-servicio span {
+  font-weight: 400;
+  font-size: 0.7rem;
+}
+
+/* SECCION DESCRIPCION */
+#descripcion {
+  margin: 50px auto;
+  width: 90%;
+  max-width: 1500px;
+}
+
+#descripcion h2 {
+  color: #343a3d;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-align: left;
+}
+
+#descripcion p {
+  margin: 20px 0;
+  color: #434343;
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-align: left;
+  white-space: pre-line;
+}
+
+@media (min-width: 768px) {
+  #resumen {
+    display: flex;
+    gap: 10px;
+  }
+  .inf-importante {
+    margin: 10px 0;
+    width: 70%;
+  }
+  .compra {
+    margin: 0;
+    width: 30%;
+  }
+
+  .contenedor-servicios {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}

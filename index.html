@@ -54,7 +54,7 @@
             <div v-for="ind in 6">
               <a
                 class="paquete-link"
-                href="servicios.html"
+                :href="'./detalle-paquete.html?id=' + paquetes[ind - 1].id"
                 v-if="paquetes[ind - 1]"
               >
                 <div class="paquete">
