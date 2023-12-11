@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paquete | Aventur</title>
+    <meta
+      name="keywords"
+      content="agencia de viajes, viajes, turismo, paquetes turísticos, excursiones, alquiler de autos, destinos, aventuras, viajar, experiencias, viajes económicos, escapadas, vacaciones"
+    />
+    <meta
+      name="description"
+      content="Bienvenidos a nuestra agencia de turismo de clase mundial, donde tus sueños de viaje se hacen realidad. Ofrecemos una amplia gama de servicios que incluyen paquetes de viaje personalizados, alquiler de autos, emocionantes excursiones, y una selección cuidadosamente curada de hoteles de lujo. Descubre destinos asombrosos y experimenta la comodidad y la excelencia en cada paso de tu viaje con nosotros. Planifica tu próxima aventura con expertos en viajes y crea recuerdos inolvidables."
+    />
+    <meta name="author" content="Fontana, Weibel and " />
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./CSS/detalle-paquete.css" />
+  </head>
+  <body>
+    <!-- Encabezado -->
+    <header>
+      <div class="logo">
+        <a href="index.html">AVENTUR</a>
+      </div>
+      <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
+      <nav>
+        <button class="cerrar-menu" id="cerrar"><i class="bi bi-x"></i></button>
+        <ul>
+          <li><a href="index.html"> Inicio </a></li>
+          <li><a href="servicios.html"> Servicios </a></li>
+          <li><a href="nosotros.html"> Quiénes somos </a></li>
+          <li><a href="contacto.html"> Contacto </a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div id="app">
+        <div v-if="error">
+          <p>Lo sentimos. Intente recargando la página...</p>
+        </div>
+        <div v-else>
+          <div class="d-flex flex-column align-items-center" v-if="cargando">
+            <div class="spinner-border"></div>
+            <p>Cargando...</p>
+          </div>
+          <div v-else>
+            <img
+              class="paquete-imagen"
+              :src="paquete.imagen"
+              alt="paquete.titulo"
+            />
+            <section id="resumen">
+              <div class="inf-importante">
+                <div class="paquete-dias-noches">
+                  {{paquete.dias}} Días / {{paquete.noches}} Noches
+                </div>
+                <div class="paquete-titulo">
+                  <h1>{{paquete.titulo}}</h1>
+                </div>
+                <div class="paquete-fecha">
+                  Desde <em>{{paquete.format_fecha_salida}}</em> Hasta
+                  <em>{{paquete.format_fecha_regreso}}</em>
+                </div>
+                <div class="paquete-destinos">
+                  <em>Destinos: </em><span>{{paquete.destinos}}</span>
+                </div>
+                <div class="paquete-salida">
+                  <em>Saliendo desde: </em
+                  ><span>{{paquete.lugar_partida}}</span>
+                </div>
+              </div>
+              <div class="compra">
+                <div class="precio-persona">
+                  <div class="precio-leyenda">Precio por persona</div>
+                  <div class="precio">
+                    <span class="simbolo">$ </span
+                    ><span class="cantidad">{{paquete.format_precio}}</span>
+                  </div>
+                </div>
+                <form>
+                  <span class="stock text-info" v-if="paquete.stock > 1"
+                    >¡Quedan {{paquete.stock}} disponibles!</span
+                  >
+                  <span
+                    class="stock text-warning"
+                    v-else-if="paquete.stock == 1"
+                    >¡Solo 1 disponible!</span
+                  >
+                  <span class="stock text-danger" v-else>No disponible</span>
+                  <div class="input-personas">
+                    <input
+                      type="number"
+                      name="introducir_personas"
+                      id="personas"
+                      v-model="personas"
+                      v-if="paquete.stock > 0"
+                    />
+                    <input
+                      type="number"
+                      name="introducir_personas"
+                      id="personas"
+                      disabled
+                      style="cursor: not-allowed"
+                      v-model="personas"
+                      v-else
+                    />
+                    <label for="personas" class="colocar_personas"
+                      >personas</label
+                    >
+                  </div>
+                  <div class="error" id="validar-personas"></div>
+                  <div class="contenedor-precio-total">
+                    <div class="precio-total-leyenda">TOTAL</div>
+                    <div class="precio-total">
+                      <span class="simbolo">$ </span
+                      ><span class="cantidad"
+                        >{{new Intl.NumberFormat("es-ES").format(personas *
+                        paquete.precio)}}</span
+                      >
+                    </div>
+                    <div class="precio-detalle">Incl. imp. PAIS + AFIP</div>
+                  </div>
+                  <button
+                    type="button"
+                    name="enviar_formulario"
+                    id="solicitar"
+                    v-on:click="solicitar()"
+                    v-if="paquete.stock > 0"
+                  >
+                    Solicitar
+                  </button>
+                  <button
+                    type="button"
+                    name="enviar_formulario"
+                    id="solicitar"
+                    style="cursor: not-allowed"
+                    v-on:click="false"
+                    v-else
+                  >
+                    Solicitar
+                  </button>
+                </form>
+              </div>
+            </section>
+            <section
+              id="servicios"
+              v-if="paquete.excursiones > 0 || paquete.seguro || paquete.traslado || paquete.alquiler_auto"
+            >
+              <h3>El paquete ofrece</h3>
+              <div class="contenedor-servicios">
+                <div class="contenedor-servicio" v-if="paquete.alquiler_auto">
+                  <i class="bi bi-car-front-fill"></i>
+                  <span>Alquiler de auto</span>
+                </div>
+                <div class="contenedor-servicio" v-if="paquete.traslado">
+                  <i class="bi bi-bus-front"></i>
+                  <span>Traslado</span>
+                </div>
+                <div class="contenedor-servicio" v-if="paquete.seguro">
+                  <i class="bi bi-pass"></i>
+                  <span>Seguro al viajero</span>
+                </div>
+                <div class="contenedor-servicio" v-if="paquete.excursiones > 1">
+                  <i class="bi bi-map"></i>
+                  <span>{{paquete.excursiones}} excursiones incluidas</span>
+                </div>
+                <div
+                  class="contenedor-servicio"
+                  v-else-if="paquete.excursiones == 1"
+                >
+                  <i class="bi bi-map"></i>
+                  <span>1 excursión incluida</span>
+                </div>
+              </div>
+            </section>
+            <section id="descripcion" v-if="paquete.descripcion">
+              <h2>Conocé un poco más</h2>
+              <p>{{paquete.descripcion}}</p>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Pie de página -->
+    <footer>
+      <section class="redes-sociales">
+        <p>Encontranos en todas las redes sociales</p>
+        <div class="iconos-redes-sociales">
+          <a href="https://www.facebook.com/" target="_blank">
+            <img src="./img/facebook.png" alt="Facebook" />
+          </a>
+          <a href="https://www.instagram.com/" target="_blank">
+            <img src="./img/instagram.png" alt="Instagram" />
+          </a>
+          <a href="https://twitter.com/" target="_blank">
+            <img src="./img/twitter.png" alt="Twitter" />
+          </a>
+        </div>
+      </section>
+      <p>&copy; 2023 Sitio desarrollado por Grupo 8 - Codo a Codo</p>
+    </footer>
+    <!-- Botón de WhatsApp -->
+    <div class="boton-whatsapp">
+      <a href="https://wa.link/zfx7oj" target="_blank">
+        <img src="./img/whatsapp-logo.png" alt="WhatsApp" />
+      </a>
+    </div>
+
+    <!--Link de VUE-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script src="./JS/sticky-header.js"></script>
+    <script src="./JS/responsive-header.js"></script>
+    <script src="./JS/detalle-paquete.js"></script>
+  </body>
+</html>
