@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aventur - Viajes y Turismo</title>
+    <title>Paquetes | Aventur</title>
     <meta
       name="keywords"
       content="agencia de viajes, viajes, turismo, paquetes turísticos, excursiones, alquiler de autos, destinos, aventuras, viajar, experiencias, viajes económicos, escapadas, vacaciones"
@@ -13,6 +13,13 @@
       content="Bienvenidos a nuestra agencia de turismo de clase mundial, donde tus sueños de viaje se hacen realidad. Ofrecemos una amplia gama de servicios que incluyen paquetes de viaje personalizados, alquiler de autos, emocionantes excursiones, y una selección cuidadosamente curada de hoteles de lujo. Descubre destinos asombrosos y experimenta la comodidad y la excelencia en cada paso de tu viaje con nosotros. Planifica tu próxima aventura con expertos en viajes y crea recuerdos inolvidables."
     />
     <meta name="author" content="Fontana, Weibel and " />
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
@@ -29,8 +36,8 @@
       <nav>
         <button class="cerrar-menu" id="cerrar"><i class="bi bi-x"></i></button>
         <ul>
-          <li><a class="active" href="index.html"> Inicio </a></li>
-          <li><a href="paquetes.html"> Paquetes </a></li>
+          <li><a href="index.html"> Inicio </a></li>
+          <li><a class="active" href="paquetes.html"> Paquetes </a></li>
           <li><a href="servicios.html"> Servicios </a></li>
           <li><a href="nosotros.html"> Quiénes somos </a></li>
           <li><a href="contacto.html"> Contacto </a></li>
@@ -38,19 +45,9 @@
       </nav>
     </header>
     <main>
-      <div class="carousel">
-        <button id="retroceder" class="controles"></button>
-        <button id="avanzar" class="controles"></button>
-      </div>
-      <section>
-        <div class="mensaje-principal">
-          <h1>¡Arma el viaje de tus sueños con AVENTUR!</h1>
-          <img src="./img/playa-tropical.webp" alt="Playa" />
-        </div>
-      </section>
       <section id="paquetes-turisticos">
+        <h1>Paquetes Turísticos</h1>
         <div id="app">
-          <h2>Nuestros paquetes turísticos más recomendados</h2>
           <div v-if="error">
             <p>Lo sentimos. Intente recargando la página...</p>
           </div>
@@ -60,45 +57,37 @@
               <p>Cargando...</p>
             </div>
             <div class="contenedor-paquetes" v-else>
-              <div v-for="ind in 6">
+              <div v-for="paquete in paquetes">
                 <a
                   class="paquete-link"
-                  :href="'./detalle-paquete.html?id=' + paquetes[ind - 1].id"
-                  v-if="paquetes[ind - 1]"
+                  :href="'./detalle-paquete.html?id=' + paquete.id"
                 >
                   <div class="paquete">
-                    <img
-                      :src="paquetes[ind - 1].imagen"
-                      :alt="paquetes[ind - 1].titulo"
-                    />
+                    <img :src="paquete.imagen" :alt="paquete.titulo" />
                     <div class="contenedor-paquete-texto">
                       <div class="paquete-dias-noches">
-                        {{paquetes[ind - 1].dias}} Días / {{paquetes[ind -
-                        1].noches}} Noches
+                        {{paquete.dias}} Días / {{paquete.noches}} Noches
                       </div>
                       <div class="paquete-titulo">
-                        <h3>{{paquetes[ind - 1].titulo}}</h3>
+                        <h3>{{paquete.titulo}}</h3>
                       </div>
                       <div class="paquete-fecha">
-                        Desde <em>{{paquetes[ind - 1].fecha_salida}}</em> Hasta
-                        <em>{{paquetes[ind - 1].fecha_regreso}}</em>
+                        Desde <em>{{paquete.fecha_salida}}</em> Hasta
+                        <em>{{paquete.fecha_regreso}}</em>
                       </div>
                       <div class="paquete-destinos">
-                        <em>Destinos: </em
-                        ><span>{{paquetes[ind - 1].destinos}}</span>
+                        <em>Destinos: </em><span>{{paquete.destinos}}</span>
                       </div>
                       <div class="paquete-salida">
                         <em>Saliendo desde: </em
-                        ><span>{{paquetes[ind - 1].lugar_partida}}</span>
+                        ><span>{{paquete.lugar_partida}}</span>
                       </div>
                     </div>
                     <div class="paquete-precio">
                       <div class="precio-leyenda">Precio por persona</div>
                       <div class="precio">
                         <span class="simbolo">$ </span
-                        ><span class="cantidad"
-                          >{{paquetes[ind - 1].precio}}</span
-                        >
+                        ><span class="cantidad">{{paquete.precio}}</span>
                       </div>
                       <div class="precio-detalle">Incl. imp. PAIS + AFIP</div>
                     </div>
@@ -138,7 +127,6 @@
     <!--Link de VUE-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-    <script src="./JS/carrusel.js"></script>
     <script src="./JS/sticky-header.js"></script>
     <script src="./JS/responsive-header.js"></script>
     <script src="./JS/paquetes.js"></script>
