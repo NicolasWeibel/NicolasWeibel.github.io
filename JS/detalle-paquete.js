@@ -131,9 +131,7 @@ createApp({
         };
         fetch(this.url, options)
           .then(function () {
-            alert(
-              "¡Solicitud realizada con éxito! Nos comunicaremos por email."
-            );
+            alert("¡Solicitud realizada con éxito! Se redujo el stock.");
             location.reload();
           })
           .catch((err) => {
