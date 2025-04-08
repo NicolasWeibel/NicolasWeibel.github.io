@@ -117,8 +117,10 @@ function dateFormatToCopyFormat(dateString, isMatchFormat) {
     "VIERNES",
     "SÁBADO",
   ];
+  const weekdaysMatchFormat = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
 
   const weekday = weekdays[date.getDay()];
+  const weekdayMatchFormat = weekdaysMatchFormat[date.getDay()];
   const dayOfMonth = date.getDate();
   const month = date.getMonth() + 1;
   const hours = date.getHours();
@@ -126,7 +128,7 @@ function dateFormatToCopyFormat(dateString, isMatchFormat) {
   let formattedDate;
 
   if (isMatchFormat) {
-    formattedDate = `| ${dayOfMonth}/${month} | ${hours}:${
+    formattedDate = `| ${weekdayMatchFormat} ${dayOfMonth}/${month} | ${hours}:${
       minutes < 10 ? "0" : ""
     }${minutes}hs`;
   } else {
