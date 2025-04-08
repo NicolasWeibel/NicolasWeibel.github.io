@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneo Superliga</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/headerfooter.css">
+    <link rel="stylesheet" href="../css/leaderboard-style-mainpage.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="/">
+                    <p>TORNEO SUPERLIGA</p>
+                </a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="month-select">
+	        <select class="button" id="month-select-id">
+                <option value="../">Mes 4 (actual)</option>
+                <option value="../month-3" selected>Mes 3</option>
+                <option value="../month-2">Mes 2</option>
+                <option value="../month-1">Mes 1</option>
+            </select>
+            <div class="arrow"></div>
+        </div>
+        <section id="matchday">
+            <div class="choose-matchday">
+                <div id="previous-matchday" class="matchday-arrow no-display-arrow">
+                    <div class="left-arrow"></div>
+                </div>
+                <div id="current-matchday"></div>
+                <div id="next-matchday" class="matchday-arrow no-display-arrow">
+                    <div class="right-arrow"></div>
+                </div>
+            </div>
+            <ul class="matchday-table"></ul>
+            <div class="copy-edit-save-container">
+                <button id="matchday-and-leaderboard-copy-button" class="button">Copiar</button>
+            </div>
+            <div id="copy-edit-save-info" class="copy-edit-save-info"></div>
+        </section>
+        <section id="leaderboard">
+            <div class="leaderboard-container">
+                <div class="leaderboard-title">
+                    <h2>Tabla de Posiciones</h2>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>Pts</th>
+                            <th>AT</th>
+                            <th>AP</th>
+                            <th>E</th>
+                            <th>PJ</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="references">
+                    <p class="reference">- 1° gana el valor de un mes de Gimnasio</p>
+                    <p class="reference">- 2° paga el 15%</p>
+                    <p class="reference">- 3° paga el 20%</p>
+                    <p class="reference">- 4° paga el 30%</p>
+                    <p class="reference">- 5° paga el 35%</p>
+                </div>
+        </section>
+    </main>
+    <footer>
+        <p>Derechos reservados © 2023</p>
+    </footer>
+    <script src="../js/main.js"></script>
+    <script src="../js/month3.js"></script>
+</body>
+</html>

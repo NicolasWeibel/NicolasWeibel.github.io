@@ -738,7 +738,7 @@
     },
     {
         "matchdayName": "Superliga Jornada 18",
-        "isCurrentMatchday": true,
+        "isCurrentMatchday": false,
         "isNextMatchday": false,
         "matchdayMatchs": [
             {

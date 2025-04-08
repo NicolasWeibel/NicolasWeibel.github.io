@@ -12,6 +12,16 @@
   background-color: #e8d747;
 }
 
+.leaderboard-container tbody tr:nth-child(4) td:first-child {
+  background-color: #d68526;
+  color: var(--white-color);
+}
+
+.leaderboard-container tbody tr:nth-child(5) td:first-child {
+  background-color: #f00;
+  color: var(--white-color);
+}
+
 /* LEADERBOARD REFERENCES */
 .reference {
   border-top: 1px solid #000;
@@ -32,4 +42,14 @@
 .reference:nth-child(3) {
   background-color: #e8d747;
   text-shadow: 0.2px 0.2px 0.5px #000;
+}
+
+.reference:nth-child(4) {
+  background-color: #d68526;
+  color: var(--white-color);
+}
+
+.reference:nth-child(5) {
+  background-color: #f00;
+  color: var(--white-color);
 }
