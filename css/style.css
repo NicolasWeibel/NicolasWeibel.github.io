@@ -209,7 +209,7 @@ ul {
   display: grid;
   background-color: var(--secondary-color);
   color: var(--match-color);
-  font-size: 0.8em;
+  font-size: 0.7em;
   text-align: center;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;

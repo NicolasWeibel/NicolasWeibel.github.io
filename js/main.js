@@ -341,6 +341,8 @@ const setChooseMatchdayTitle = (
 
 const createMatchDateDiv = (dateString) => {
   const date = new Date(dateString);
+  const weekdays = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
+  const weekday = weekdays[date.getDay()];
   const day = date.getDate();
   const month = date.getMonth() + 1;
   const hours = date.getHours().toString().padStart(2, "0");
@@ -348,7 +350,7 @@ const createMatchDateDiv = (dateString) => {
 
   const dateDiv = createAndAppendDiv(["match-date"]);
 
-  createAndAppendDiv(["match-day"], dateDiv, `${day}/${month}`);
+  createAndAppendDiv(["match-day"], dateDiv, `${weekday} ${day}/${month}`);
 
   createAndAppendDiv(["match-time"], dateDiv, `${hours}:${minutes}`);
 
