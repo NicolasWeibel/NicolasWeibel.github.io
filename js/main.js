@@ -205,7 +205,7 @@ const playerAlinedName = (playerName) => {
     case "Lautaro":
       return "Lautaro";
     case "Nicolás":
-      return "•Nicolás";
+      return "Nicolás";
     case "Alejo":
       return "•••Alejo";
     case "Vilchez":
