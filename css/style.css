@@ -2,8 +2,8 @@
 :root {
   --main-color: #091109;
   --secondary-color: #162916;
-  --white-color: rgba(245, 245, 245);
-  --match-color: #e5e5e5;
+  --white-color: rgba(235, 235, 235);
+  --match-color: #d5d5d5;
 }
 
 /* ----BODY---- */
@@ -200,7 +200,7 @@ ul {
 }
 
 .match:hover {
-  background-color: #d0d0d0;
+  background-color: #c0c0c0;
   cursor: pointer;
 }
 
@@ -208,7 +208,7 @@ ul {
 .match-date {
   display: grid;
   background-color: var(--secondary-color);
-  color: var(--match-color);
+  color: var(--white-color);
   font-size: 0.7em;
   text-align: center;
   border-top-left-radius: 10px;
