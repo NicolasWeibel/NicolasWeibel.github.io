@@ -142,7 +142,7 @@
         ]
     },
     {
-        "matchdayName": "Liga Profesional Jornada 13",
+        "matchdayName": "Apertura Fecha 13",
         "isCurrentMatchday": true,
         "isNextMatchday": false,
         "matchdayMatchs": [
@@ -329,7 +329,7 @@
         ]
     },
     {
-        "matchdayName": "Liga Profesional Jornada 14",
+        "matchdayName": "Apertura Fecha 14",
         "isCurrentMatchday": false,
         "isNextMatchday": true,
         "matchdayMatchs": [
