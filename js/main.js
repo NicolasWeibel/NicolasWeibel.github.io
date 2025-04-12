@@ -174,7 +174,11 @@ const matchdayTextToCopy = () => {
         predictionScoreTeam1,
         predictionScoreTeam2
       );
-      copiedText += `\n${prediction["name"]}: ${predictionScoreTeam1} - ${predictionScoreTeam2} ${emojiCode}`;
+      if (predictionScoreTeam1 !== "" && predictionScoreTeam2 !== "") {
+        copiedText += `\n${prediction["name"]}: ${predictionScoreTeam1} - ${predictionScoreTeam2} ${emojiCode}`;
+      } else {
+        copiedText += `\n${prediction["name"]}:`;
+      }
     }
 
     matchIndex += 1;
@@ -194,38 +198,66 @@ const matchdayTextToCopy = () => {
   return copiedText;
 };
 
-const playerAlinedName = (playerName) => {
-  switch (playerName) {
-    case "Juany":
-      return "••Juany";
-    case "Franco":
-      return "•Franco";
-    case "Ulises":
-      return "••Ulises";
-    case "Lautaro":
-      return "Lautaro";
-    case "Nicolás":
-      return "Nicolás";
-    case "Alejo":
-      return "•••Alejo";
-    case "Vilchez":
-      return "Vilchez";
-    default:
-      return "";
+const formatLeaderboardNumber = (numberString, leaderboardNumberType) => {
+  let formattedNumberString;
+
+  if (leaderboardNumberType === 0) {
+    // leaderboard number type is points
+    formattedNumberString =
+      numberString.length === 1
+        ? " ``` ```" + numberString + " ``` ```"
+        : "```  ```" + numberString + "`````` ";
+  } else if (leaderboardNumberType === 1) {
+    // leaderboard number type is played matches
+    formattedNumberString =
+      numberString.length === 1
+        ? "```  ```" + numberString + " ```"
+        : "``` ```" + numberString + "```";
+  } else if (leaderboardNumberType === 2) {
+    // leaderboard number type is another type
+    formattedNumberString =
+      numberString.length === 1
+        ? "```  ```" + numberString + " ``````"
+        : "``` ```" + numberString + "``` ```";
   }
+
+  return formattedNumberString;
 };
 
 const leaderboardTextToCopy = () => {
-  let copiedText = "*TABLA*\n*Nombre* | *Pts* | AT | AP | E | PJ";
+  const longestNameLength = leaderboardPositions.leaderboardPlayers.reduce(
+    (max, player) => (player.name.length > max ? player.name.length : max),
+    0
+  );
+
+  let copiedText =
+    "*TABLA*\n```" +
+    "Nombre".padEnd(longestNameLength, " ") +
+    "``` ```|``` ```Pts``` ```|``` ```AT``` ```|``` ```AP``` ```|```  ```E ``````|``` ```PJ```";
 
   for (const player of leaderboardPositions.leaderboardPlayers) {
-    let playerName = playerAlinedName(player.name);
-    let playerPoints = player.points.toString().padStart(2, "0");
-    let playerExactHits = player.exactHits.toString().padStart(2, "0");
-    let playerPartialHits = player.partialHits.toString().padStart(2, "0");
-    let playerIncorrect = player.incorrects.toString().padStart(2, "0");
-    let playerPlayedMatches = player.playedMatches.toString().padStart(2, "0");
-    copiedText += `\n*${playerName}* | *${playerPoints}* | ${playerExactHits} | ${playerPartialHits} | ${playerIncorrect} | ${playerPlayedMatches}`;
+    let playerName =
+      "```" + player.name.padEnd(longestNameLength, " ") + "``` ```";
+
+    let playerPoints = formatLeaderboardNumber(player.points.toString(), 0);
+    let playerExactHits = formatLeaderboardNumber(
+      player.exactHits.toString(),
+      2
+    );
+    let playerPartialHits = formatLeaderboardNumber(
+      player.partialHits.toString(),
+      2
+    );
+    let playerIncorrect = formatLeaderboardNumber(
+      player.incorrects.toString(),
+      2
+    );
+    let playerPlayedMatches = formatLeaderboardNumber(
+      player.playedMatches.toString(),
+      1
+    );
+
+    copiedText += `\n${playerName}|${playerPoints}|${playerExactHits}|${playerPartialHits}|${playerIncorrect}|${playerPlayedMatches}`;
   }
 
   copiedText += "\n\nhttps://nicolasweibel.github.io";
