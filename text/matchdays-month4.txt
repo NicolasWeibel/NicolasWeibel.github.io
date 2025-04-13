@@ -149,8 +149,8 @@
             {
                 "team1": "Belgrano",
                 "team2": "Boca",
-                "scoreTeam1": "",
-                "scoreTeam2": "",
+                "scoreTeam1": "3",
+                "scoreTeam2": "1",
                 "matchDate": "2025-04-12T20:30:00.000-03:00",
                 "predictions": [
                     {
@@ -186,16 +186,16 @@
                     {
                         "name": "Vilchez",
                         "cleanName": "Vilchez",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
+                        "scoreTeam1": "0",
+                        "scoreTeam2": "1"
                     }
                 ]
             },
             {
                 "team1": "Gimnasia",
                 "team2": "Estudiantes",
-                "scoreTeam1": "",
-                "scoreTeam2": "",
+                "scoreTeam1": "1",
+                "scoreTeam2": "1",
                 "matchDate": "2025-04-13T15:30:00.000-03:00",
                 "predictions": [
                     {
@@ -231,8 +231,8 @@
                     {
                         "name": "Vilchez",
                         "cleanName": "Vilchez",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
+                        "scoreTeam1": "1",
+                        "scoreTeam2": "0"
                     }
                 ]
             },
@@ -276,8 +276,8 @@
                     {
                         "name": "Vilchez",
                         "cleanName": "Vilchez",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
+                        "scoreTeam1": "1",
+                        "scoreTeam2": "0"
                     }
                 ]
             },
@@ -321,8 +321,8 @@
                     {
                         "name": "Vilchez",
                         "cleanName": "Vilchez",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
+                        "scoreTeam1": "1",
+                        "scoreTeam2": "0"
                     }
                 ]
             }
