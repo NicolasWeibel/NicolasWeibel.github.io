@@ -89,10 +89,10 @@ const predictionEmoji = (
     return "";
   }
   if (points === 3) {
-    return "✅";
+    return "✅ (+3)";
   }
   if (points === 1) {
-    return "🟰";
+    return "🟰 (+1)";
   }
   return "❌";
 };
