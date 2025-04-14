@@ -239,8 +239,8 @@
             {
                 "team1": "River",
                 "team2": "Talleres",
-                "scoreTeam1": "",
-                "scoreTeam2": "",
+                "scoreTeam1": "1",
+                "scoreTeam2": "1",
                 "matchDate": "2025-04-13T20:15:00.000-03:00",
                 "predictions": [
                     {
