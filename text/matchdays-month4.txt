@@ -37,13 +37,13 @@
                     },
                     {
                         "name": "Alejo",
-                        "cleanName": "Alejo",
+                        "cleanName": "alejo",
                         "scoreTeam1": "1",
                         "scoreTeam2": "1"
                     },
                     {
                         "name": "Vilchez",
-                        "cleanName": "Vilchez",
+                        "cleanName": "vilchez",
                         "scoreTeam1": "1",
                         "scoreTeam2": "0"
                     }
@@ -82,13 +82,13 @@
                     },
                     {
                         "name": "Alejo",
-                        "cleanName": "Alejo",
+                        "cleanName": "alejo",
                         "scoreTeam1": "1",
                         "scoreTeam2": "0"
                     },
                     {
                         "name": "Vilchez",
-                        "cleanName": "Vilchez",
+                        "cleanName": "vilchez",
                         "scoreTeam1": "2",
                         "scoreTeam2": "1"
                     }
@@ -127,13 +127,13 @@
                     },
                     {
                         "name": "Alejo",
-                        "cleanName": "Alejo",
+                        "cleanName": "alejo",
                         "scoreTeam1": "0",
                         "scoreTeam2": "0"
                     },
                     {
                         "name": "Vilchez",
-                        "cleanName": "Vilchez",
+                        "cleanName": "vilchez",
                         "scoreTeam1": "0",
                         "scoreTeam2": "1"
                     }
@@ -179,13 +179,13 @@
                     },
                     {
                         "name": "Alejo",
-                        "cleanName": "Alejo",
+                        "cleanName": "alejo",
                         "scoreTeam1": "1",
                         "scoreTeam2": "2"
                     },
                     {
                         "name": "Vilchez",
-                        "cleanName": "Vilchez",
+                        "cleanName": "vilchez",
                         "scoreTeam1": "0",
                         "scoreTeam2": "1"
                     }
@@ -224,13 +224,13 @@
                     },
                     {
                         "name": "Alejo",
-                        "cleanName": "Alejo",
+                        "cleanName": "alejo",
                         "scoreTeam1": "2",
                         "scoreTeam2": "2"
                     },
                     {
                         "name": "Vilchez",
-                        "cleanName": "Vilchez",
+                        "cleanName": "vilchez",
                         "scoreTeam1": "1",
                         "scoreTeam2": "0"
                     }
@@ -269,13 +269,13 @@
                     },
                     {
                         "name": "Alejo",
-                        "cleanName": "Alejo",
+                        "cleanName": "alejo",
                         "scoreTeam1": "1",
                         "scoreTeam2": "0"
                     },
                     {
                         "name": "Vilchez",
-                        "cleanName": "Vilchez",
+                        "cleanName": "vilchez",
                         "scoreTeam1": "1",
                         "scoreTeam2": "0"
                     }
@@ -314,13 +314,13 @@
                     },
                     {
                         "name": "Alejo",
-                        "cleanName": "Alejo",
+                        "cleanName": "alejo",
                         "scoreTeam1": "2",
                         "scoreTeam2": "1"
                     },
                     {
                         "name": "Vilchez",
-                        "cleanName": "Vilchez",
+                        "cleanName": "vilchez",
                         "scoreTeam1": "1",
                         "scoreTeam2": "0"
                     }
@@ -340,42 +340,12 @@
                 "scoreTeam2": "",
                 "matchDate": "2025-04-18T17:00:00.000-03:00",
                 "predictions": [
-                    {
-                        "name": "Juany",
-                        "cleanName": "juany",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
-                    },
-                    {
-                        "name": "Franco",
-                        "cleanName": "franco",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
-                    },
-                    {
-                        "name": "Ulises",
-                        "cleanName": "ulises",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
-                    },
-                    {
-                        "name": "Nicolás",
-                        "cleanName": "nicolas",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
-                    },
-                    {
-                        "name": "Alejo",
-                        "cleanName": "Alejo",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
-                    },
-                    {
-                        "name": "Vilchez",
-                        "cleanName": "Vilchez",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
-                    }
+                    { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Franco", "cleanName": "franco", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "", "scoreTeam2": "" }
                 ]
             },
             {
@@ -385,42 +355,12 @@
                 "scoreTeam2": "",
                 "matchDate": "2025-04-18T19:15:00.000-03:00",
                 "predictions": [
-                    {
-                        "name": "Juany",
-                        "cleanName": "juany",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
-                    },
-                    {
-                        "name": "Franco",
-                        "cleanName": "franco",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
-                    },
-                    {
-                        "name": "Ulises",
-                        "cleanName": "ulises",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
-                    },
-                    {
-                        "name": "Nicolás",
-                        "cleanName": "nicolas",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
-                    },
-                    {
-                        "name": "Alejo",
-                        "cleanName": "Alejo",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
-                    },
-                    {
-                        "name": "Vilchez",
-                        "cleanName": "Vilchez",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
-                    }
+                    { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Franco", "cleanName": "franco", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "", "scoreTeam2": "" }
                 ]
             },
             {
@@ -430,42 +370,64 @@
                 "scoreTeam2": "",
                 "matchDate": "2025-04-19T20:30:00.000-03:00",
                 "predictions": [
-                    {
-                        "name": "Juany",
-                        "cleanName": "juany",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
-                    },
-                    {
-                        "name": "Franco",
-                        "cleanName": "franco",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
-                    },
-                    {
-                        "name": "Ulises",
-                        "cleanName": "ulises",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
-                    },
-                    {
-                        "name": "Nicolás",
-                        "cleanName": "nicolas",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
-                    },
-                    {
-                        "name": "Alejo",
-                        "cleanName": "Alejo",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
-                    },
-                    {
-                        "name": "Vilchez",
-                        "cleanName": "Vilchez",
-                        "scoreTeam1": "",
-                        "scoreTeam2": ""
-                    }
+                    { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Franco", "cleanName": "franco", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "", "scoreTeam2": "" }
+                ]
+            }
+        ]
+    },
+    {
+        "matchdayName": "Lib P3 Grupos",
+        "isCurrentMatchday": false,
+        "isNextMatchday": false,
+        "matchdayMatchs": [
+            {
+                "team1": "San Antonio",
+                "team2": "Vélez",
+                "scoreTeam1": "",
+                "scoreTeam2": "",
+                "matchDate": "2025-04-23T19:00:00.000-03:00",
+                "predictions": [
+                    { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Franco", "cleanName": "franco", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "", "scoreTeam2": "" }
+                ]
+            },
+            {
+                "team1": "Estudiantes",
+                "team2": "Botafogo",
+                "scoreTeam1": "",
+                "scoreTeam2": "",
+                "matchDate": "2025-04-23T21:30:00.000-03:00",
+                "predictions": [
+                    { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Franco", "cleanName": "franco", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "", "scoreTeam2": "" }
+                ]
+            },
+            {
+                "team1": "Independiente del Valle",
+                "team2": "River",
+                "scoreTeam1": "",
+                "scoreTeam2": "",
+                "matchDate": "2025-04-23T21:30:00.000-03:00",
+                "predictions": [
+                    { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Franco", "cleanName": "franco", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "", "scoreTeam2": "" }
                 ]
             }
         ]
