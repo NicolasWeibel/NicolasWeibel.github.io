@@ -284,8 +284,8 @@
             {
                 "team1": "Vélez",
                 "team2": "Sarmiento",
-                "scoreTeam1": "",
-                "scoreTeam2": "",
+                "scoreTeam1": "0",
+                "scoreTeam2": "1",
                 "matchDate": "2025-04-14T21:15:00.000-03:00",
                 "predictions": [
                     {
