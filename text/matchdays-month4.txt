@@ -143,7 +143,7 @@
     },
     {
         "matchdayName": "Apertura Fecha 13",
-        "isCurrentMatchday": true,
+        "isCurrentMatchday": false,
         "isNextMatchday": false,
         "matchdayMatchs": [
             {
@@ -330,8 +330,8 @@
     },
     {
         "matchdayName": "Apertura Fecha 14",
-        "isCurrentMatchday": false,
-        "isNextMatchday": true,
+        "isCurrentMatchday": true,
+        "isNextMatchday": false,
         "matchdayMatchs": [
             {
                 "team1": "Gimnasia",
@@ -383,7 +383,7 @@
     {
         "matchdayName": "Lib P3 Grupos",
         "isCurrentMatchday": false,
-        "isNextMatchday": false,
+        "isNextMatchday": true,
         "matchdayMatchs": [
             {
                 "team1": "San Antonio",
