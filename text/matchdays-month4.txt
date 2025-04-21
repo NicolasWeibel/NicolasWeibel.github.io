@@ -336,8 +336,8 @@
                 {
                         "team1": "Gimnasia",
                         "team2": "River",
-                        "scoreTeam1": "",
-                        "scoreTeam2": "",
+                        "scoreTeam1": "0",
+                        "scoreTeam2": "3",
                         "matchDate": "2025-04-18T17:00:00.000-03:00",
                         "predictions": [
                                 { "name": "Juany", "cleanName": "juany", "scoreTeam1": "0", "scoreTeam2": "0" },
@@ -351,8 +351,8 @@
                 {
                         "team1": "Talleres",
                         "team2": "Vélez",
-                        "scoreTeam1": "",
-                        "scoreTeam2": "",
+                        "scoreTeam1": "0",
+                        "scoreTeam2": "1",
                         "matchDate": "2025-04-18T19:15:00.000-03:00",
                         "predictions": [
                                 { "name": "Juany", "cleanName": "juany", "scoreTeam1": "0", "scoreTeam2": "1" },
@@ -366,8 +366,8 @@
                 {
                         "team1": "Boca",
                         "team2": "Estudiantes",
-                        "scoreTeam1": "",
-                        "scoreTeam2": "",
+                        "scoreTeam1": "2",
+                        "scoreTeam2": "0",
                         "matchDate": "2025-04-19T20:30:00.000-03:00",
                         "predictions": [
                                 { "name": "Juany", "cleanName": "juany", "scoreTeam1": "2", "scoreTeam2": "0" },
