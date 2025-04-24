@@ -388,8 +388,8 @@
                 {
                         "team1": "San Antonio",
                         "team2": "Vélez",
-                        "scoreTeam1": "",
-                        "scoreTeam2": "",
+                        "scoreTeam1": "2",
+                        "scoreTeam2": "1",
                         "matchDate": "2025-04-23T19:00:00.000-03:00",
                         "predictions": [
                                 { "name": "Juany", "cleanName": "juany", "scoreTeam1": "1", "scoreTeam2": "2" },
@@ -403,8 +403,8 @@
                 {
                         "team1": "Estudiantes",
                         "team2": "Botafogo",
-                        "scoreTeam1": "",
-                        "scoreTeam2": "",
+                        "scoreTeam1": "1",
+                        "scoreTeam2": "0",
                         "matchDate": "2025-04-23T21:30:00.000-03:00",
                         "predictions": [
                                 { "name": "Juany", "cleanName": "juany", "scoreTeam1": "2", "scoreTeam2": "0" },
@@ -418,8 +418,8 @@
                 {
                         "team1": "Independiente del Valle",
                         "team2": "River",
-                        "scoreTeam1": "",
-                        "scoreTeam2": "",
+                        "scoreTeam1": "2",
+                        "scoreTeam2": "2",
                         "matchDate": "2025-04-23T21:30:00.000-03:00",
                         "predictions": [
                                 { "name": "Juany", "cleanName": "juany", "scoreTeam1": "0", "scoreTeam2": "2" },
