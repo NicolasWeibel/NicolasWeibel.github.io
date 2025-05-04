@@ -206,7 +206,7 @@ const matchdayTextToCopy = () => {
       `*${
         wasDateCopiedFirstMatch
           ? "Decir resultados"
-          : "Decir el resto de resultados"
+          : "Decir el resto de resultados (solo si no han dicho ninguno)"
       } antes del ${copyDateFormat}*` +
       copiedText;
   else
