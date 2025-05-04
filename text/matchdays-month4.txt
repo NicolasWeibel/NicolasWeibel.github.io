@@ -382,7 +382,7 @@
     },
     {
         "matchdayName": "Lib P3 Grupos",
-        "isCurrentMatchday": true,
+        "isCurrentMatchday": false,
         "isNextMatchday": false,
         "matchdayMatchs": [
                 {
@@ -435,7 +435,7 @@
     {
         "matchdayName": "Apertura Fecha 15",
         "isCurrentMatchday": false,
-        "isNextMatchday": true,
+        "isNextMatchday": false,
         "matchdayMatchs": [
             {
                 "team1": "River",

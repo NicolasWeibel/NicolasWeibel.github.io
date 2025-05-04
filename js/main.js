@@ -39,7 +39,11 @@ class LeaderboardPositions {
 
   sortPositions() {
     this.leaderboardPlayers.sort((a, b) => {
-      return b.points - a.points || b.exactHits - a.exactHits || 0;
+      return (
+        b.points - a.points ||
+        b.exactHits - a.exactHits ||
+        a.name.localeCompare(b.name)
+      );
     });
   }
 }
@@ -145,6 +149,8 @@ const matchdayTextToCopy = () => {
   let isPronostic = true;
   let matchIndex = 0;
   let copyDateFormat = "";
+  let wasDateCopied = false;
+  let wasDateCopiedFirstMatch = false;
 
   for (const match of matchdays[showedMatchdayIndex]["matchdayMatchs"]) {
     let team1 = match["team1"];
@@ -153,8 +159,13 @@ const matchdayTextToCopy = () => {
     let scoreTeam2 = match["scoreTeam2"];
     let matchdayDate = dateFormatToCopyFormat(match["matchDate"], true);
 
-    if (matchIndex === 0) {
+    if (scoreTeam1 === "" && scoreTeam2 === "" && !wasDateCopied) {
       copyDateFormat = dateFormatToCopyFormat(match["matchDate"], false);
+      wasDateCopied = true;
+
+      if (matchIndex === 0) {
+        wasDateCopiedFirstMatch = true;
+      }
     }
 
     copiedText += `\n\n${team1.toUpperCase()} ${scoreTeam1} - ${scoreTeam2} ${team2.toUpperCase()} `;
@@ -163,6 +174,7 @@ const matchdayTextToCopy = () => {
       isPronostic = false;
     } else {
       copiedText += matchdayDate;
+      isPronostic = true;
     }
 
     for (const prediction of match["predictions"]) {
@@ -176,6 +188,8 @@ const matchdayTextToCopy = () => {
       );
       if (predictionScoreTeam1 !== "" && predictionScoreTeam2 !== "") {
         copiedText += `\n${prediction["name"]}: ${predictionScoreTeam1} - ${predictionScoreTeam2} ${emojiCode}`;
+      } else if (scoreTeam1 !== "" && scoreTeam2 !== "") {
+        copiedText += `\n${prediction["name"]}: ${emojiCode}`;
       } else {
         copiedText += `\n${prediction["name"]}:`;
       }
@@ -188,7 +202,12 @@ const matchdayTextToCopy = () => {
     copiedText =
       `*${matchdays[showedMatchdayIndex][
         "matchdayName"
-      ].toUpperCase()} PRONÓSTICO*\n\n*Decir resultados antes del ${copyDateFormat}*` +
+      ].toUpperCase()} PRONÓSTICO*\n\n` +
+      `*${
+        wasDateCopiedFirstMatch
+          ? "Decir resultados"
+          : "Decir el resto de resultados"
+      } antes del ${copyDateFormat}*` +
       copiedText;
   else
     copiedText =
@@ -680,15 +699,11 @@ const fetchFiles = async (filePath) => {
   return data;
 };
 
-const initializeMainPage = async (
-  isCurrentMatchday,
-  matchdayTextUrl,
-  players
-) => {
+const initializeMainPage = async (isCurrentMonth, matchdayTextUrl, players) => {
   const users = await fetchFiles("../text/users.txt");
   matchdays = await fetchFiles(matchdayTextUrl);
 
   checkLoginStatus(users);
 
-  initializeMatchdayLeaderboardTable(isCurrentMatchday, players);
+  initializeMatchdayLeaderboardTable(isCurrentMonth, players);
 };

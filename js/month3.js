@@ -1,4 +1,4 @@
-const isCurrentMaychday = false;
+const isCurrentMonth = false;
 const matchdayTextUrl = "../text/matchdays-month3.txt";
 const players = ["Juany", "Franco", "Ulises", "Nicolás", "Lautaro"];
-initializeMainPage(isCurrentMaychday, matchdayTextUrl, players);
+initializeMainPage(isCurrentMonth, matchdayTextUrl, players);
