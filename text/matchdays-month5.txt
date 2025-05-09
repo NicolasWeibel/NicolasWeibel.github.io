@@ -59,138 +59,55 @@
         {
                 "team1": "U. de Chile",
                 "team2": "Estudiantes",
-                "scoreTeam1": "",
-                "scoreTeam2": "",
+                "scoreTeam1": "0",
+                "scoreTeam2": "3",
                 "matchDate": "2025-05-07T21:00:00.000-03:00",
                 "predictions": [
-                        {
-                                "name": "Juany",
-                                "cleanName": "juany",
-                                "scoreTeam1": "1",
-                                "scoreTeam2": "2"
-                        },
-                        {
-                                "name": "Toto",
-                                "cleanName": "toto",
-                                "scoreTeam1": "1",
-                                "scoreTeam2": "0"
-                        },
-                        {
-                                "name": "Ulises",
-                                "cleanName": "ulises",
-                                "scoreTeam1": "2",
-                                "scoreTeam2": "1"
-                        },
-                        {
-                                "name": "Nicolás",
-                                "cleanName": "nicolas",
-                                "scoreTeam1": "1",
-                                "scoreTeam2": "1"
-                        },
-                        {
-                                "name": "Alejo",
-                                "cleanName": "Alejo",
-                                "scoreTeam1": "1",
-                                "scoreTeam2": "0"
-                        },
-                        {
-                                "name": "Vilchez",
-                                "cleanName": "Vilchez",
-                                "scoreTeam1": "0",
-                                "scoreTeam2": "1"
-                        }
-                ]
-        },
-        {
-                "team1": "Vélez",
-                "team2": "Olimpia",
-                "scoreTeam1": "",
-                "scoreTeam2": "",
-                "matchDate": "2025-05-08T19:00:00.000-03:00",
-                "predictions": [
-                        {
-                                "name": "Juany",
-                                "cleanName": "juany",
-                                "scoreTeam1": "2",
-                                "scoreTeam2": "0"
-                        },
-                        {
-                                "name": "Toto",
-                                "cleanName": "toto",
-                                "scoreTeam1": "1",
-                                "scoreTeam2": "0"
-                        },
-                        {
-                                "name": "Ulises",
-                                "cleanName": "ulises",
-                                "scoreTeam1": "1",
-                                "scoreTeam2": "1"
-                        },
-                        {
-                                "name": "Nicolás",
-                                "cleanName": "nicolas",
-                                "scoreTeam1": "2",
-                                "scoreTeam2": "1"
-                        },
-                        {
-                                "name": "Alejo",
-                                "cleanName": "Alejo",
-                                "scoreTeam1": "2",
-                                "scoreTeam2": "1"
-                        },
-                        {
-                                "name": "Vilchez",
-                                "cleanName": "Vilchez",
-                                "scoreTeam1": "2",
-                                "scoreTeam2": "1"
-                        }
-                ]
-        },
-        {
-                "team1": "Barcelona SC",
-                "team2": "River",
-                "scoreTeam1": "",
-                "scoreTeam2": "",
-                "matchDate": "2025-05-08T21:30:00.000-03:00",
-                "predictions": [
-                        {
-                                "name": "Juany",
-                                "cleanName": "juany",
-                                "scoreTeam1": "0",
-                                "scoreTeam2": "1"
-                        },
-                        {
-                                "name": "Toto",
-                                "cleanName": "toto",
-                                "scoreTeam1": "0",
-                                "scoreTeam2": "0"
-                        },
-                        {
-                                "name": "Ulises",
-                                "cleanName": "ulises",
-                                "scoreTeam1": "1",
-                                "scoreTeam2": "2"
-                        },
-                        {
-                                "name": "Nicolás",
-                                "cleanName": "nicolas",
-                                "scoreTeam1": "0",
-                                "scoreTeam2": "1"
-                        },
-                        {
-                                "name": "Alejo",
-                                "cleanName": "Alejo",
-                                "scoreTeam1": "0",
-                                "scoreTeam2": "2"
-                        },
-                        {
-                                "name": "Vilchez",
-                                "cleanName": "Vilchez",
-                                "scoreTeam1": "0",
-                                "scoreTeam2": "2"
-                        }
-                ]
-            }
+                {
+                        "team1": "U. de Chile",
+                        "team2": "Estudiantes",
+                        "scoreTeam1": "",
+                        "scoreTeam2": "",
+                        "matchDate": "2025-05-07T21:00:00.000-03:00",
+                        "predictions": [
+                                { "name": "Juany", "cleanName": "juany", "scoreTeam1": "1", "scoreTeam2": "2" },
+                                { "name": "Toto", "cleanName": "toto", "scoreTeam1": "1", "scoreTeam2": "0" },
+                                { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "2", "scoreTeam2": "1" },
+                                { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "1", "scoreTeam2": "1" },
+                                { "name": "Alejo", "cleanName": "Alejo", "scoreTeam1": "1", "scoreTeam2": "0" },
+                                { "name": "Vilchez", "cleanName": "Vilchez", "scoreTeam1": "0", "scoreTeam2": "1" }
+                        ]
+                },
+                {
+                        "team1": "Vélez",
+                        "team2": "Olimpia",
+                        "scoreTeam1": "1",
+                        "scoreTeam2": "1",
+                        "matchDate": "2025-05-08T19:00:00.000-03:00",
+                        "predictions": [
+                                { "name": "Juany", "cleanName": "juany", "scoreTeam1": "2", "scoreTeam2": "0" },
+                                { "name": "Toto", "cleanName": "toto", "scoreTeam1": "1", "scoreTeam2": "0" },
+                                { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "1", "scoreTeam2": "1" },
+                                { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "2", "scoreTeam2": "1" },
+                                { "name": "Alejo", "cleanName": "Alejo", "scoreTeam1": "2", "scoreTeam2": "1" },
+                                { "name": "Vilchez", "cleanName": "Vilchez", "scoreTeam1": "2", "scoreTeam2": "1" }
+                        ]
+                },
+                {
+                        "team1": "Barcelona SC",
+                        "team2": "River",
+                        "scoreTeam1": "2",
+                        "scoreTeam2": "3",
+                        "matchDate": "2025-05-08T21:30:00.000-03:00",
+                        "predictions": [
+                                { "name": "Juany", "cleanName": "juany", "scoreTeam1": "0", "scoreTeam2": "1" },
+                                { "name": "Toto", "cleanName": "toto", "scoreTeam1": "0", "scoreTeam2": "0" },
+                                { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "1", "scoreTeam2": "2" },
+                                { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "0", "scoreTeam2": "1" },
+                                { "name": "Alejo", "cleanName": "Alejo", "scoreTeam1": "0", "scoreTeam2": "2" },
+                                { "name": "Vilchez", "cleanName": "Vilchez", "scoreTeam1": "0", "scoreTeam2": "2" }
+                        ]
+                }
         ]
     }
 ]
