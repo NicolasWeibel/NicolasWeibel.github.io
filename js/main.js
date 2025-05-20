@@ -19,16 +19,20 @@ class Player {
       case 3:
         this.points += 3;
         this.exactHits += 1;
+        this.playedMatches += 1;
         break;
       case 1:
         this.points += 1;
         this.partialHits += 1;
+        this.playedMatches += 1;
+        break;
+      case -1:
         break;
       default:
         this.incorrects += 1;
+        this.playedMatches += 1;
         break;
     }
-    this.playedMatches += 1;
   }
 }
 
@@ -58,7 +62,7 @@ const predictionHit = (
     return "";
   }
   if (predictionScoreTeam1 === "" || predictionScoreTeam2 === "") {
-    return 0;
+    return -1;
   }
   if (
     scoreTeam1 == predictionScoreTeam1 &&
@@ -487,7 +491,7 @@ const createPredictionResultDiv = (scorePredictionsArray, scoreTeamsArray) => {
   } else if (predictionResult === 1) {
     classes.push("partial-hit");
     text = "+1";
-  } else if (predictionResult === 0) {
+  } else if (predictionResult === 0 || predictionResult === -1) {
     classes.push("incorrect");
     text = "0";
   }
