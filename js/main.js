@@ -44,9 +44,10 @@ class LeaderboardPositions {
   sortPositions() {
     this.leaderboardPlayers.sort((a, b) => {
       return (
-        b.points - a.points ||
-        b.exactHits - a.exactHits ||
-        a.name.localeCompare(b.name)
+        b.points - a.points || // Ordenar por puntos (descendente)
+        b.exactHits - a.exactHits || // Luego por aciertos exactos (descendente)
+        a.incorrects - b.incorrects || // Luego por incorrectos (ascendente)
+        a.name.localeCompare(b.name) // Finalmente por nombre (ascendente)
       );
     });
   }
