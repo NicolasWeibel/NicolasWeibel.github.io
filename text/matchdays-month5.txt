@@ -298,15 +298,52 @@
     },
     {
         "matchdayName": "Apertura Semifinal",
-        "isCurrentMatchday": true,
+        "isCurrentMatchday": false,
         "isNextMatchday": false,
         "matchdayMatchs": [
             {
                 "team1": "Independiente",
                 "team2": "Huracán",
+                "scoreTeam1": "0",
+                "scoreTeam2": "0",
+                "matchDate": "2025-05-24T18:30:00.000-03:00",
+                "predictions": [
+                    { "name": "Juany", "cleanName": "juany", "scoreTeam1": "0", "scoreTeam2": "0" },
+                    { "name": "Toto", "cleanName": "toto", "scoreTeam1": "1", "scoreTeam2": "1" },
+                    { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "2", "scoreTeam2": "1" },
+                    { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "1", "scoreTeam2": "0" },
+                    { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "1", "scoreTeam2": "1" },
+                    { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "1", "scoreTeam2": "0" }
+                ]
+            },
+            {
+                "team1": "San lorenzo",
+                "team2": "Platense",
+                "scoreTeam1": "0",
+                "scoreTeam2": "1",
+                "matchDate": "2025-05-25T16:00:00.000-03:00",
+                "predictions": [
+                    { "name": "Juany", "cleanName": "juany", "scoreTeam1": "1", "scoreTeam2": "0" },
+                    { "name": "Toto", "cleanName": "toto", "scoreTeam1": "2", "scoreTeam2": "1" },
+                    { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "1", "scoreTeam2": "1" },
+                    { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "1", "scoreTeam2": "0" },
+                    { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "1", "scoreTeam2": "2" },
+                    { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "2", "scoreTeam2": "1" }
+                ]
+            }
+        ]
+    },
+    {
+        "matchdayName": "Lib P5 Grupos",
+        "isCurrentMatchday": true,
+        "isNextMatchday": false,
+        "matchdayMatchs": [
+            {
+                "team1": "Estudiantes",
+                "team2": "Carabobo",
                 "scoreTeam1": "",
                 "scoreTeam2": "",
-                "matchDate": "2025-05-24T18:30:00.000-03:00",
+                "matchDate": "2025-05-27T21:30:00.000-03:00",
                 "predictions": [
                     { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
                     { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
@@ -317,11 +354,26 @@
                 ]
             },
             {
-                "team1": "San lorenzo",
-                "team2": "Platense",
+                "team1": "River",
+                "team2": "Universitario",
                 "scoreTeam1": "",
                 "scoreTeam2": "",
-                "matchDate": "2025-05-25T16:00:00.000-03:00",
+                "matchDate": "2025-05-27T21:30:00.000-03:00",
+                "predictions": [
+                    { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "", "scoreTeam2": "" }
+                ]
+            },
+            {
+                "team1": "Peñarol",
+                "team2": "Vélez",
+                "scoreTeam1": "",
+                "scoreTeam2": "",
+                "matchDate": "2025-05-29T19:00:00.000-03:00",
                 "predictions": [
                     { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
                     { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
