@@ -335,30 +335,67 @@
     },
     {
         "matchdayName": "Lib P5 Grupos",
-        "isCurrentMatchday": true,
+        "isCurrentMatchday": false,
         "isNextMatchday": false,
         "matchdayMatchs": [
             {
                 "team1": "Estudiantes",
                 "team2": "Carabobo",
-                "scoreTeam1": "",
-                "scoreTeam2": "",
+                "scoreTeam1": "2",
+                "scoreTeam2": "0",
                 "matchDate": "2025-05-27T21:30:00.000-03:00",
                 "predictions": [
-                    { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
-                    { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
-                    { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
-                    { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
-                    { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
-                    { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "", "scoreTeam2": "" }
+                    { "name": "Juany", "cleanName": "juany", "scoreTeam1": "3", "scoreTeam2": "0" },
+                    { "name": "Toto", "cleanName": "toto", "scoreTeam1": "3", "scoreTeam2": "1" },
+                    { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "2", "scoreTeam2": "0" },
+                    { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "3", "scoreTeam2": "0" },
+                    { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "1", "scoreTeam2": "1" },
+                    { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "2", "scoreTeam2": "0" }
                 ]
             },
             {
                 "team1": "River",
                 "team2": "Universitario",
+                "scoreTeam1": "1",
+                "scoreTeam2": "1",
+                "matchDate": "2025-05-27T21:30:00.000-03:00",
+                "predictions": [
+                    { "name": "Juany", "cleanName": "juany", "scoreTeam1": "4", "scoreTeam2": "0" },
+                    { "name": "Toto", "cleanName": "toto", "scoreTeam1": "3", "scoreTeam2": "0" },
+                    { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "3", "scoreTeam2": "1" },
+                    { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "3", "scoreTeam2": "0" },
+                    { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "2", "scoreTeam2": "0" },
+                    { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "3", "scoreTeam2": "0" }
+                ]
+            },
+            {
+                "team1": "Peñarol",
+                "team2": "Vélez",
+                "scoreTeam1": "0",
+                "scoreTeam2": "0",
+                "matchDate": "2025-05-29T19:00:00.000-03:00",
+                "predictions": [
+                    { "name": "Juany", "cleanName": "juany", "scoreTeam1": "2", "scoreTeam2": "0" },
+                    { "name": "Toto", "cleanName": "toto", "scoreTeam1": "2", "scoreTeam2": "1" },
+                    { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "2", "scoreTeam2": "0" },
+                    { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "2", "scoreTeam2": "0" },
+                    { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "1", "scoreTeam2": "1" },
+                    { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "2", "scoreTeam2": "0" }
+                ]
+            }
+        ]
+    },
+    {
+        "matchdayName": "Champ Copa Arg y Final Apert",
+        "isCurrentMatchday": true,
+        "isNextMatchday": false,
+        "matchdayMatchs": [
+            {
+                "team1": "PSG",
+                "team2": "Inter",
                 "scoreTeam1": "",
                 "scoreTeam2": "",
-                "matchDate": "2025-05-27T21:30:00.000-03:00",
+                "matchDate": "2025-05-31T16:00:00.000-03:00",
                 "predictions": [
                     { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
                     { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
@@ -369,11 +406,26 @@
                 ]
             },
             {
-                "team1": "Peñarol",
-                "team2": "Vélez",
+                "team1": "Estudiantes",
+                "team2": "Aldosivi",
                 "scoreTeam1": "",
                 "scoreTeam2": "",
-                "matchDate": "2025-05-29T19:00:00.000-03:00",
+                "matchDate": "2025-06-01T13:10:00.000-03:00",
+                "predictions": [
+                    { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
+                    { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "", "scoreTeam2": "" }
+                ]
+            },
+            {
+                "team1": "Huracán",
+                "team2": "Platense",
+                "scoreTeam1": "",
+                "scoreTeam2": "",
+                "matchDate": "2025-06-01T17:00:00.000-03:00",
                 "predictions": [
                     { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
                     { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
