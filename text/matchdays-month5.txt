@@ -386,7 +386,7 @@
         ]
     },
     {
-        "matchdayName": "Champ Copa Arg y Final Apert",
+        "matchdayName": "Finales y Copa Arg",
         "isCurrentMatchday": true,
         "isNextMatchday": false,
         "matchdayMatchs": [
