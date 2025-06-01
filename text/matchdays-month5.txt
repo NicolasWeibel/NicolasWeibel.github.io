@@ -393,46 +393,46 @@
             {
                 "team1": "PSG",
                 "team2": "Inter",
-                "scoreTeam1": "",
-                "scoreTeam2": "",
+                "scoreTeam1": "5",
+                "scoreTeam2": "0",
                 "matchDate": "2025-05-31T16:00:00.000-03:00",
                 "predictions": [
-                    { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
-                    { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
-                    { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
-                    { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
-                    { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
-                    { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "", "scoreTeam2": "" }
+                    { "name": "Juany", "cleanName": "juany", "scoreTeam1": "2", "scoreTeam2": "1" },
+                    { "name": "Toto", "cleanName": "toto", "scoreTeam1": "1", "scoreTeam2": "2" },
+                    { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "2", "scoreTeam2": "3" },
+                    { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "2", "scoreTeam2": "1" },
+                    { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "1", "scoreTeam2": "2" },
+                    { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "2", "scoreTeam2": "1" }
                 ]
             },
             {
                 "team1": "Estudiantes",
                 "team2": "Aldosivi",
-                "scoreTeam1": "",
-                "scoreTeam2": "",
+                "scoreTeam1": "1",
+                "scoreTeam2": "1",
                 "matchDate": "2025-06-01T13:10:00.000-03:00",
                 "predictions": [
-                    { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
-                    { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
-                    { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
-                    { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
-                    { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
-                    { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "", "scoreTeam2": "" }
+                    { "name": "Juany", "cleanName": "juany", "scoreTeam1": "1", "scoreTeam2": "1" },
+                    { "name": "Toto", "cleanName": "toto", "scoreTeam1": "1", "scoreTeam2": "1" },
+                    { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "3", "scoreTeam2": "0" },
+                    { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "2", "scoreTeam2": "1" },
+                    { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "2", "scoreTeam2": "0" },
+                    { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "1", "scoreTeam2": "0" }
                 ]
             },
             {
                 "team1": "Huracán",
                 "team2": "Platense",
-                "scoreTeam1": "",
-                "scoreTeam2": "",
+                "scoreTeam1": "0",
+                "scoreTeam2": "1",
                 "matchDate": "2025-06-01T17:00:00.000-03:00",
                 "predictions": [
-                    { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
-                    { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
-                    { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
-                    { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
-                    { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
-                    { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "", "scoreTeam2": "" }
+                    { "name": "Juany", "cleanName": "juany", "scoreTeam1": "1", "scoreTeam2": "0" },
+                    { "name": "Toto", "cleanName": "toto", "scoreTeam1": "1", "scoreTeam2": "1" },
+                    { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "0", "scoreTeam2": "0" },
+                    { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "1", "scoreTeam2": "0" },
+                    { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "1", "scoreTeam2": "2" },
+                    { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "1", "scoreTeam2": "2" }
                 ]
             }
         ]
