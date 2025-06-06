@@ -1,8 +1,24 @@
+/**
+ * @file Main script for football prediction game management
+ * @description Handles matchday display, leaderboard generation, and user interactions
+ *
+ * Main functionality groups:
+ * 1. Core Classes (Player, LeaderboardPositions)
+ * 2. Prediction Logic Functions
+ * 3. DOM Creation Utilities
+ * 4. Text Formatting Utilities
+ * 5. Event Handlers & Initialization
+ * 6. Clipboard Operations
+ */
 "use strict";
 
 let showedMatchdayIndex;
 let matchdays;
 let leaderboardPositions;
+
+// ======================
+// 1. CORE CLASSES
+// ======================
 
 class Player {
   constructor(name) {
@@ -52,6 +68,10 @@ class LeaderboardPositions {
     });
   }
 }
+
+// ======================
+// 2. PREDICTION LOGIC
+// ======================
 
 const predictionHit = (
   scoreTeam1,
@@ -106,295 +126,16 @@ const predictionEmoji = (
   return "❌";
 };
 
+// ======================
+// 3. DOM CREATION UTILS
+// ======================
+
 const createAndAppendDiv = (classesArray, fatherDiv = "", text = "") => {
   const createdDiv = document.createElement("div");
   createdDiv.classList.add(...classesArray);
   createdDiv.textContent = text;
   if (fatherDiv) fatherDiv.appendChild(createdDiv);
   return createdDiv;
-};
-
-function dateFormatToCopyFormat(dateString, isMatchFormat) {
-  const date = new Date(dateString);
-
-  const weekdays = [
-    "DOMINGO",
-    "LUNES",
-    "MARTES",
-    "MIÉRCOLES",
-    "JUEVES",
-    "VIERNES",
-    "SÁBADO",
-  ];
-  const weekdaysMatchFormat = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
-
-  const weekday = weekdays[date.getDay()];
-  const weekdayMatchFormat = weekdaysMatchFormat[date.getDay()];
-  const dayOfMonth = date.getDate();
-  const month = date.getMonth() + 1;
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
-  let formattedDate;
-
-  if (isMatchFormat) {
-    formattedDate = `| ${weekdayMatchFormat} ${dayOfMonth}/${month} | ${hours}:${
-      minutes < 10 ? "0" : ""
-    }${minutes}hs`;
-  } else {
-    formattedDate = `${weekday} ${dayOfMonth}/${month} a las ${hours}:${
-      minutes < 10 ? "0" : ""
-    }${minutes}hs`;
-  }
-
-  return formattedDate;
-}
-
-const matchdayTextToCopy = () => {
-  let copiedText = "";
-  let isPronostic = true;
-  let matchIndex = 0;
-  let copyDateFormat = "";
-  let wasDateCopied = false;
-  let wasDateCopiedFirstMatch = false;
-
-  for (const match of matchdays[showedMatchdayIndex]["matchdayMatchs"]) {
-    let team1 = match["team1"];
-    let team2 = match["team2"];
-    let scoreTeam1 = match["scoreTeam1"];
-    let scoreTeam2 = match["scoreTeam2"];
-    let matchdayDate = dateFormatToCopyFormat(match["matchDate"], true);
-
-    if (scoreTeam1 === "" && scoreTeam2 === "" && !wasDateCopied) {
-      copyDateFormat = dateFormatToCopyFormat(match["matchDate"], false);
-      wasDateCopied = true;
-
-      if (matchIndex === 0) {
-        wasDateCopiedFirstMatch = true;
-      }
-    }
-
-    copiedText += `\n\n${team1.toUpperCase()} ${scoreTeam1} - ${scoreTeam2} ${team2.toUpperCase()} `;
-
-    if (scoreTeam1 !== "" && scoreTeam2 !== "") {
-      isPronostic = false;
-    } else {
-      copiedText += matchdayDate;
-      isPronostic = true;
-    }
-
-    for (const prediction of match["predictions"]) {
-      let predictionScoreTeam1 = prediction["scoreTeam1"];
-      let predictionScoreTeam2 = prediction["scoreTeam2"];
-      let emojiCode = predictionEmoji(
-        scoreTeam1,
-        scoreTeam2,
-        predictionScoreTeam1,
-        predictionScoreTeam2
-      );
-      if (predictionScoreTeam1 !== "" && predictionScoreTeam2 !== "") {
-        copiedText += `\n${prediction["name"]}: ${predictionScoreTeam1} - ${predictionScoreTeam2} ${emojiCode}`;
-      } else if (scoreTeam1 !== "" && scoreTeam2 !== "") {
-        copiedText += `\n${prediction["name"]}: ${emojiCode}`;
-      } else {
-        copiedText += `\n${prediction["name"]}:`;
-      }
-    }
-
-    matchIndex += 1;
-  }
-
-  if (isPronostic)
-    copiedText =
-      `*${matchdays[showedMatchdayIndex][
-        "matchdayName"
-      ].toUpperCase()} PRONÓSTICO*\n\n` +
-      `*${
-        wasDateCopiedFirstMatch
-          ? "Decir resultados"
-          : "Decir el resto de resultados (solo si todavía no dijeron ninguno)"
-      } antes del ${copyDateFormat}*` +
-      copiedText;
-  else
-    copiedText =
-      `*${matchdays[showedMatchdayIndex]["matchdayName"].toUpperCase()}*` +
-      copiedText;
-
-  return copiedText;
-};
-
-const formatLeaderboardNumber = (numberString, leaderboardNumberType) => {
-  let formattedNumberString;
-
-  if (leaderboardNumberType === 0) {
-    // leaderboard number type is points
-    formattedNumberString =
-      numberString.length === 1
-        ? " ``` ```" + numberString + " ``` ```"
-        : "```  ```" + numberString + "`````` ";
-  } else if (leaderboardNumberType === 1) {
-    // leaderboard number type is played matches
-    formattedNumberString =
-      numberString.length === 1
-        ? "```  ```" + numberString + " ```"
-        : "``` ```" + numberString + "```";
-  } else if (leaderboardNumberType === 2) {
-    // leaderboard number type is another type
-    formattedNumberString =
-      numberString.length === 1
-        ? "```  ```" + numberString + " ``````"
-        : "``` ```" + numberString + "``` ```";
-  }
-
-  return formattedNumberString;
-};
-
-const leaderboardTextToCopy = () => {
-  const longestNameLength = leaderboardPositions.leaderboardPlayers.reduce(
-    (max, player) => (player.name.length > max ? player.name.length : max),
-    0
-  );
-
-  let copiedText =
-    "*TABLA*\n```" +
-    "Nombre".padEnd(longestNameLength, " ") +
-    "``` ```|``` ```Pts``` ```|``` ```AT``` ```|``` ```AP``` ```|```  ```E ``````|``` ```PJ```";
-
-  for (const player of leaderboardPositions.leaderboardPlayers) {
-    let playerName =
-      "```" + player.name.padEnd(longestNameLength, " ") + "``` ```";
-
-    let playerPoints = formatLeaderboardNumber(player.points.toString(), 0);
-    let playerExactHits = formatLeaderboardNumber(
-      player.exactHits.toString(),
-      2
-    );
-    let playerPartialHits = formatLeaderboardNumber(
-      player.partialHits.toString(),
-      2
-    );
-    let playerIncorrect = formatLeaderboardNumber(
-      player.incorrects.toString(),
-      2
-    );
-    let playerPlayedMatches = formatLeaderboardNumber(
-      player.playedMatches.toString(),
-      1
-    );
-
-    copiedText += `\n${playerName}|${playerPoints}|${playerExactHits}|${playerPartialHits}|${playerIncorrect}|${playerPlayedMatches}`;
-  }
-
-  copiedText += "\n\nhttps://nicolasweibel.github.io";
-
-  return copiedText;
-};
-
-const matchdayAndLeaderboardTextToCopy = () => {
-  let copiedText = matchdayTextToCopy() + "\n\n" + leaderboardTextToCopy();
-  return copiedText;
-};
-
-document.addEventListener("DOMContentLoaded", () => {
-  const previusMatchdayDiv = document.getElementById("previous-matchday");
-  previusMatchdayDiv.addEventListener("click", () => {
-    createSpecificMatchdayTable(showedMatchdayIndex - 1);
-  });
-
-  const nextMatchdayDiv = document.getElementById("next-matchday");
-  nextMatchdayDiv.addEventListener("click", () => {
-    createSpecificMatchdayTable(showedMatchdayIndex + 1);
-  });
-
-  const monthSelectorSelect = document.getElementById("month-select-id");
-  monthSelectorSelect.addEventListener("change", () => {
-    window.location.href = monthSelectorSelect.value;
-  });
-
-  const matchdayAndLeaderboardCopyButton = document.getElementById(
-    "matchday-and-leaderboard-copy-button"
-  );
-  matchdayAndLeaderboardCopyButton.addEventListener("click", async () => {
-    const copyInfoDiv = document.getElementById("copy-edit-save-info");
-
-    try {
-      const permissionStatus = await navigator.permissions.query({
-        name: "clipboard-write",
-      });
-
-      if (
-        permissionStatus.state === "granted" ||
-        permissionStatus.state === "prompt"
-      ) {
-        const copiedText = matchdayAndLeaderboardTextToCopy();
-        await navigator.clipboard.writeText(copiedText);
-        copyInfoDiv.textContent = "¡Texto copiado al portapapeles!";
-        copyInfoDiv.classList.add("green-info");
-        copyInfoDiv.classList.remove("red-info");
-      } else {
-        copyInfoDiv.textContent =
-          "No se otorgaron permisos para copiar al portapapeles.";
-        copyInfoDiv.classList.add("red-info");
-        copyInfoDiv.classList.remove("green-info");
-      }
-    } catch (error) {
-      copyInfoDiv.textContent = "Ocurrió un error al copiar al portapapeles.";
-      copyInfoDiv.classList.add("red-info");
-      copyInfoDiv.classList.remove("green-info");
-    }
-
-    setTimeout(function () {
-      copyInfoDiv.textContent = "";
-    }, 1000);
-  });
-});
-
-const addMatchEventListeners = (matchDiv) => {
-  matchDiv.addEventListener("click", () => {
-    const predictionContainerDiv = matchDiv.nextElementSibling;
-    const predictionArrow = matchDiv.lastChild.firstChild;
-    const predictionContainerHeight = predictionContainerDiv.offsetHeight;
-
-    if (predictionContainerHeight === 0) {
-      const predictionDiv = predictionContainerDiv.firstChild;
-      predictionContainerDiv.style.height = predictionDiv.offsetHeight + "px";
-      predictionArrow.classList.add("rotate");
-    } else {
-      predictionContainerDiv.style.height = 0;
-      predictionArrow.classList.remove("rotate");
-    }
-  });
-};
-
-const setChooseMatchdayTitle = (
-  matchdayName,
-  isCurrentMatchday,
-  isNextMatchday
-) => {
-  const matchdayNameDiv = document.getElementById("current-matchday");
-  matchdayNameDiv.textContent = "";
-
-  if (isCurrentMatchday) matchdayNameDiv.textContent = "(fecha actual)";
-  else if (isNextMatchday) matchdayNameDiv.textContent = "(próxima fecha)";
-
-  const matchdayNameH2 = document.createElement("H2");
-  matchdayNameH2.textContent = matchdayName;
-  matchdayNameDiv.insertBefore(matchdayNameH2, matchdayNameDiv.firstChild);
-
-  const rightArrowDiv = document.getElementById("next-matchday");
-  const leftArrowDiv = document.getElementById("previous-matchday");
-  if (showedMatchdayIndex > 0 && showedMatchdayIndex < matchdays.length - 1) {
-    rightArrowDiv.classList.remove("no-display-arrow");
-    leftArrowDiv.classList.remove("no-display-arrow");
-  } else if (matchdays.length === 1) {
-    leftArrowDiv.classList.add("no-display-arrow");
-    rightArrowDiv.classList.add("no-display-arrow");
-  } else if (showedMatchdayIndex === matchdays.length - 1) {
-    leftArrowDiv.classList.remove("no-display-arrow");
-    rightArrowDiv.classList.add("no-display-arrow");
-  } else if (showedMatchdayIndex === 0) {
-    rightArrowDiv.classList.remove("no-display-arrow");
-    leftArrowDiv.classList.add("no-display-arrow");
-  }
 };
 
 const createMatchDateDiv = (dateString) => {
@@ -597,43 +338,398 @@ const createMatchdayTable = (matchdayObject) => {
   }
 };
 
-const createSpecificMatchdayTable = (matchdayIndex) => {
-  showedMatchdayIndex = matchdayIndex;
-  createMatchdayTable(matchdays[matchdayIndex]);
-};
+/**
+ * @function completeLeaderboard
+ * @description Renders the leaderboard table in the DOM using the provided player data.
+ *
+ * - Dynamically creates and appends table rows for each player.
+ * - Displays position, name, and stats (points, exact hits, partial hits, incorrects, played matches).
+ * - Supports shared rankings when players tie in points, exact hits, and incorrects.
+ * - Adds position-based classes (first to seventh) to position cells based on available references.
+ *
+ * @param {Array<Object>} orderedLeaderboardPlayers - Array of player objects sorted by ranking criteria.
+ * @param {Array} referencesList - Optional array of references to determine the maximum position for applying position-based classes.
+ */
+const completeLeaderboard = (orderedLeaderboardPlayers, referencesList) => {
+  // Determine the maximum position for applying position-based classes
+  const maxPositionWithClass = referencesList ? referencesList.length : 0;
 
-const completeLeaderboard = (orderedLeaderboardPlayers) => {
-  function createAndAppendTd(trElement, content) {
+  /**
+   * @function createAndAppendTd
+   * @description Creates a table cell (td) element, sets its content, and appends it to the provided table row.
+   *              Optionally applies a position-based class to the cell if within the valid range.
+   * @param {HTMLElement} trElement - The table row element to append the cell to.
+   * @param {string|number} content - The content to display in the cell.
+   * @param {number|null} position - The position value for applying position-based classes (optional).
+   */
+  const createAndAppendTd = (trElement, content, position = null) => {
     const tdElement = document.createElement("td");
     tdElement.textContent = content;
-    trElement.appendChild(tdElement);
-  }
 
+    // Apply position-based class if the position is within the valid range
+    if (position !== null && position <= maxPositionWithClass) {
+      const positionClass =
+        position === 1
+          ? "first"
+          : position === 2
+          ? "second"
+          : position === 3
+          ? "third"
+          : position === 4
+          ? "fourth"
+          : position === 5
+          ? "fifth"
+          : position === 6
+          ? "sixth"
+          : "seventh";
+      tdElement.classList.add(positionClass);
+    }
+
+    trElement.appendChild(tdElement);
+  };
+
+  // Select the table body element and clear its existing content
   const tableBodyElement = document.querySelector(
     ".leaderboard-container tbody"
   );
-  let positionCounter = 1;
-  for (let playerObject of orderedLeaderboardPlayers) {
+  tableBodyElement.innerHTML = ""; // Clear table before rendering
+
+  let positionCounter = 1; // Initialize position counter
+  let previous = null; // Store previous player object for tie comparison
+
+  // Iterate through the sorted player data to build the leaderboard
+  for (let i = 0; i < orderedLeaderboardPlayers.length; i++) {
+    const playerObject = orderedLeaderboardPlayers[i];
+
+    // Determine position: increment only if the current player does not tie with the previous
+    if (
+      !(
+        previous &&
+        playerObject.points === previous.points &&
+        playerObject.exactHits === previous.exactHits &&
+        playerObject.incorrects === previous.incorrects
+      )
+    ) {
+      positionCounter = i + 1;
+    }
+
+    // Create a new table row for the player
     const trElement = document.createElement("tr");
 
-    createAndAppendTd(trElement, positionCounter);
+    // Append cells for position, name, and stats
+    createAndAppendTd(trElement, positionCounter, positionCounter); // Position cell with position-based class
+    createAndAppendTd(trElement, playerObject.name); // Name cell
+    createAndAppendTd(trElement, playerObject.points); // Points cell
+    createAndAppendTd(trElement, playerObject.exactHits); // Exact hits cell
+    createAndAppendTd(trElement, playerObject.partialHits); // Partial hits cell
+    createAndAppendTd(trElement, playerObject.incorrects); // Incorrects cell
+    createAndAppendTd(trElement, playerObject.playedMatches); // Played matches cell
 
-    createAndAppendTd(trElement, playerObject.name);
-
-    createAndAppendTd(trElement, playerObject.points);
-
-    createAndAppendTd(trElement, playerObject.exactHits);
-
-    createAndAppendTd(trElement, playerObject.partialHits);
-
-    createAndAppendTd(trElement, playerObject.incorrects);
-
-    createAndAppendTd(trElement, playerObject.playedMatches);
-
+    // Append the row to the table body
     tableBodyElement.appendChild(trElement);
-
-    positionCounter += 1;
+    previous = playerObject; // Update previous player for the next iteration
   }
+};
+
+/**
+ * @function addReferencesToLeaderboard
+ * @description Dynamically adds a list of reference notes (e.g., prize distribution) to the leaderboard section in the DOM.
+ *
+ * - Creates a <div> with class "references" inside the leaderboard container.
+ * - Appends each reference as a <p> element with class "reference".
+ * - Optionally assigns ranking-based classes ("first", "second", "third", etc.) to the first items for custom styling.
+ * - If the leaderboard container is not found, the function exits silently.
+ *
+ * @param {Array<string>} referencesArray - An array of reference text strings to be displayed under the leaderboard (e.g., ["- 1° wins $12,000", "- 2° wins $8,000"]).
+ */
+const addReferencesToLeaderboard = (referencesArray) => {
+  const leaderboardContainer = document.querySelector(".leaderboard-container");
+
+  if (!leaderboardContainer) return;
+
+  const referencesDiv = document.createElement("div");
+  referencesDiv.classList.add("references");
+
+  const classNames = [
+    "first",
+    "second",
+    "third",
+    "fourth",
+    "fifth",
+    "sixth",
+    "seventh",
+  ];
+
+  referencesArray.forEach((referenceText, index) => {
+    const pElement = document.createElement("p");
+    pElement.classList.add("reference");
+    if (classNames[index]) {
+      pElement.classList.add(classNames[index]);
+    }
+    pElement.textContent = referenceText;
+    referencesDiv.appendChild(pElement);
+  });
+
+  leaderboardContainer.appendChild(referencesDiv);
+};
+
+// ======================
+// 4. TEXT FORMATTING UTILS
+// ======================
+
+const dateFormatToCopyFormat = (dateString, isMatchFormat) => {
+  const date = new Date(dateString);
+
+  const weekdays = [
+    "DOMINGO",
+    "LUNES",
+    "MARTES",
+    "MIÉRCOLES",
+    "JUEVES",
+    "VIERNES",
+    "SÁBADO",
+  ];
+  const weekdaysMatchFormat = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
+
+  const weekday = weekdays[date.getDay()];
+  const weekdayMatchFormat = weekdaysMatchFormat[date.getDay()];
+  const dayOfMonth = date.getDate();
+  const month = date.getMonth() + 1;
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  let formattedDate;
+
+  if (isMatchFormat) {
+    formattedDate = `| ${weekdayMatchFormat} ${dayOfMonth}/${month} | ${hours}:${
+      minutes < 10 ? "0" : ""
+    }${minutes}hs`;
+  } else {
+    formattedDate = `${weekday} ${dayOfMonth}/${month} a las ${hours}:${
+      minutes < 10 ? "0" : ""
+    }${minutes}hs`;
+  }
+
+  return formattedDate;
+};
+
+const matchdayTextToCopy = () => {
+  let copiedText = "";
+  let isPronostic = true;
+  let matchIndex = 0;
+  let copyDateFormat = "";
+  let wasDateCopied = false;
+  let wasDateCopiedFirstMatch = false;
+
+  for (const match of matchdays[showedMatchdayIndex]["matchdayMatchs"]) {
+    let team1 = match["team1"];
+    let team2 = match["team2"];
+    let scoreTeam1 = match["scoreTeam1"];
+    let scoreTeam2 = match["scoreTeam2"];
+    let matchdayDate = dateFormatToCopyFormat(match["matchDate"], true);
+
+    if (scoreTeam1 === "" && scoreTeam2 === "" && !wasDateCopied) {
+      copyDateFormat = dateFormatToCopyFormat(match["matchDate"], false);
+      wasDateCopied = true;
+
+      if (matchIndex === 0) {
+        wasDateCopiedFirstMatch = true;
+      }
+    }
+
+    copiedText += `\n\n${team1.toUpperCase()} ${scoreTeam1} - ${scoreTeam2} ${team2.toUpperCase()} `;
+
+    if (scoreTeam1 !== "" && scoreTeam2 !== "") {
+      isPronostic = false;
+    } else {
+      copiedText += matchdayDate;
+      isPronostic = true;
+    }
+
+    for (const prediction of match["predictions"]) {
+      let predictionScoreTeam1 = prediction["scoreTeam1"];
+      let predictionScoreTeam2 = prediction["scoreTeam2"];
+      let emojiCode = predictionEmoji(
+        scoreTeam1,
+        scoreTeam2,
+        predictionScoreTeam1,
+        predictionScoreTeam2
+      );
+      if (predictionScoreTeam1 !== "" && predictionScoreTeam2 !== "") {
+        copiedText += `\n${prediction["name"]}: ${predictionScoreTeam1} - ${predictionScoreTeam2} ${emojiCode}`;
+      } else if (scoreTeam1 !== "" && scoreTeam2 !== "") {
+        copiedText += `\n${prediction["name"]}: ${emojiCode}`;
+      } else {
+        copiedText += `\n${prediction["name"]}:`;
+      }
+    }
+
+    matchIndex += 1;
+  }
+
+  if (isPronostic)
+    copiedText =
+      `*${matchdays[showedMatchdayIndex][
+        "matchdayName"
+      ].toUpperCase()} PRONÓSTICO*\n\n` +
+      `*${
+        wasDateCopiedFirstMatch
+          ? "Decir resultados"
+          : "Decir el resto de resultados (solo si todavía no dijeron ninguno)"
+      } antes del ${copyDateFormat}*` +
+      copiedText;
+  else
+    copiedText =
+      `*${matchdays[showedMatchdayIndex]["matchdayName"].toUpperCase()}*` +
+      copiedText;
+
+  return copiedText;
+};
+
+const formatLeaderboardNumber = (numberString, leaderboardNumberType) => {
+  let formattedNumberString;
+
+  if (leaderboardNumberType === 0) {
+    // leaderboard number type is points
+    formattedNumberString =
+      numberString.length === 1
+        ? " ``` ```" + numberString + " ``` ```"
+        : "```  ```" + numberString + "`````` ";
+  } else if (leaderboardNumberType === 1) {
+    // leaderboard number type is played matches
+    formattedNumberString =
+      numberString.length === 1
+        ? "```  ```" + numberString + " ```"
+        : "``` ```" + numberString + "```";
+  } else if (leaderboardNumberType === 2) {
+    // leaderboard number type is another type
+    formattedNumberString =
+      numberString.length === 1
+        ? "```  ```" + numberString + " ``````"
+        : "``` ```" + numberString + "``` ```";
+  }
+
+  return formattedNumberString;
+};
+
+/**
+ * @function leaderboardTextToCopy
+ * @description Generates a formatted leaderboard table as plain text,
+ * aligned for sharing via messaging apps like WhatsApp.
+ *
+ * - Aligns columns dynamically based on player name length and position digits.
+ * - Supports shared rankings when players tie in points, exact hits, and incorrects.
+ *
+ * @returns {string} Formatted leaderboard table.
+ */
+const leaderboardTextToCopy = () => {
+  const players = leaderboardPositions.leaderboardPlayers;
+
+  const longestNameLength = players.reduce(
+    (max, player) => Math.max(max, player.name.length),
+    0
+  );
+
+  const positionDigits = players.length.toString().length;
+
+  let copiedText = "*TABLA*\n```";
+  copiedText += `\n${"#".padEnd(positionDigits)} | ${"Nombre".padEnd(
+    longestNameLength
+  )} | Pts | AT | AP | Er | PJ`;
+
+  let displayPosition;
+  let previous = null;
+
+  players.forEach((player, index) => {
+    // Keep same position number if tied with previous player in points, exact hits, and incorrects
+    if (
+      !(
+        previous &&
+        player.points === previous.points &&
+        player.exactHits === previous.exactHits &&
+        player.incorrects === previous.incorrects
+      )
+    ) {
+      displayPosition = index + 1;
+    }
+
+    const positionStr = `${displayPosition}`.padEnd(positionDigits);
+    const name = player.name.padEnd(longestNameLength);
+    const pts = player.points.toString().padStart(3);
+    const at = player.exactHits.toString().padStart(2);
+    const ap = player.partialHits.toString().padStart(2);
+    const e = player.incorrects.toString().padStart(2);
+    const pj = player.playedMatches.toString().padStart(2);
+
+    copiedText += `\n${positionStr} | ${name} | ${pts} | ${at} | ${ap} | ${e} | ${pj}`;
+
+    previous = player;
+  });
+
+  copiedText += "\n```\n\nhttps://nicolasweibel.github.io";
+  return copiedText;
+};
+
+const matchdayAndLeaderboardTextToCopy = () => {
+  let copiedText = matchdayTextToCopy() + "\n\n" + leaderboardTextToCopy();
+  return copiedText;
+};
+
+// ======================
+// 5. EVENT HANDLERS & INIT
+// ======================
+
+const addMatchEventListeners = (matchDiv) => {
+  matchDiv.addEventListener("click", () => {
+    const predictionContainerDiv = matchDiv.nextElementSibling;
+    const predictionArrow = matchDiv.lastChild.firstChild;
+    const predictionContainerHeight = predictionContainerDiv.offsetHeight;
+
+    if (predictionContainerHeight === 0) {
+      const predictionDiv = predictionContainerDiv.firstChild;
+      predictionContainerDiv.style.height = predictionDiv.offsetHeight + "px";
+      predictionArrow.classList.add("rotate");
+    } else {
+      predictionContainerDiv.style.height = 0;
+      predictionArrow.classList.remove("rotate");
+    }
+  });
+};
+
+const setChooseMatchdayTitle = (
+  matchdayName,
+  isCurrentMatchday,
+  isNextMatchday
+) => {
+  const matchdayNameDiv = document.getElementById("current-matchday");
+  matchdayNameDiv.textContent = "";
+
+  if (isCurrentMatchday) matchdayNameDiv.textContent = "(fecha actual)";
+  else if (isNextMatchday) matchdayNameDiv.textContent = "(próxima fecha)";
+
+  const matchdayNameH2 = document.createElement("H2");
+  matchdayNameH2.textContent = matchdayName;
+  matchdayNameDiv.insertBefore(matchdayNameH2, matchdayNameDiv.firstChild);
+
+  const rightArrowDiv = document.getElementById("next-matchday");
+  const leftArrowDiv = document.getElementById("previous-matchday");
+  if (showedMatchdayIndex > 0 && showedMatchdayIndex < matchdays.length - 1) {
+    rightArrowDiv.classList.remove("no-display-arrow");
+    leftArrowDiv.classList.remove("no-display-arrow");
+  } else if (matchdays.length === 1) {
+    leftArrowDiv.classList.add("no-display-arrow");
+    rightArrowDiv.classList.add("no-display-arrow");
+  } else if (showedMatchdayIndex === matchdays.length - 1) {
+    leftArrowDiv.classList.remove("no-display-arrow");
+    rightArrowDiv.classList.add("no-display-arrow");
+  } else if (showedMatchdayIndex === 0) {
+    rightArrowDiv.classList.remove("no-display-arrow");
+    leftArrowDiv.classList.add("no-display-arrow");
+  }
+};
+
+const createSpecificMatchdayTable = (matchdayIndex) => {
+  showedMatchdayIndex = matchdayIndex;
+  createMatchdayTable(matchdays[matchdayIndex]);
 };
 
 const completeLeaderboardPositions = (iMatchdays, leaderboardPositions) => {
@@ -659,7 +755,11 @@ const completeLeaderboardPositions = (iMatchdays, leaderboardPositions) => {
   }
 };
 
-const initializeMatchdayLeaderboardTable = (isCurrentMatchday, players) => {
+const initializeMatchdayLeaderboardTable = (
+  isCurrentMatchday,
+  players,
+  referencesList
+) => {
   leaderboardPositions = new LeaderboardPositions(players);
 
   for (let iMatchdays in matchdays) {
@@ -674,7 +774,11 @@ const initializeMatchdayLeaderboardTable = (isCurrentMatchday, players) => {
   }
 
   leaderboardPositions.sortPositions();
-  completeLeaderboard(leaderboardPositions.leaderboardPlayers);
+  completeLeaderboard(leaderboardPositions.leaderboardPlayers, referencesList);
+
+  if (referencesList) {
+    addReferencesToLeaderboard(referencesList);
+  }
 };
 
 const checkLoginStatus = (usersObject) => {
@@ -704,11 +808,78 @@ const fetchFiles = async (filePath) => {
   return data;
 };
 
-const initializeMainPage = async (isCurrentMonth, matchdayTextUrl, players) => {
+const initializeMainPage = async (
+  isCurrentMonth,
+  matchdayTextUrl,
+  players,
+  referencesList = null
+) => {
   const users = await fetchFiles("../text/users.txt");
   matchdays = await fetchFiles(matchdayTextUrl);
 
   checkLoginStatus(users);
 
-  initializeMatchdayLeaderboardTable(isCurrentMonth, players);
+  initializeMatchdayLeaderboardTable(isCurrentMonth, players, referencesList);
 };
+
+// ======================
+// 6. CLIPBOARD OPERATIONS
+// ======================
+
+// Note: Clipboard event handlers are included in the DOMContentLoaded section
+// as they're directly tied to button elements
+
+// Main initialization
+document.addEventListener("DOMContentLoaded", () => {
+  const previusMatchdayDiv = document.getElementById("previous-matchday");
+  previusMatchdayDiv.addEventListener("click", () => {
+    createSpecificMatchdayTable(showedMatchdayIndex - 1);
+  });
+
+  const nextMatchdayDiv = document.getElementById("next-matchday");
+  nextMatchdayDiv.addEventListener("click", () => {
+    createSpecificMatchdayTable(showedMatchdayIndex + 1);
+  });
+
+  const monthSelectorSelect = document.getElementById("month-select-id");
+  monthSelectorSelect.addEventListener("change", () => {
+    window.location.href = monthSelectorSelect.value;
+  });
+
+  const matchdayAndLeaderboardCopyButton = document.getElementById(
+    "matchday-and-leaderboard-copy-button"
+  );
+  matchdayAndLeaderboardCopyButton.addEventListener("click", async () => {
+    const copyInfoDiv = document.getElementById("copy-edit-save-info");
+
+    try {
+      const permissionStatus = await navigator.permissions.query({
+        name: "clipboard-write",
+      });
+
+      if (
+        permissionStatus.state === "granted" ||
+        permissionStatus.state === "prompt"
+      ) {
+        const copiedText = matchdayAndLeaderboardTextToCopy();
+        await navigator.clipboard.writeText(copiedText);
+        copyInfoDiv.textContent = "¡Texto copiado al portapapeles!";
+        copyInfoDiv.classList.add("green-info");
+        copyInfoDiv.classList.remove("red-info");
+      } else {
+        copyInfoDiv.textContent =
+          "No se otorgaron permisos para copiar al portapapeles.";
+        copyInfoDiv.classList.add("red-info");
+        copyInfoDiv.classList.remove("green-info");
+      }
+    } catch (error) {
+      copyInfoDiv.textContent = "Ocurrió un error al copiar al portapapeles.";
+      copyInfoDiv.classList.add("red-info");
+      copyInfoDiv.classList.remove("green-info");
+    }
+
+    setTimeout(function () {
+      copyInfoDiv.textContent = "";
+    }, 1000);
+  });
+});

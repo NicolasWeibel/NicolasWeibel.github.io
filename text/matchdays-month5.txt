@@ -387,7 +387,7 @@
     },
     {
         "matchdayName": "Finales y Copa Arg",
-        "isCurrentMatchday": true,
+        "isCurrentMatchday": false,
         "isNextMatchday": false,
         "matchdayMatchs": [
             {

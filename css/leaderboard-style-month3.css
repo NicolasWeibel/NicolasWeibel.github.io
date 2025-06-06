@@ -26,7 +26,8 @@
 .reference {
   border-top: 1px solid #000;
   font-size: 0.8em;
-  text-shadow: 1px 1px 1px #000;
+  font-weight: 400;
+  padding: 0.2rem;
 }
 
 .reference:nth-child(1) {
@@ -36,12 +37,10 @@
 
 .reference:nth-child(2) {
   background-color: #f5f374;
-  text-shadow: 0.2px 0.2px 0.5px #000;
 }
 
 .reference:nth-child(3) {
   background-color: #e8d747;
-  text-shadow: 0.2px 0.2px 0.5px #000;
 }
 
 .reference:nth-child(4) {

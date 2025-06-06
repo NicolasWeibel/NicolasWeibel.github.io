@@ -1,47 +1,46 @@
 /* Leaderboard Position Cells */
 .leaderboard-container tbody tr:nth-child(1) td:first-child {
-    background-color: #008000;
-    color: var(--white-color);
+  background-color: #008000;
+  color: var(--white-color);
 }
 
 .leaderboard-container tbody tr:nth-child(2) td:first-child {
-    background-color: #f5f374;
+  background-color: #f5f374;
 }
 
 .leaderboard-container tbody tr:nth-child(3) td:first-child {
-    background-color: #d68526;
-    color: var(--white-color);
+  background-color: #d68526;
+  color: var(--white-color);
 }
 
 .leaderboard-container tbody tr:nth-child(4) td:first-child {
-    background-color: #f00;
-    color: var(--white-color);
+  background-color: #f00;
+  color: var(--white-color);
 }
-
 
 /* LEADERBOARD REFERENCES */
 .reference {
-    border-top: 1px solid #000;
-    font-size: 0.8em;
-    text-shadow: 1px 1px 1px #000;
+  border-top: 1px solid #000;
+  font-size: 0.8em;
+  font-weight: 400;
+  padding: 0.2rem;
 }
 
 .reference:nth-child(1) {
-    background-color: #008000;
-    color: var(--white-color);
+  background-color: #008000;
+  color: var(--white-color);
 }
 
 .reference:nth-child(2) {
-    background-color: #f5f374;
-    text-shadow: 0.2px 0.2px 0.5px #000;
+  background-color: #f5f374;
 }
 
 .reference:nth-child(3) {
-    background-color: #d68526;
-    color: var(--white-color);
+  background-color: #d68526;
+  color: var(--white-color);
 }
 
 .reference:nth-child(4) {
-    background-color: #f00;
-    color: var(--white-color);
+  background-color: #f00;
+  color: var(--white-color);
 }

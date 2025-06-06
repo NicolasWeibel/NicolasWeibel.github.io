@@ -1,35 +1,37 @@
-/* Leaderboard Position Cells */
-.leaderboard-container tbody tr:nth-child(1) td:first-child {
-  background-color: #008000;
-  color: var(--white-color);
-}
-
-.leaderboard-container tbody tr:nth-child(2) td:first-child {
-  background-color: #f5f374;
-}
-
-.leaderboard-container tbody tr:nth-child(3) td:first-child {
-  background-color: #e8d747;
-}
-
 /* LEADERBOARD REFERENCES */
 .reference {
   border-top: 1px solid #000;
   font-size: 0.8em;
-  text-shadow: 1px 1px 1px #000;
+  font-weight: 400;
+  padding: 0.2rem;
 }
 
-.reference:nth-child(1) {
-  background-color: #008000;
+.first {
+  background-color: #008000; /* Verde */
   color: var(--white-color);
 }
 
-.reference:nth-child(2) {
-  background-color: #f5f374;
-  text-shadow: 0.2px 0.2px 0.5px #000;
+.second {
+  background-color: #f5f374; /* Amarillo claro */
 }
 
-.reference:nth-child(3) {
-  background-color: #e8d747;
-  text-shadow: 0.2px 0.2px 0.5px #000;
+.third {
+  background-color: #e8d747; /* Amarillo intenso */
+}
+
+.fourth {
+  background-color: #feb854;
+}
+
+.fifth {
+  background-color: #ff9807;
+}
+
+.sixth {
+  background-color: #d68526;
+}
+
+.seventh {
+  background-color: #ab2cf5;
+  color: var(--white-color);
 }
