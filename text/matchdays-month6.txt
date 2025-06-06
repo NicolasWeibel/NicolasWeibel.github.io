@@ -43,7 +43,7 @@
         ]
     },
     {
-        "matchdayName": "Mundial Clubes P1",
+        "matchdayName": "Mundial Clubes J1",
         "isCurrentMatchday": false,
         "isNextMatchday": true,
         "matchdayMatchs": [
