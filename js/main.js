@@ -585,32 +585,6 @@ const matchdayTextToCopy = () => {
   return copiedText;
 };
 
-const formatLeaderboardNumber = (numberString, leaderboardNumberType) => {
-  let formattedNumberString;
-
-  if (leaderboardNumberType === 0) {
-    // leaderboard number type is points
-    formattedNumberString =
-      numberString.length === 1
-        ? " ``` ```" + numberString + " ``` ```"
-        : "```  ```" + numberString + "`````` ";
-  } else if (leaderboardNumberType === 1) {
-    // leaderboard number type is played matches
-    formattedNumberString =
-      numberString.length === 1
-        ? "```  ```" + numberString + " ```"
-        : "``` ```" + numberString + "```";
-  } else if (leaderboardNumberType === 2) {
-    // leaderboard number type is another type
-    formattedNumberString =
-      numberString.length === 1
-        ? "```  ```" + numberString + " ``````"
-        : "``` ```" + numberString + "``` ```";
-  }
-
-  return formattedNumberString;
-};
-
 /**
  * @function leaderboardTextToCopy
  * @description Generates a formatted leaderboard table as plain text,
@@ -632,9 +606,9 @@ const leaderboardTextToCopy = () => {
   const positionDigits = players.length.toString().length;
 
   let copiedText = "*TABLA*\n```";
-  copiedText += `\n${"#".padEnd(positionDigits)} | ${"Nombre".padEnd(
+  copiedText += `\n${"#".padEnd(positionDigits + 1)}⠀ ${"Nombre".padEnd(
     longestNameLength
-  )} |Pts|AT|AP|Er|PJ`;
+  )} ⠀Pts⠀AT⠀AP⠀Er⠀PJ`;
 
   let displayPosition;
   let previous = null;
@@ -652,15 +626,15 @@ const leaderboardTextToCopy = () => {
       displayPosition = index + 1;
     }
 
-    const positionStr = `${displayPosition}`.padEnd(positionDigits);
+    const positionStr = `${displayPosition}°`.padEnd(positionDigits + 1);
     const name = player.name.padEnd(longestNameLength);
-    const pts = player.points.toString().padStart(3);
-    const at = player.exactHits.toString().padStart(2);
-    const ap = player.partialHits.toString().padStart(2);
-    const e = player.incorrects.toString().padStart(2);
-    const pj = player.playedMatches.toString().padStart(2);
+    const pts = player.points.toString().padEnd(3);
+    const at = player.exactHits.toString().padEnd(2);
+    const ap = player.partialHits.toString().padEnd(2);
+    const e = player.incorrects.toString().padEnd(2);
+    const pj = player.playedMatches.toString().padEnd(2);
 
-    copiedText += `\n${positionStr} | ${name} |${pts}|${at}|${ap}|${e}|${pj}`;
+    copiedText += `\n${positionStr}⠀ ${name} ⠀${pts}⠀${at}⠀${ap}⠀${e}⠀${pj}`;
 
     previous = player;
   });
