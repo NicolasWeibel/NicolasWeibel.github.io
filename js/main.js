@@ -634,7 +634,7 @@ const leaderboardTextToCopy = () => {
   let copiedText = "*TABLA*\n```";
   copiedText += `\n${"#".padEnd(positionDigits)} | ${"Nombre".padEnd(
     longestNameLength
-  )} | Pts | AT | AP | Er | PJ`;
+  )} |Pts|AT|AP|Er|PJ`;
 
   let displayPosition;
   let previous = null;
@@ -660,7 +660,7 @@ const leaderboardTextToCopy = () => {
     const e = player.incorrects.toString().padStart(2);
     const pj = player.playedMatches.toString().padStart(2);
 
-    copiedText += `\n${positionStr} | ${name} | ${pts} | ${at} | ${ap} | ${e} | ${pj}`;
+    copiedText += `\n${positionStr} | ${name} |${pts}|${at}|${ap}|${e}|${pj}`;
 
     previous = player;
   });
