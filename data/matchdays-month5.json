@@ -1,8 +1,6 @@
 [
   {
     "matchdayName": "Apertura Fecha 16",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Argentinos",
@@ -143,8 +141,6 @@
   },
   {
     "matchdayName": "Lib P4 Grupos",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "U. de Chile",
@@ -285,8 +281,6 @@
   },
   {
     "matchdayName": "Apertura Octavos de Final",
-    "isCurrentMatchday": true,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Rosario Central",
@@ -427,8 +421,6 @@
   },
   {
     "matchdayName": "Lib P5 Grupos",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Vélez",
@@ -569,8 +561,6 @@
   },
   {
     "matchdayName": "Apertura Cuartos de Final",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Rosario Central",
@@ -756,8 +746,6 @@
   },
   {
     "matchdayName": "Copa Argentina",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Lanús",
@@ -808,8 +796,6 @@
   },
   {
     "matchdayName": "Apertura Semifinal",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Independiente",
@@ -905,8 +891,6 @@
   },
   {
     "matchdayName": "Lib P5 Grupos",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Estudiantes",
@@ -1047,8 +1031,6 @@
   },
   {
     "matchdayName": "Finales y Copa Arg",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "PSG",

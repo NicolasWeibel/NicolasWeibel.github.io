@@ -1,8 +1,6 @@
 [
   {
     "matchdayName": "Sud y Lib P3 Grupos",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Bragantino",
@@ -125,8 +123,6 @@
   },
   {
     "matchdayName": "Superliga Jornada 15",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Godoy Cruz",
@@ -249,8 +245,6 @@
   },
   {
     "matchdayName": "Superliga Jornada 16",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Huracán",
@@ -451,8 +445,6 @@
   },
   {
     "matchdayName": "Superliga Jornada 17",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Godoy Cruz",
@@ -614,8 +606,6 @@
   },
   {
     "matchdayName": "Sud y Lib P4 Grupos",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Deportivo Pereyra",
@@ -738,8 +728,6 @@
   },
   {
     "matchdayName": "Superliga Jornada 18",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Boca",

@@ -1,8 +1,6 @@
 [
   {
     "matchdayName": "Lib P2 Grupos",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Estudiantes",
@@ -143,8 +141,6 @@
   },
   {
     "matchdayName": "Apertura Fecha 13",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Belgrano",
@@ -330,8 +326,6 @@
   },
   {
     "matchdayName": "Apertura Fecha 14",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Gimnasia",
@@ -472,8 +466,6 @@
   },
   {
     "matchdayName": "Lib P3 Grupos",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "San Antonio",
@@ -614,8 +606,6 @@
   },
   {
     "matchdayName": "Apertura Fecha 15",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "River",

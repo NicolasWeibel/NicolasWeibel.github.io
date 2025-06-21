@@ -329,12 +329,8 @@ const createPredictionsDiv = (predictionsArray, teamsArray) => {
   return predictionContainerDiv;
 };
 
-const createMatchdayTable = (matchdayObject) => {
-  setChooseMatchdayTitle(
-    matchdayObject["matchdayName"],
-    matchdayObject["isCurrentMatchday"],
-    matchdayObject["isNextMatchday"]
-  );
+const createMatchdayTable = (matchdayObject, index, isCurrentMonth = true) => {
+  setChooseMatchdayTitle(matchdayObject["matchdayName"], index, isCurrentMonth);
   const matchdayTableUl = document.querySelector(".matchday__list");
   matchdayTableUl.textContent = ""; // Clear existing content
 
@@ -722,16 +718,15 @@ const addMatchEventListeners = (matchDiv) => {
   });
 };
 
-const setChooseMatchdayTitle = (
-  matchdayName,
-  isCurrentMatchday,
-  isNextMatchday
-) => {
+const setChooseMatchdayTitle = (matchdayName, index, isCurrentMonth) => {
   const matchdayNameDiv = document.getElementById("current-matchday");
   matchdayNameDiv.textContent = "";
 
-  if (isCurrentMatchday) matchdayNameDiv.textContent = "(fecha actual)";
-  else if (isNextMatchday) matchdayNameDiv.textContent = "(próxima fecha)";
+  const { currentIndex, nextIndex } = getMatchdayIndexStatus(matchdays);
+
+  if (isCurrentMonth && index === currentIndex)
+    matchdayNameDiv.textContent = "(fecha actual)";
+  else if (index === nextIndex) matchdayNameDiv.textContent = "(próxima fecha)";
 
   const matchdayNameH2 = document.createElement("H2");
   matchdayNameH2.textContent = matchdayName;
@@ -756,7 +751,7 @@ const setChooseMatchdayTitle = (
 
 const createSpecificMatchdayTable = (matchdayIndex) => {
   showedMatchdayIndex = matchdayIndex;
-  createMatchdayTable(matchdays[matchdayIndex]);
+  createMatchdayTable(matchdays[matchdayIndex], matchdayIndex, isCurrentMonth);
 };
 
 const completeLeaderboardPositions = (iMatchdays, leaderboardPositions) => {
@@ -782,6 +777,41 @@ const completeLeaderboardPositions = (iMatchdays, leaderboardPositions) => {
   }
 };
 
+const getMatchdayIndexStatus = (matchdays) => {
+  const now = new Date();
+  const timestamps = matchdays.map((md) => {
+    const dates = md.matchdayMatchs.map((m) => new Date(m.matchDate).getTime());
+    return {
+      start: Math.min(...dates),
+      end: Math.max(...dates),
+    };
+  });
+
+  for (let i = 0; i < timestamps.length; i++) {
+    const { start, end } = timestamps[i];
+    if (now >= start && now <= end) {
+      return {
+        currentIndex: i,
+        nextIndex: i + 1 < matchdays.length ? i + 1 : null,
+      };
+    }
+  }
+
+  for (let i = 0; i < timestamps.length - 1; i++) {
+    const { end: endPrev } = timestamps[i];
+    const { start: startNext } = timestamps[i + 1];
+    if (now > endPrev && now < startNext) {
+      return { currentIndex: i, nextIndex: i + 1 };
+    }
+  }
+
+  if (now < timestamps[0].start) {
+    return { currentIndex: 0, nextIndex: null };
+  }
+
+  return { currentIndex: matchdays.length - 1, nextIndex: null };
+};
+
 const initializeMatchdayLeaderboardTable = (
   isCurrentMonth,
   players,
@@ -789,14 +819,15 @@ const initializeMatchdayLeaderboardTable = (
 ) => {
   leaderboardPositions = new LeaderboardPositions(players);
 
-  for (const iMatchdays in matchdays) {
-    if (
-      (isCurrentMonth && matchdays[iMatchdays]["isCurrentMatchday"]) ||
-      (!isCurrentMonth && Number.parseInt(iMatchdays) === matchdays.length - 1)
-    ) {
-      createSpecificMatchdayTable(Number.parseInt(iMatchdays));
-    }
+  const { currentIndex, nextIndex } = getMatchdayIndexStatus(matchdays);
 
+  if (isCurrentMonth && currentIndex !== null) {
+    createSpecificMatchdayTable(currentIndex);
+  } else if (!isCurrentMonth) {
+    createSpecificMatchdayTable(matchdays.length - 1);
+  }
+
+  for (const iMatchdays in matchdays) {
     completeLeaderboardPositions(iMatchdays, leaderboardPositions);
   }
 

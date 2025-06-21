@@ -1,8 +1,6 @@
 [
   {
     "matchdayName": "Superliga Jornada 5",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Estudiantes",
@@ -107,8 +105,6 @@
   },
   {
     "matchdayName": "Supercopa Argentina",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Boca",
@@ -147,8 +143,6 @@
   },
   {
     "matchdayName": "Superliga Jornada 6",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Unión",
@@ -286,8 +280,6 @@
   },
   {
     "matchdayName": "Copa Argentina 32avos",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "River",
@@ -326,8 +318,6 @@
   },
   {
     "matchdayName": "Superliga Jornada 7",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "River",
@@ -465,8 +455,6 @@
   },
   {
     "matchdayName": "Superliga Jornada 8",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Gimnasia",
@@ -604,8 +592,6 @@
   },
   {
     "matchdayName": "Copa Argentina 32avos",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Boca",
@@ -644,8 +630,6 @@
   },
   {
     "matchdayName": "Superliga Jornada 9",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Defensa y Justicia",

@@ -1,8 +1,6 @@
 [
   {
     "matchdayName": "Sud y Lib P1 Grupos",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "The Strongest",
@@ -107,8 +105,6 @@
   },
   {
     "matchdayName": "Superliga Jornada 10",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Velez",
@@ -246,8 +242,6 @@
   },
   {
     "matchdayName": "Superliga Jornada 11",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Instituto",
@@ -385,8 +379,6 @@
   },
   {
     "matchdayName": "Superliga Jornada 12",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Boca",
@@ -491,8 +483,6 @@
   },
   {
     "matchdayName": "Sud y Lib P2 Grupos",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Boca",
@@ -597,8 +587,6 @@
   },
   {
     "matchdayName": "Superliga Jornada 13",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Colón",
@@ -736,8 +724,6 @@
   },
   {
     "matchdayName": "Superliga Jornada 14",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Platense",

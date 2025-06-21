@@ -1,8 +1,6 @@
 [
   {
     "matchdayName": "Eliminatorias Mundial 2026",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Chile",
@@ -134,8 +132,6 @@
   },
   {
     "matchdayName": "Mundial Clubes J1",
-    "isCurrentMatchday": false,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Boca",
@@ -267,8 +263,6 @@
   },
   {
     "matchdayName": "Mundial Clubes J2",
-    "isCurrentMatchday": true,
-    "isNextMatchday": false,
     "matchdayMatchs": [
       {
         "team1": "Bayern Munich",
@@ -393,6 +387,137 @@
             "cleanName": "joaco",
             "scoreTeam1": "1",
             "scoreTeam2": "1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "matchdayName": "Mundial Clubes J3",
+    "matchdayMatchs": [
+      {
+        "team1": "Auckland City",
+        "team2": "Boca",
+        "scoreTeam1": "",
+        "scoreTeam2": "",
+        "matchDate": "2025-06-24T16:00:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": "",
+            "scoreTeam2": ""
+          },
+          {
+            "name": "Toto",
+            "cleanName": "toto",
+            "scoreTeam1": "",
+            "scoreTeam2": ""
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": "",
+            "scoreTeam2": ""
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolás",
+            "scoreTeam1": "",
+            "scoreTeam2": ""
+          },
+          {
+            "name": "Alejo",
+            "cleanName": "alejo",
+            "scoreTeam1": "",
+            "scoreTeam2": ""
+          },
+          {
+            "name": "Vilchez",
+            "cleanName": "vilchez",
+            "scoreTeam1": "",
+            "scoreTeam2": ""
+          },
+          {
+            "name": "Seba",
+            "cleanName": "seba",
+            "scoreTeam1": "",
+            "scoreTeam2": ""
+          },
+          {
+            "name": "Mati",
+            "cleanName": "mati",
+            "scoreTeam1": "",
+            "scoreTeam2": ""
+          },
+          {
+            "name": "Joaco",
+            "cleanName": "joaco",
+            "scoreTeam1": "",
+            "scoreTeam2": ""
+          }
+        ]
+      },
+      {
+        "team1": "Inter Milan",
+        "team2": "River",
+        "scoreTeam1": "",
+        "scoreTeam2": "",
+        "matchDate": "2025-06-25T22:00:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": "",
+            "scoreTeam2": ""
+          },
+          {
+            "name": "Toto",
+            "cleanName": "toto",
+            "scoreTeam1": "",
+            "scoreTeam2": ""
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": "",
+            "scoreTeam2": ""
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolás",
+            "scoreTeam1": "",
+            "scoreTeam2": ""
+          },
+          {
+            "name": "Alejo",
+            "cleanName": "alejo",
+            "scoreTeam1": "",
+            "scoreTeam2": ""
+          },
+          {
+            "name": "Vilchez",
+            "cleanName": "vilchez",
+            "scoreTeam1": "",
+            "scoreTeam2": ""
+          },
+          {
+            "name": "Seba",
+            "cleanName": "seba",
+            "scoreTeam1": "",
+            "scoreTeam2": ""
+          },
+          {
+            "name": "Mati",
+            "cleanName": "mati",
+            "scoreTeam1": "",
+            "scoreTeam2": ""
+          },
+          {
+            "name": "Joaco",
+            "cleanName": "joaco",
+            "scoreTeam1": "",
+            "scoreTeam2": ""
           }
         ]
       }

@@ -42,13 +42,11 @@
   padding: 8px 5px;
 }
 
-.leaderboard__table-header th,
-.leaderboard__table-header td {
+.leaderboard__table th {
   border: 1px solid #222;
 }
 
-.leaderboard__table-body th,
-.leaderboard__table-body td {
+.leaderboard__table td {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
