@@ -1,0 +1,401 @@
+[
+  {
+    "matchdayName": "Eliminatorias Mundial 2026",
+    "isCurrentMatchday": false,
+    "isNextMatchday": false,
+    "matchdayMatchs": [
+      {
+        "team1": "Chile",
+        "team2": "Argentina",
+        "scoreTeam1": "0",
+        "scoreTeam2": "1",
+        "matchDate": "2025-06-05T22:00:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": "0",
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Toto",
+            "cleanName": "toto",
+            "scoreTeam1": "0",
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": "0",
+            "scoreTeam2": "2"
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolas",
+            "scoreTeam1": "1",
+            "scoreTeam2": "2"
+          },
+          {
+            "name": "Alejo",
+            "cleanName": "alejo",
+            "scoreTeam1": "0",
+            "scoreTeam2": "3"
+          },
+          {
+            "name": "Vilchez",
+            "cleanName": "vilchez",
+            "scoreTeam1": "0",
+            "scoreTeam2": "3"
+          },
+          {
+            "name": "Seba",
+            "cleanName": "seba",
+            "scoreTeam1": "1",
+            "scoreTeam2": "2"
+          },
+          {
+            "name": "Mati",
+            "cleanName": "mati",
+            "scoreTeam1": "0",
+            "scoreTeam2": "2"
+          },
+          {
+            "name": "Joaco",
+            "cleanName": "joaco",
+            "scoreTeam1": "0",
+            "scoreTeam2": "2"
+          }
+        ]
+      },
+      {
+        "team1": "Argentina",
+        "team2": "Colombia",
+        "scoreTeam1": "1",
+        "scoreTeam2": "1",
+        "matchDate": "2025-06-10T21:00:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": "2",
+            "scoreTeam2": "19"
+          },
+          {
+            "name": "Toto",
+            "cleanName": "toto",
+            "scoreTeam1": "2",
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": "2",
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolas",
+            "scoreTeam1": "2",
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Alejo",
+            "cleanName": "alejo",
+            "scoreTeam1": "3",
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Vilchez",
+            "cleanName": "vilchez",
+            "scoreTeam1": "2",
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Seba",
+            "cleanName": "seba",
+            "scoreTeam1": "2",
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Mati",
+            "cleanName": "mati",
+            "scoreTeam1": "2",
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Joaco",
+            "cleanName": "joaco",
+            "scoreTeam1": "1",
+            "scoreTeam2": "1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "matchdayName": "Mundial Clubes J1",
+    "isCurrentMatchday": false,
+    "isNextMatchday": false,
+    "matchdayMatchs": [
+      {
+        "team1": "Boca",
+        "team2": "Benfica",
+        "scoreTeam1": "2",
+        "scoreTeam2": "2",
+        "matchDate": "2025-06-16T19:00:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": "0",
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Toto",
+            "cleanName": "toto",
+            "scoreTeam1": "0",
+            "scoreTeam2": "2"
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": "0",
+            "scoreTeam2": "2"
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolás",
+            "scoreTeam1": "0",
+            "scoreTeam2": "2"
+          },
+          {
+            "name": "Alejo",
+            "cleanName": "alejo",
+            "scoreTeam1": "0",
+            "scoreTeam2": "2"
+          },
+          {
+            "name": "Vilchez",
+            "cleanName": "vilchez",
+            "scoreTeam1": "0",
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Seba",
+            "cleanName": "seba",
+            "scoreTeam1": "0",
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Mati",
+            "cleanName": "mati",
+            "scoreTeam1": "0",
+            "scoreTeam2": "2"
+          },
+          {
+            "name": "Joaco",
+            "cleanName": "joaco",
+            "scoreTeam1": "0",
+            "scoreTeam2": "3"
+          }
+        ]
+      },
+      {
+        "team1": "River",
+        "team2": "Urawa Reds",
+        "scoreTeam1": "3",
+        "scoreTeam2": "1",
+        "matchDate": "2025-06-17T16:00:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": "2",
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Toto",
+            "cleanName": "toto",
+            "scoreTeam1": "3",
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": "2",
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolás",
+            "scoreTeam1": "2",
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Alejo",
+            "cleanName": "alejo",
+            "scoreTeam1": "2",
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Vilchez",
+            "cleanName": "vilchez",
+            "scoreTeam1": "1",
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Seba",
+            "cleanName": "seba",
+            "scoreTeam1": "3",
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Mati",
+            "cleanName": "mati",
+            "scoreTeam1": "1",
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Joaco",
+            "cleanName": "joaco",
+            "scoreTeam1": "1",
+            "scoreTeam2": "1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "matchdayName": "Mundial Clubes J2",
+    "isCurrentMatchday": true,
+    "isNextMatchday": false,
+    "matchdayMatchs": [
+      {
+        "team1": "Bayern Munich",
+        "team2": "Boca",
+        "scoreTeam1": "2",
+        "scoreTeam2": "1",
+        "matchDate": "2025-06-20T22:00:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": "1",
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Toto",
+            "cleanName": "toto",
+            "scoreTeam1": "1",
+            "scoreTeam2": "2"
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": "3",
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolás",
+            "scoreTeam1": "2",
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Alejo",
+            "cleanName": "alejo",
+            "scoreTeam1": "2",
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Vilchez",
+            "cleanName": "vilchez",
+            "scoreTeam1": "4",
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Seba",
+            "cleanName": "seba",
+            "scoreTeam1": "3",
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Mati",
+            "cleanName": "mati",
+            "scoreTeam1": "1",
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Joaco",
+            "cleanName": "joaco",
+            "scoreTeam1": "2",
+            "scoreTeam2": "0"
+          }
+        ]
+      },
+      {
+        "team1": "River",
+        "team2": "Monterrey",
+        "scoreTeam1": "",
+        "scoreTeam2": "",
+        "matchDate": "2025-06-21T22:00:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": "2",
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Toto",
+            "cleanName": "toto",
+            "scoreTeam1": "2",
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": "2",
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolás",
+            "scoreTeam1": "1",
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Alejo",
+            "cleanName": "alejo",
+            "scoreTeam1": "1",
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Vilchez",
+            "cleanName": "vilchez",
+            "scoreTeam1": "2",
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Seba",
+            "cleanName": "seba",
+            "scoreTeam1": "3",
+            "scoreTeam2": "2"
+          },
+          {
+            "name": "Mati",
+            "cleanName": "mati",
+            "scoreTeam1": "1",
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Joaco",
+            "cleanName": "joaco",
+            "scoreTeam1": "1",
+            "scoreTeam2": "1"
+          }
+        ]
+      }
+    ]
+  }
+]

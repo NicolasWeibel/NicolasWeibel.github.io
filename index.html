@@ -1,79 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Torneo Superliga</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/headerfooter.css">
-    <link rel="stylesheet" href="css/leaderboard-style-mainpage.css">
-    <link rel="icon" href="images/logo-liga-argentina.png">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <a href="/">
-                    <p>TORNEO SUPERLIGA</p>
-                </a>
-            </div>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/month-select.css" />
+    <link rel="stylesheet" href="css/matchday.css" />
+    <link rel="stylesheet" href="css/leaderboard.css" />
+    <link rel="stylesheet" href="css/action-buttons.css" />
+    <link rel="icon" href="images/logo-liga-argentina.png" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container container">
+        <div class="header__logo">
+          <a href="/">
+            <img
+              src="images/logo-liga-argentina.png"
+              alt="Torneo Superliga Logo"
+              class="header__logo-image"
+              width="40"
+              height="40"
+            />
+            <p class="header__logo-text">TORNEO SUPERLIGA</p>
+          </a>
         </div>
+        <div class="header__session">
+          <!-- Content dynamically added by JS -->
+        </div>
+      </div>
     </header>
-    <main>
-        <div class="month-select">
-	        <select class="button" id="month-select-id">
-                <option value="/" selected>Mes 6 (actual)</option>
-                <option value="month-5">Mes 5</option>
-                <option value="month-4">Mes 4</option>
-                <option value="month-3">Mes 3</option>
-                <option value="month-2">Mes 2</option>
-                <option value="month-1">Mes 1</option>
-            </select>
-            <div class="arrow"></div>
+    <main class="main">
+      <div class="month-select">
+        <select class="month-select__button button" id="month-select-id">
+          <option value="6">Mes 6 (actual)</option>
+          <option value="5">Mes 5</option>
+          <option value="4">Mes 4</option>
+          <option value="3">Mes 3</option>
+          <option value="2">Mes 2</option>
+          <option value="1">Mes 1</option>
+        </select>
+        <div class="month-select__arrow"></div>
+      </div>
+      <section id="matchday" class="matchday">
+        <div class="matchday__choose">
+          <div
+            id="previous-matchday"
+            class="matchday__arrow matchday__arrow--left matchday__arrow--no-display"
+          >
+            <div class="matchday__arrow-icon"></div>
+          </div>
+          <div id="current-matchday" class="matchday__current"></div>
+          <div
+            id="next-matchday"
+            class="matchday__arrow matchday__arrow--right matchday__arrow--no-display"
+          >
+            <div class="matchday__arrow-icon"></div>
+          </div>
         </div>
-        <section id="matchday">
-            <div class="choose-matchday">
-                <div id="previous-matchday" class="matchday-arrow no-display-arrow">
-                    <div class="left-arrow"></div>
-                </div>
-                <div id="current-matchday"></div>
-                <div id="next-matchday" class="matchday-arrow no-display-arrow">
-                    <div class="right-arrow"></div>
-                </div>
-            </div>
-            <ul class="matchday-table"></ul>
-            <div class="copy-edit-save-container">
-                <button id="matchday-and-leaderboard-copy-button" class="button">Copiar</button>
-            </div>
-            <div id="copy-edit-save-info" class="copy-edit-save-info"></div>
-        </section>
-        <section id="leaderboard">
-            <div class="leaderboard-container">
-                <div class="leaderboard-title">
-                    <h2>Tabla de Posiciones</h2>
-                </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Nombre</th>
-                            <th>Pts</th>
-                            <th>AT</th>
-                            <th>AP</th>
-                            <th>Er</th>
-                            <th>PJ</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-        </section>
+        <ul class="matchday__list"></ul>
+        <div class="action-buttons">
+          <button
+            id="matchday-and-leaderboard-copy-button"
+            class="action-buttons__button button"
+          >
+            Copiar
+          </button>
+        </div>
+        <div id="copy-edit-save-info" class="action-buttons__info"></div>
+      </section>
+      <section id="leaderboard" class="leaderboard">
+        <div class="leaderboard__container">
+          <div class="leaderboard__title">
+            <h2>Tabla de Posiciones</h2>
+          </div>
+          <table class="leaderboard__table">
+            <thead class="leaderboard__table-header">
+              <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Pts</th>
+                <th>AT</th>
+                <th>AP</th>
+                <th>Er</th>
+                <th>PJ</th>
+              </tr>
+            </thead>
+            <tbody class="leaderboard__table-body"></tbody>
+          </table>
+        </div>
+      </section>
     </main>
-    <footer>
-        <p>Derechos reservados © 2023</p>
+    <footer class="footer">
+      <div class="footer__content">
+        <p class="footer__text">
+          © <span id="year"></span> Nicolás Weibel. All rights reserved.
+        </p>
+        <p class="footer__text">
+          Built with 💻 by
+          <a
+            href="https://github.com/NicolasWeibel"
+            target="_blank"
+            rel="noopener"
+            class="footer__link"
+          >
+            @NicolasWeibel
+          </a>
+        </p>
+      </div>
     </footer>
+
     <script src="js/main.js"></script>
-    <script src="js/month6.js"></script>
-</body>
+    <script src="js/month-loader.js"></script>
+  </body>
 </html>

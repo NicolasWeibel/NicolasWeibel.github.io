@@ -1,0 +1,32 @@
+/* ----FOOTER BLOCK---- */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--secondary-bg-color);
+  text-align: center;
+  min-height: 10vh;
+  padding: 20px 15px;
+}
+
+.footer__text {
+  color: var(--text-light-color);
+  margin: 0;
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+
+.footer__link {
+  color: var(--text-light-color);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.footer__link:hover {
+  color: #90ee90; /* light green or whatever suits your palette */
+}

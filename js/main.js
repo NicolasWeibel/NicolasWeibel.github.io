@@ -1,17 +1,3 @@
-/**
- * @file Main script for football prediction game management
- * @description Handles matchday display, leaderboard generation, and user interactions
- *
- * Main functionality groups:
- * 1. Core Classes (Player, LeaderboardPositions)
- * 2. Prediction Logic Functions
- * 3. DOM Creation Utilities
- * 4. Text Formatting Utilities
- * 5. Event Handlers & Initialization
- * 6. Clipboard Operations
- */
-"use strict";
-
 let showedMatchdayIndex;
 let matchdays;
 let leaderboardPositions;
@@ -42,9 +28,9 @@ class Player {
         this.partialHits += 1;
         this.playedMatches += 1;
         break;
-      case -1:
+      case -1: // Prediction not made
         break;
-      default:
+      default: // points === 0 (incorrect)
         this.incorrects += 1;
         this.playedMatches += 1;
         break;
@@ -60,10 +46,10 @@ class LeaderboardPositions {
   sortPositions() {
     this.leaderboardPlayers.sort((a, b) => {
       return (
-        b.points - a.points || // Ordenar por puntos (descendente)
-        b.exactHits - a.exactHits || // Luego por aciertos exactos (descendente)
-        a.incorrects - b.incorrects || // Luego por incorrectos (ascendente)
-        a.name.localeCompare(b.name) // Finalmente por nombre (ascendente)
+        b.points - a.points || // Sort by points (descending)
+        b.exactHits - a.exactHits || // Then by exact hits (descending)
+        a.incorrects - b.incorrects || // Then by incorrects (ascending)
+        a.name.localeCompare(b.name) // Finally by name (ascending)
       );
     });
   }
@@ -80,25 +66,25 @@ const predictionHit = (
   predictionScoreTeam2
 ) => {
   if (scoreTeam1 === "" || scoreTeam2 === "") {
-    return "";
+    return ""; // Match not played yet
   }
   if (predictionScoreTeam1 === "" || predictionScoreTeam2 === "") {
-    return -1;
+    return -1; // Prediction not made
   }
   if (
     scoreTeam1 == predictionScoreTeam1 &&
     scoreTeam2 == predictionScoreTeam2
   ) {
-    return 3;
+    return 3; // Exact hit
   }
   if (
     (scoreTeam1 > scoreTeam2 && predictionScoreTeam1 > predictionScoreTeam2) ||
     (scoreTeam1 < scoreTeam2 && predictionScoreTeam1 < predictionScoreTeam2) ||
     (scoreTeam1 == scoreTeam2 && predictionScoreTeam1 == predictionScoreTeam2)
   ) {
-    return 1;
+    return 1; // Partial hit (correct outcome)
   }
-  return 0;
+  return 0; // Incorrect
 };
 
 const predictionEmoji = (
@@ -130,12 +116,23 @@ const predictionEmoji = (
 // 3. DOM CREATION UTILS
 // ======================
 
-const createAndAppendDiv = (classesArray, fatherDiv = "", text = "") => {
-  const createdDiv = document.createElement("div");
-  createdDiv.classList.add(...classesArray);
-  createdDiv.textContent = text;
-  if (fatherDiv) fatherDiv.appendChild(createdDiv);
-  return createdDiv;
+const createAndAppendElement = (
+  tag,
+  classesArray,
+  fatherElement = null,
+  textContent = ""
+) => {
+  const element = document.createElement(tag);
+  if (classesArray && classesArray.length > 0) {
+    element.classList.add(...classesArray);
+  }
+  if (textContent) {
+    element.textContent = textContent;
+  }
+  if (fatherElement) {
+    fatherElement.appendChild(element);
+  }
+  return element;
 };
 
 const createMatchDateDiv = (dateString) => {
@@ -147,73 +144,99 @@ const createMatchDateDiv = (dateString) => {
   const hours = date.getHours().toString().padStart(2, "0");
   const minutes = date.getMinutes().toString().padStart(2, "0");
 
-  const dateDiv = createAndAppendDiv(["match-date"]);
+  const dateDiv = createAndAppendElement("div", ["match__date"]);
 
-  createAndAppendDiv(["match-day"], dateDiv, `${weekday} ${day}/${month}`);
-
-  createAndAppendDiv(["match-time"], dateDiv, `${hours}:${minutes}`);
+  createAndAppendElement(
+    "div",
+    ["match__date-day"],
+    dateDiv,
+    `${weekday} ${day}/${month}`
+  );
+  createAndAppendElement(
+    "div",
+    ["match__date-time"],
+    dateDiv,
+    `${hours}:${minutes}`
+  );
 
   return dateDiv;
 };
 
 const createMatchScoreDiv = (scoreTeam1, scoreTeam2) => {
-  const scoreDiv = createAndAppendDiv(["match-score"]);
-
-  createAndAppendDiv(["score-team1"], scoreDiv, scoreTeam1.toString());
-
-  createAndAppendDiv(["score-team2"], scoreDiv, scoreTeam2.toString());
-
+  const scoreDiv = createAndAppendElement("div", ["match__score"]);
+  createAndAppendElement(
+    "div",
+    ["match__score-team"],
+    scoreDiv,
+    scoreTeam1.toString()
+  );
+  createAndAppendElement(
+    "div",
+    ["match__score-team"],
+    scoreDiv,
+    scoreTeam2.toString()
+  );
   return scoreDiv;
 };
 
 const createMatchExpandPredictionsDiv = () => {
-  const expandPredictionsDiv = createAndAppendDiv([["expand-predictions"]]);
-
-  createAndAppendDiv(["prediction-arrow"], expandPredictionsDiv);
-
+  const expandPredictionsDiv = createAndAppendElement("div", [
+    "match__expand-predictions",
+  ]);
+  createAndAppendElement(
+    "div",
+    ["match__expand-predictions-arrow"],
+    expandPredictionsDiv
+  );
   return expandPredictionsDiv;
 };
 
 const createMatchDiv = (matchObject) => {
-  const matchDiv = createAndAppendDiv(["match"]);
+  const matchDiv = createAndAppendElement("div", ["match"]);
   addMatchEventListeners(matchDiv);
 
-  const matchDateDiv = createMatchDateDiv(matchObject["matchDate"]);
-  matchDiv.appendChild(matchDateDiv);
-
-  createAndAppendDiv(["match-team1"], matchDiv, matchObject["team1"]);
-
-  const matchScoreDiv = createMatchScoreDiv(
-    matchObject["scoreTeam1"],
-    matchObject["scoreTeam2"]
+  matchDiv.appendChild(createMatchDateDiv(matchObject["matchDate"]));
+  createAndAppendElement(
+    "div",
+    ["match__team"],
+    matchDiv,
+    matchObject["team1"]
   );
-  matchDiv.appendChild(matchScoreDiv);
-
-  createAndAppendDiv(["match-team2"], matchDiv, matchObject["team2"]);
-
-  const matchExpandPredictionsDiv = createMatchExpandPredictionsDiv();
-  matchDiv.appendChild(matchExpandPredictionsDiv);
+  matchDiv.appendChild(
+    createMatchScoreDiv(matchObject["scoreTeam1"], matchObject["scoreTeam2"])
+  );
+  createAndAppendElement(
+    "div",
+    ["match__team"],
+    matchDiv,
+    matchObject["team2"]
+  );
+  matchDiv.appendChild(createMatchExpandPredictionsDiv());
 
   return matchDiv;
 };
 
 const createPredictionScoreDiv = (scoreTeam1, scoreTeam2) => {
-  const predictionScoreDiv = createAndAppendDiv(["prediction-score"]);
-
-  createAndAppendDiv(
-    ["prediction-score-team1"],
+  const predictionScoreDiv = createAndAppendElement("div", [
+    "prediction__score",
+  ]);
+  createAndAppendElement(
+    "div",
+    ["prediction__score-team"],
     predictionScoreDiv,
     scoreTeam1
   );
-
-  createAndAppendDiv(["separator"], predictionScoreDiv);
-
-  createAndAppendDiv(
-    ["prediction-score-team2"],
+  createAndAppendElement(
+    "div",
+    ["prediction__score-separator"],
+    predictionScoreDiv
+  );
+  createAndAppendElement(
+    "div",
+    ["prediction__score-team"],
     predictionScoreDiv,
     scoreTeam2
   );
-
   return predictionScoreDiv;
 };
 
@@ -224,69 +247,71 @@ const createPredictionResultDiv = (scorePredictionsArray, scoreTeamsArray) => {
     scorePredictionsArray[0],
     scorePredictionsArray[1]
   );
-  let classes = ["prediction-result"];
+  const classes = ["prediction__result"];
   let text = "";
 
   if (predictionResult === 3) {
-    classes.push("exact-hit");
+    classes.push("prediction__result--exact-hit");
     text = "+3";
   } else if (predictionResult === 1) {
-    classes.push("partial-hit");
+    classes.push("prediction__result--partial-hit");
     text = "+1";
   } else if (predictionResult === 0 || predictionResult === -1) {
-    classes.push("incorrect");
+    classes.push("prediction__result--incorrect");
     text = "0";
   }
 
-  return createAndAppendDiv(classes, undefined, text);
+  return createAndAppendElement("div", classes, undefined, text);
 };
 
 const createSinglePredictionDiv = (singlePredictionObject, teamsArray) => {
-  const singlePredictionDiv = createAndAppendDiv([
-    "single-prediction",
-    `prediction-${singlePredictionObject["cleanName"]}`,
+  const singlePredictionDiv = createAndAppendElement("div", [
+    "prediction",
+    `prediction--${singlePredictionObject["cleanName"]}`,
   ]);
 
-  createAndAppendDiv(
-    ["prediction-name"],
+  createAndAppendElement(
+    "div",
+    ["prediction__name"],
     singlePredictionDiv,
     singlePredictionObject["name"]
   );
-
-  createAndAppendDiv(
-    ["prediction-team1"],
+  createAndAppendElement(
+    "div",
+    ["prediction__team"],
     singlePredictionDiv,
     teamsArray[0][0]
   );
-
-  const predictionScoreDiv = createPredictionScoreDiv(
-    singlePredictionObject["scoreTeam1"],
-    singlePredictionObject["scoreTeam2"]
+  singlePredictionDiv.appendChild(
+    createPredictionScoreDiv(
+      singlePredictionObject["scoreTeam1"],
+      singlePredictionObject["scoreTeam2"]
+    )
   );
-  singlePredictionDiv.appendChild(predictionScoreDiv);
-
-  createAndAppendDiv(
-    ["prediction-team2"],
+  createAndAppendElement(
+    "div",
+    ["prediction__team"],
     singlePredictionDiv,
     teamsArray[1][0]
   );
-
-  const predictionResultDiv = createPredictionResultDiv(
-    [
-      singlePredictionObject["scoreTeam1"],
-      singlePredictionObject["scoreTeam2"],
-    ],
-    [teamsArray[0][1], teamsArray[1][1]]
+  singlePredictionDiv.appendChild(
+    createPredictionResultDiv(
+      [
+        singlePredictionObject["scoreTeam1"],
+        singlePredictionObject["scoreTeam2"],
+      ],
+      [teamsArray[0][1], teamsArray[1][1]]
+    )
   );
-  singlePredictionDiv.appendChild(predictionResultDiv);
 
   return singlePredictionDiv;
 };
 
 const createPredictionsDiv = (predictionsArray, teamsArray) => {
-  const predictionContainerDiv = createAndAppendDiv(["prediction-container"]);
-
-  const predictionsDiv = createAndAppendDiv(["predictions"]);
+  const predictionContainerDiv = createAndAppendElement("div", [
+    "prediction-container",
+  ]);
+  const predictionsDiv = createAndAppendElement("div", ["predictions"]);
 
   for (
     let iPrediction = 0;
@@ -301,7 +326,6 @@ const createPredictionsDiv = (predictionsArray, teamsArray) => {
   }
 
   predictionContainerDiv.appendChild(predictionsDiv);
-
   return predictionContainerDiv;
 };
 
@@ -311,8 +335,8 @@ const createMatchdayTable = (matchdayObject) => {
     matchdayObject["isCurrentMatchday"],
     matchdayObject["isNextMatchday"]
   );
-  const matchdayTableUl = document.querySelector(".matchday-table");
-  matchdayTableUl.textContent = "";
+  const matchdayTableUl = document.querySelector(".matchday__list");
+  matchdayTableUl.textContent = ""; // Clear existing content
 
   for (
     let iMatchs = 0;
@@ -320,137 +344,22 @@ const createMatchdayTable = (matchdayObject) => {
     iMatchs++
   ) {
     const matchObject = matchdayObject["matchdayMatchs"][iMatchs];
-    const matchFragment = document.createDocumentFragment();
     const matchLi = document.createElement("li");
 
-    const matchDiv = createMatchDiv(matchObject);
-    matchLi.appendChild(matchDiv);
+    matchLi.appendChild(createMatchDiv(matchObject));
+    matchLi.appendChild(
+      createPredictionsDiv(matchObject["predictions"], [
+        [matchObject["team1"], matchObject["scoreTeam1"]],
+        [matchObject["team2"], matchObject["scoreTeam2"]],
+      ])
+    );
 
-    const predictionsDiv = createPredictionsDiv(matchObject["predictions"], [
-      [matchObject["team1"], matchObject["scoreTeam1"]],
-      [matchObject["team2"], matchObject["scoreTeam2"]],
-    ]);
-    matchLi.appendChild(predictionsDiv);
-
-    matchFragment.appendChild(matchLi);
-
-    matchdayTableUl.appendChild(matchFragment);
+    matchdayTableUl.appendChild(matchLi);
   }
 };
 
-/**
- * @function completeLeaderboard
- * @description Renders the leaderboard table in the DOM using the provided player data.
- *
- * - Dynamically creates and appends table rows for each player.
- * - Displays position, name, and stats (points, exact hits, partial hits, incorrects, played matches).
- * - Supports shared rankings when players tie in points, exact hits, and incorrects.
- * - Adds position-based classes (first to seventh) to position cells based on available references.
- *
- * @param {Array<Object>} orderedLeaderboardPlayers - Array of player objects sorted by ranking criteria.
- * @param {Array} referencesList - Optional array of references to determine the maximum position for applying position-based classes.
- */
-const completeLeaderboard = (orderedLeaderboardPlayers, referencesList) => {
-  // Determine the maximum position for applying position-based classes
-  const maxPositionWithClass = referencesList ? referencesList.length : 0;
-
-  /**
-   * @function createAndAppendTd
-   * @description Creates a table cell (td) element, sets its content, and appends it to the provided table row.
-   *              Optionally applies a position-based class to the cell if within the valid range.
-   * @param {HTMLElement} trElement - The table row element to append the cell to.
-   * @param {string|number} content - The content to display in the cell.
-   * @param {number|null} position - The position value for applying position-based classes (optional).
-   */
-  const createAndAppendTd = (trElement, content, position = null) => {
-    const tdElement = document.createElement("td");
-    tdElement.textContent = content;
-
-    // Apply position-based class if the position is within the valid range
-    if (position !== null && position <= maxPositionWithClass) {
-      const positionClass =
-        position === 1
-          ? "first"
-          : position === 2
-          ? "second"
-          : position === 3
-          ? "third"
-          : position === 4
-          ? "fourth"
-          : position === 5
-          ? "fifth"
-          : position === 6
-          ? "sixth"
-          : "seventh";
-      tdElement.classList.add(positionClass);
-    }
-
-    trElement.appendChild(tdElement);
-  };
-
-  // Select the table body element and clear its existing content
-  const tableBodyElement = document.querySelector(
-    ".leaderboard-container tbody"
-  );
-  tableBodyElement.innerHTML = ""; // Clear table before rendering
-
-  let positionCounter = 1; // Initialize position counter
-  let previous = null; // Store previous player object for tie comparison
-
-  // Iterate through the sorted player data to build the leaderboard
-  for (let i = 0; i < orderedLeaderboardPlayers.length; i++) {
-    const playerObject = orderedLeaderboardPlayers[i];
-
-    // Determine position: increment only if the current player does not tie with the previous
-    if (
-      !(
-        previous &&
-        playerObject.points === previous.points &&
-        playerObject.exactHits === previous.exactHits &&
-        playerObject.incorrects === previous.incorrects
-      )
-    ) {
-      positionCounter = i + 1;
-    }
-
-    // Create a new table row for the player
-    const trElement = document.createElement("tr");
-
-    // Append cells for position, name, and stats
-    createAndAppendTd(trElement, positionCounter, positionCounter); // Position cell with position-based class
-    createAndAppendTd(trElement, playerObject.name); // Name cell
-    createAndAppendTd(trElement, playerObject.points); // Points cell
-    createAndAppendTd(trElement, playerObject.exactHits); // Exact hits cell
-    createAndAppendTd(trElement, playerObject.partialHits); // Partial hits cell
-    createAndAppendTd(trElement, playerObject.incorrects); // Incorrects cell
-    createAndAppendTd(trElement, playerObject.playedMatches); // Played matches cell
-
-    // Append the row to the table body
-    tableBodyElement.appendChild(trElement);
-    previous = playerObject; // Update previous player for the next iteration
-  }
-};
-
-/**
- * @function addReferencesToLeaderboard
- * @description Dynamically adds a list of reference notes (e.g., prize distribution) to the leaderboard section in the DOM.
- *
- * - Creates a <div> with class "references" inside the leaderboard container.
- * - Appends each reference as a <p> element with class "reference".
- * - Optionally assigns ranking-based classes ("first", "second", "third", etc.) to the first items for custom styling.
- * - If the leaderboard container is not found, the function exits silently.
- *
- * @param {Array<string>} referencesArray - An array of reference text strings to be displayed under the leaderboard (e.g., ["- 1° wins $12,000", "- 2° wins $8,000"]).
- */
-const addReferencesToLeaderboard = (referencesArray) => {
-  const leaderboardContainer = document.querySelector(".leaderboard-container");
-
-  if (!leaderboardContainer) return;
-
-  const referencesDiv = document.createElement("div");
-  referencesDiv.classList.add("references");
-
-  const classNames = [
+const getPositionClassNameByIndex = (index) => {
+  const names = [
     "first",
     "second",
     "third",
@@ -459,18 +368,159 @@ const addReferencesToLeaderboard = (referencesArray) => {
     "sixth",
     "seventh",
   ];
+  return names[index] || "default";
+};
 
-  referencesArray.forEach((referenceText, index) => {
-    const pElement = document.createElement("p");
-    pElement.classList.add("reference");
-    if (classNames[index]) {
-      pElement.classList.add(classNames[index]);
+/**
+ * @function completeLeaderboard
+ * @description Renders the leaderboard table in the DOM using the provided player data.
+ *
+ * - Dynamically creates and appends table rows for each player.
+ * - Displays position, name, and stats: total points, exact hits, partial hits, incorrects, and played matches.
+ * - Handles shared rankings: if multiple players have identical stats, they share the same displayed position.
+ * - For each row:
+ *      - Applies a position-based class to the position cell:
+ *          - If the reference for that position includes a custom color, a dynamic class (e.g., --custom-2) is applied.
+ *          - Otherwise, a default class is applied based on position order (e.g., --first, --second, --third...).
+ * - The applied classes allow styling consistency between the leaderboard table and the reference display.
+ *
+ * @param {Array<Object>} orderedLeaderboardPlayers - Array of player objects sorted by ranking criteria.
+ *      Each player object includes: name, points, exactHits, partialHits, incorrects, playedMatches.
+ * @param {Array<Object>} referencesList - Optional array of reference objects:
+ *      {
+ *          text: string,              // Displayed text
+ *          positions: number[],       // Array of affected positions
+ *          color?: string,            // Optional custom background color
+ *          textColorLight?: boolean   // Optional flag for light text on dark background
+ *      }
+ */
+const completeLeaderboard = (
+  orderedLeaderboardPlayers,
+  referencesList = []
+) => {
+  const tableBody = document.querySelector(".leaderboard__table-body");
+  tableBody.innerHTML = "";
+
+  let positionCounter = 1;
+  let previous = null;
+
+  for (let i = 0; i < orderedLeaderboardPlayers.length; i++) {
+    const player = orderedLeaderboardPlayers[i];
+    if (
+      !(
+        previous &&
+        player.points === previous.points &&
+        player.exactHits === previous.exactHits &&
+        player.incorrects === previous.incorrects
+      )
+    ) {
+      positionCounter = i + 1;
     }
-    pElement.textContent = referenceText;
-    referencesDiv.appendChild(pElement);
+
+    const tr = document.createElement("tr");
+
+    const matchingRefIndex = referencesList.findIndex((ref) =>
+      ref.positions.includes(positionCounter)
+    );
+    const matchingRef =
+      matchingRefIndex !== -1 ? referencesList[matchingRefIndex] : null;
+
+    let className = null;
+    if (matchingRef) {
+      if (matchingRef.color) {
+        className = `leaderboard__position--custom-${positionCounter}`;
+      } else {
+        const classBase = getPositionClassNameByIndex(matchingRefIndex);
+        className = `leaderboard__position--${classBase}`;
+      }
+    }
+
+    const appendCell = (content, extraClass = null) => {
+      const td = document.createElement("td");
+      td.textContent = content;
+      if (extraClass) td.classList.add(extraClass);
+      tr.appendChild(td);
+    };
+
+    appendCell(positionCounter, className);
+    appendCell(player.name);
+    appendCell(player.points);
+    appendCell(player.exactHits);
+    appendCell(player.partialHits);
+    appendCell(player.incorrects);
+    appendCell(player.playedMatches);
+
+    tableBody.appendChild(tr);
+    previous = player;
+  }
+};
+
+/**
+ * @function addReferencesToLeaderboard
+ * @description Dynamically renders the leaderboard references section based on the provided data.
+ *
+ * - Creates a <div> with class "leaderboard__references" and appends it to the leaderboard container.
+ * - For each reference object:
+ *      - Appends a <p> element with class "leaderboard__reference".
+ *      - If a custom color is defined:
+ *          - Applies it as background-color.
+ *          - Dynamically generates custom BEM-based CSS classes for each referenced position (e.g., .leaderboard__position--custom-2).
+ *          - Applies custom text color based on `textColorLight`.
+ *      - If no custom color is defined:
+ *          - Assigns a default BEM-based class (e.g., --first, --second, ...) based on the reference index.
+ *          - Uses the default background and text color from the stylesheet.
+ * - Supports shared references across multiple ranking positions.
+ * - If the leaderboard container is not found in the DOM, the function exits silently.
+ *
+ * @param {Array<Object>} referencesArray - An array of reference objects, each with the structure:
+ *      {
+ *          text: string,             // Text to display in the reference
+ *          positions: number[],      // Ranking positions this reference applies to
+ *          color?: string,           // Optional custom background color (hex, rgb, etc.)
+ *          textColorLight?: boolean  // Optional text color mode: true = light text, false (default) = dark text
+ *      }
+ */
+const addReferencesToLeaderboard = (referencesArray = []) => {
+  const container = document.querySelector(".leaderboard__container");
+  if (!container) return;
+
+  const div = createAndAppendElement("div", ["leaderboard__references"]);
+
+  referencesArray.forEach((ref, i) => {
+    const isCustomColor = !!ref.color;
+    const useLightText = ref.textColorLight === true;
+    const textColor = useLightText ? "rgba(235, 235, 235, 0.9)" : "#222";
+
+    const classBase = isCustomColor
+      ? `leaderboard__reference--custom-${i + 1}`
+      : `leaderboard__reference--${getPositionClassNameByIndex(i)}`;
+
+    const p = createAndAppendElement(
+      "p",
+      ["leaderboard__reference", classBase],
+      div,
+      ref.text
+    );
+
+    // Aplica color personalizado a referencia
+    if (isCustomColor) {
+      p.style.backgroundColor = ref.color;
+      p.style.color = textColor;
+
+      ref.positions.forEach((pos) => {
+        const style = document.createElement("style");
+        style.textContent = `
+                    .leaderboard__position--custom-${pos} {
+                        background-color: ${ref.color};
+                        color: ${textColor};
+                    }
+                `;
+        document.head.appendChild(style);
+      });
+    }
   });
 
-  leaderboardContainer.appendChild(referencesDiv);
+  container.appendChild(div);
 };
 
 // ======================
@@ -521,11 +571,11 @@ const matchdayTextToCopy = () => {
   let wasDateCopiedFirstMatch = false;
 
   for (const match of matchdays[showedMatchdayIndex]["matchdayMatchs"]) {
-    let team1 = match["team1"];
-    let team2 = match["team2"];
-    let scoreTeam1 = match["scoreTeam1"];
-    let scoreTeam2 = match["scoreTeam2"];
-    let matchdayDate = dateFormatToCopyFormat(match["matchDate"], true);
+    const team1 = match["team1"];
+    const team2 = match["team2"];
+    const scoreTeam1 = match["scoreTeam1"];
+    const scoreTeam2 = match["scoreTeam2"];
+    const matchdayDate = dateFormatToCopyFormat(match["matchDate"], true);
 
     if (scoreTeam1 === "" && scoreTeam2 === "" && !wasDateCopied) {
       copyDateFormat = dateFormatToCopyFormat(match["matchDate"], false);
@@ -546,9 +596,9 @@ const matchdayTextToCopy = () => {
     }
 
     for (const prediction of match["predictions"]) {
-      let predictionScoreTeam1 = prediction["scoreTeam1"];
-      let predictionScoreTeam2 = prediction["scoreTeam2"];
-      let emojiCode = predictionEmoji(
+      const predictionScoreTeam1 = prediction["scoreTeam1"];
+      const predictionScoreTeam2 = prediction["scoreTeam2"];
+      const emojiCode = predictionEmoji(
         scoreTeam1,
         scoreTeam2,
         predictionScoreTeam1,
@@ -606,9 +656,9 @@ const leaderboardTextToCopy = () => {
   const positionDigits = players.length.toString().length;
 
   let copiedText = "*TABLA*\n```";
-  copiedText += `\n${"#".padEnd(positionDigits + 1)}〡 ${"Nombre".padEnd(
+  copiedText += `\n${"#".padEnd(positionDigits + 1)}〡${"Nombre".padEnd(
     longestNameLength
-  )} 〡Pts〡AT〡AP〡Er〡PJ`;
+  )}〡Pts〡AT〡AP〡Er〡PJ`;
 
   let displayPosition;
   let previous = null;
@@ -634,7 +684,7 @@ const leaderboardTextToCopy = () => {
     const e = player.incorrects.toString().padEnd(2);
     const pj = player.playedMatches.toString().padEnd(2);
 
-    copiedText += `\n${positionStr}〡 ${name} 〡${pts}〡${at}〡${ap}〡${e}〡${pj}`;
+    copiedText += `\n${positionStr}〡${name}〡${pts}〡${at}〡${ap}〡${e}〡${pj}`;
 
     previous = player;
   });
@@ -644,7 +694,7 @@ const leaderboardTextToCopy = () => {
 };
 
 const matchdayAndLeaderboardTextToCopy = () => {
-  let copiedText = matchdayTextToCopy() + "\n\n" + leaderboardTextToCopy();
+  const copiedText = matchdayTextToCopy() + "\n\n" + leaderboardTextToCopy();
   return copiedText;
 };
 
@@ -655,16 +705,19 @@ const matchdayAndLeaderboardTextToCopy = () => {
 const addMatchEventListeners = (matchDiv) => {
   matchDiv.addEventListener("click", () => {
     const predictionContainerDiv = matchDiv.nextElementSibling;
-    const predictionArrow = matchDiv.lastChild.firstChild;
-    const predictionContainerHeight = predictionContainerDiv.offsetHeight;
+    const predictionArrow = matchDiv.querySelector(
+      ".match__expand-predictions-arrow"
+    );
+    const predictionDiv = predictionContainerDiv.querySelector(".predictions");
 
-    if (predictionContainerHeight === 0) {
-      const predictionDiv = predictionContainerDiv.firstChild;
+    if (predictionContainerDiv.offsetHeight === 0) {
       predictionContainerDiv.style.height = predictionDiv.offsetHeight + "px";
-      predictionArrow.classList.add("rotate");
+      predictionArrow.classList.add("match__expand-predictions-arrow--rotate");
     } else {
       predictionContainerDiv.style.height = 0;
-      predictionArrow.classList.remove("rotate");
+      predictionArrow.classList.remove(
+        "match__expand-predictions-arrow--rotate"
+      );
     }
   });
 };
@@ -687,17 +740,17 @@ const setChooseMatchdayTitle = (
   const rightArrowDiv = document.getElementById("next-matchday");
   const leftArrowDiv = document.getElementById("previous-matchday");
   if (showedMatchdayIndex > 0 && showedMatchdayIndex < matchdays.length - 1) {
-    rightArrowDiv.classList.remove("no-display-arrow");
-    leftArrowDiv.classList.remove("no-display-arrow");
+    rightArrowDiv.classList.remove("matchday__arrow--no-display");
+    leftArrowDiv.classList.remove("matchday__arrow--no-display");
   } else if (matchdays.length === 1) {
-    leftArrowDiv.classList.add("no-display-arrow");
-    rightArrowDiv.classList.add("no-display-arrow");
+    leftArrowDiv.classList.add("matchday__arrow--no-display");
+    rightArrowDiv.classList.add("matchday__arrow--no-display");
   } else if (showedMatchdayIndex === matchdays.length - 1) {
-    leftArrowDiv.classList.remove("no-display-arrow");
-    rightArrowDiv.classList.add("no-display-arrow");
+    leftArrowDiv.classList.remove("matchday__arrow--no-display");
+    rightArrowDiv.classList.add("matchday__arrow--no-display");
   } else if (showedMatchdayIndex === 0) {
-    rightArrowDiv.classList.remove("no-display-arrow");
-    leftArrowDiv.classList.add("no-display-arrow");
+    rightArrowDiv.classList.remove("matchday__arrow--no-display");
+    leftArrowDiv.classList.add("matchday__arrow--no-display");
   }
 };
 
@@ -707,12 +760,12 @@ const createSpecificMatchdayTable = (matchdayIndex) => {
 };
 
 const completeLeaderboardPositions = (iMatchdays, leaderboardPositions) => {
-  for (let match of matchdays[iMatchdays]["matchdayMatchs"]) {
+  for (const match of matchdays[iMatchdays]["matchdayMatchs"]) {
     const scoreTeam1 = match["scoreTeam1"];
     const scoreTeam2 = match["scoreTeam2"];
 
     if (scoreTeam1 !== "" && scoreTeam2 !== "") {
-      for (let iPredictions in match["predictions"]) {
+      for (const iPredictions in match["predictions"]) {
         const predictionScoreTeam1 =
           match["predictions"][iPredictions]["scoreTeam1"];
         const predictionScoreTeam2 =
@@ -730,18 +783,18 @@ const completeLeaderboardPositions = (iMatchdays, leaderboardPositions) => {
 };
 
 const initializeMatchdayLeaderboardTable = (
-  isCurrentMatchday,
+  isCurrentMonth,
   players,
   referencesList
 ) => {
   leaderboardPositions = new LeaderboardPositions(players);
 
-  for (let iMatchdays in matchdays) {
+  for (const iMatchdays in matchdays) {
     if (
-      (isCurrentMatchday && matchdays[iMatchdays]["isCurrentMatchday"]) ||
-      (!isCurrentMatchday && parseInt(iMatchdays) === matchdays.length - 1)
+      (isCurrentMonth && matchdays[iMatchdays]["isCurrentMatchday"]) ||
+      (!isCurrentMonth && Number.parseInt(iMatchdays) === matchdays.length - 1)
     ) {
-      createSpecificMatchdayTable(parseInt(iMatchdays));
+      createSpecificMatchdayTable(Number.parseInt(iMatchdays));
     }
 
     completeLeaderboardPositions(iMatchdays, leaderboardPositions);
@@ -752,27 +805,6 @@ const initializeMatchdayLeaderboardTable = (
 
   if (referencesList) {
     addReferencesToLeaderboard(referencesList);
-  }
-};
-
-const checkLoginStatus = (usersObject) => {
-  if (document.cookie) {
-    const cookieValue = document.cookie.split("!");
-    const cookieUsername = cookieValue[0].split("=")[1];
-    const cookieToken = cookieValue[1];
-    if (
-      usersObject[cookieUsername] &&
-      cookieToken === usersObject[cookieUsername]["token"]
-    ) {
-      let elementHTML = `
-      <div class="login-succesfully">
-        <p>Hola ${encodeURIComponent(usersObject[cookieUsername]["name"])}</p>
-        <img src="../imagenes/usuario.png" alt="Sesion Iniciada">
-      </div>
-      `;
-      const sesionDiv = document.querySelector(".sesion");
-      sesionDiv.innerHTML = elementHTML;
-    }
   }
 };
 
@@ -788,10 +820,7 @@ const initializeMainPage = async (
   players,
   referencesList = null
 ) => {
-  const users = await fetchFiles("../text/users.txt");
   matchdays = await fetchFiles(matchdayTextUrl);
-
-  checkLoginStatus(users);
 
   initializeMatchdayLeaderboardTable(isCurrentMonth, players, referencesList);
 };
@@ -799,9 +828,6 @@ const initializeMainPage = async (
 // ======================
 // 6. CLIPBOARD OPERATIONS
 // ======================
-
-// Note: Clipboard event handlers are included in the DOMContentLoaded section
-// as they're directly tied to button elements
 
 // Main initialization
 document.addEventListener("DOMContentLoaded", () => {
@@ -815,10 +841,12 @@ document.addEventListener("DOMContentLoaded", () => {
     createSpecificMatchdayTable(showedMatchdayIndex + 1);
   });
 
-  const monthSelectorSelect = document.getElementById("month-select-id");
-  monthSelectorSelect.addEventListener("change", () => {
-    window.location.href = monthSelectorSelect.value;
-  });
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // const monthSelectorSelect = document.getElementById("month-select-id");
+  // monthSelectorSelect.addEventListener("change", () => {
+  //   window.location.href = monthSelectorSelect.value;
+  // });
 
   const matchdayAndLeaderboardCopyButton = document.getElementById(
     "matchday-and-leaderboard-copy-button"
@@ -838,21 +866,21 @@ document.addEventListener("DOMContentLoaded", () => {
         const copiedText = matchdayAndLeaderboardTextToCopy();
         await navigator.clipboard.writeText(copiedText);
         copyInfoDiv.textContent = "¡Texto copiado al portapapeles!";
-        copyInfoDiv.classList.add("green-info");
-        copyInfoDiv.classList.remove("red-info");
+        copyInfoDiv.classList.add("action-buttons__info--green");
+        copyInfoDiv.classList.remove("action-buttons__info--red");
       } else {
         copyInfoDiv.textContent =
           "No se otorgaron permisos para copiar al portapapeles.";
-        copyInfoDiv.classList.add("red-info");
-        copyInfoDiv.classList.remove("green-info");
+        copyInfoDiv.classList.add("action-buttons__info--red");
+        copyInfoDiv.classList.remove("action-buttons__info--green");
       }
     } catch (error) {
       copyInfoDiv.textContent = "Ocurrió un error al copiar al portapapeles.";
-      copyInfoDiv.classList.add("red-info");
-      copyInfoDiv.classList.remove("green-info");
+      copyInfoDiv.classList.add("action-buttons__info--red");
+      copyInfoDiv.classList.remove("action-buttons__info--green");
     }
 
-    setTimeout(function () {
+    setTimeout(() => {
       copyInfoDiv.textContent = "";
     }, 1000);
   });

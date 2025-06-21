@@ -1,0 +1,143 @@
+/* ----LEADERBOARD SECTION BLOCK---- */
+.leaderboard {
+  max-width: 550px;
+  margin: 40px auto;
+  padding: 0 15px;
+}
+
+.leaderboard__container {
+  width: 90%;
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* LEADERBOARD TITLE ELEMENT */
+.leaderboard__title {
+  background-color: var(--secondary-bg-color);
+  text-align: center;
+  color: var(--text-light-color);
+  font-size: clamp(0.75em, 3.8vw, 1em);
+  text-shadow: 1px 1px 1px #000;
+  padding: 10px;
+}
+
+.leaderboard__title h2 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+/* LEADERBOARD TABLE ELEMENT */
+.leaderboard__table {
+  background-color: #797979;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9em;
+  border-collapse: collapse;
+}
+
+.leaderboard__table th,
+.leaderboard__table td {
+  padding: 8px 5px;
+}
+
+.leaderboard__table-header th,
+.leaderboard__table-header td {
+  border: 1px solid #222;
+}
+
+.leaderboard__table-body th,
+.leaderboard__table-body td {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Leaderboard Head */
+.leaderboard__table-header {
+  background-color: black;
+  color: var(--text-light-color);
+  font-size: 0.85em;
+}
+
+/* Leaderboard Body Cells*/
+.leaderboard__table-body td {
+  height: 30px;
+}
+
+/* Leaderboard Rows */
+.leaderboard__table-body tr:nth-child(odd) {
+  background-color: #d5d5d5;
+}
+
+.leaderboard__table-body tr:nth-child(even) {
+  background-color: #e5e5e5;
+}
+
+/* Leaderboard Columns */
+.leaderboard__table-body td:nth-child(2) {
+  text-align: start;
+  padding-left: 8px;
+  font-weight: 700;
+}
+
+.leaderboard__table-body td:nth-child(3) {
+  font-weight: 700;
+}
+
+/* LEADERBOARD REFERENCES */
+.leaderboard__references {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 5px;
+  overflow: hidden;
+  background-color: var(--match-bg-color);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.leaderboard__reference {
+  font-size: 0.85em;
+  font-weight: 400;
+  padding: 2px 5px;
+  margin: 0;
+  border-radius: 5px;
+}
+
+/* Position-based colors for leaderboard */
+.leaderboard__reference--first,
+.leaderboard__table-body .leaderboard__position--first {
+  background-color: #008000; /* Verde */
+  color: var(--text-light-color);
+}
+
+.leaderboard__reference--second,
+.leaderboard__table-body .leaderboard__position--second {
+  background-color: #f5f374; /* Amarillo claro */
+}
+
+.leaderboard__reference--third,
+.leaderboard__table-body .leaderboard__position--third {
+  background-color: #e8d747; /* Amarillo intenso */
+}
+
+.leaderboard__reference--fourth,
+.leaderboard__table-body .leaderboard__position--fourth {
+  background-color: #feb854;
+}
+
+.leaderboard__reference--fifth,
+.leaderboard__table-body .leaderboard__position--fifth {
+  background-color: #ff9807;
+}
+
+.leaderboard__reference--sixth,
+.leaderboard__table-body .leaderboard__position--sixth {
+  background-color: #d68526;
+}
+
+.leaderboard__reference--seventh,
+.leaderboard__table-body .leaderboard__position--seventh {
+  background-color: #ab2cf5;
+  color: var(--text-light-color);
+}

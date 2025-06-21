@@ -1,0 +1,74 @@
+/* ----VARIABLES---- */
+:root {
+  --main-bg-color: #091109;
+  --secondary-bg-color: #162916;
+  --text-light-color: rgba(235, 235, 235, 0.9);
+  --text-dark-color: #222;
+  --match-bg-color: #d5d5d5;
+  --border-color: rgba(245, 245, 245, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --success-color: #008000d0;
+  --partial-color: #222d;
+  --error-color: #f00d;
+  --info-green: #0f0;
+  --info-red: #f00;
+}
+
+/* ----BASE STYLES---- */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--main-bg-color);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: var(--text-dark-color);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ----LAYOUT CONTAINERS---- */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.main {
+  min-height: 80vh;
+  padding: 20px 0;
+}
+
+/* ----BUTTONS---- */
+.button {
+  background-color: var(--secondary-bg-color);
+  color: var(--text-light-color);
+  cursor: pointer;
+  padding: 10px 15px;
+  text-shadow: 1px 1px 1px #000;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  font-size: 1em;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.button:hover {
+  background-color: #164716;
+}
+
+.button:focus {
+  box-shadow: 0px 0px 10px 2px var(--shadow-color);
+  outline: none;
+}

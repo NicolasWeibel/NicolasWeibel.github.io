@@ -1,0 +1,784 @@
+[
+  {
+    "matchdayName": "Superliga Jornada 5",
+    "isCurrentMatchday": false,
+    "isNextMatchday": false,
+    "matchdayMatchs": [
+      {
+        "team1": "Estudiantes",
+        "team2": "Sarmiento",
+        "scoreTeam1": "1",
+        "scoreTeam2": "1",
+        "matchDate": "2023-02-25T19:15:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": "1",
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Franco",
+            "cleanName": "franco",
+            "scoreTeam1": 2,
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": "1",
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolas",
+            "scoreTeam1": 2,
+            "scoreTeam2": "1"
+          }
+        ]
+      },
+      {
+        "team1": "Boca",
+        "team2": "Velez",
+        "scoreTeam1": 2,
+        "scoreTeam2": "1",
+        "matchDate": "2023-02-25T21:30:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": "1",
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Franco",
+            "cleanName": "franco",
+            "scoreTeam1": "0",
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": "1",
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolas",
+            "scoreTeam1": 2,
+            "scoreTeam2": "1"
+          }
+        ]
+      },
+      {
+        "team1": "River",
+        "team2": "Arsenal",
+        "scoreTeam1": "1",
+        "scoreTeam2": 2,
+        "matchDate": "2023-02-26T19:15:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": 2,
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Franco",
+            "cleanName": "franco",
+            "scoreTeam1": 2,
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": 2,
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolas",
+            "scoreTeam1": 3,
+            "scoreTeam2": "0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "matchdayName": "Supercopa Argentina",
+    "isCurrentMatchday": false,
+    "isNextMatchday": false,
+    "matchdayMatchs": [
+      {
+        "team1": "Boca",
+        "team2": "Patronato",
+        "scoreTeam1": 3,
+        "scoreTeam2": "0",
+        "matchDate": "2023-03-01T21:15:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": 3,
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Franco",
+            "cleanName": "franco",
+            "scoreTeam1": 2,
+            "scoreTeam2": "1"
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": 2,
+            "scoreTeam2": 1
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolas",
+            "scoreTeam1": 2,
+            "scoreTeam2": "0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "matchdayName": "Superliga Jornada 6",
+    "isCurrentMatchday": false,
+    "isNextMatchday": false,
+    "matchdayMatchs": [
+      {
+        "team1": "Unión",
+        "team2": "Estudiantes",
+        "scoreTeam1": 2,
+        "scoreTeam2": "0",
+        "matchDate": "2023-03-03T20:00:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": 1,
+            "scoreTeam2": 2
+          },
+          {
+            "name": "Franco",
+            "cleanName": "franco",
+            "scoreTeam1": 1,
+            "scoreTeam2": 2
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": 1,
+            "scoreTeam2": 3
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolas",
+            "scoreTeam1": "0",
+            "scoreTeam2": 1
+          }
+        ]
+      },
+      {
+        "team1": "Lanús",
+        "team2": "River",
+        "scoreTeam1": "0",
+        "scoreTeam2": 2,
+        "matchDate": "2023-03-04T19:15:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": 1,
+            "scoreTeam2": 2
+          },
+          {
+            "name": "Franco",
+            "cleanName": "franco",
+            "scoreTeam1": 2,
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": 1,
+            "scoreTeam2": 3
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolas",
+            "scoreTeam1": 1,
+            "scoreTeam2": 1
+          }
+        ]
+      },
+      {
+        "team1": "Talleres",
+        "team2": "Velez",
+        "scoreTeam1": 1,
+        "scoreTeam2": 2,
+        "matchDate": "2023-03-05T21:30:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": 2,
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Franco",
+            "cleanName": "franco",
+            "scoreTeam1": 1,
+            "scoreTeam2": 1
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": 2,
+            "scoreTeam2": 1
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolas",
+            "scoreTeam1": 1,
+            "scoreTeam2": "0"
+          }
+        ]
+      },
+      {
+        "team1": "Boca",
+        "team2": "Defensa y Justicia",
+        "scoreTeam1": "0",
+        "scoreTeam2": "0",
+        "matchDate": "2023-03-06T21:00:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": 1,
+            "scoreTeam2": 1
+          },
+          {
+            "name": "Franco",
+            "cleanName": "franco",
+            "scoreTeam1": 2,
+            "scoreTeam2": 1
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": 2,
+            "scoreTeam2": 1
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolas",
+            "scoreTeam1": 1,
+            "scoreTeam2": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "matchdayName": "Copa Argentina 32avos",
+    "isCurrentMatchday": false,
+    "isNextMatchday": false,
+    "matchdayMatchs": [
+      {
+        "team1": "River",
+        "team2": "Racing de Córdoba",
+        "scoreTeam1": 3,
+        "scoreTeam2": "0",
+        "matchDate": "2023-03-08T21:10:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": 3,
+            "scoreTeam2": 1
+          },
+          {
+            "name": "Franco",
+            "cleanName": "franco",
+            "scoreTeam1": 2,
+            "scoreTeam2": 1
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": 3,
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolas",
+            "scoreTeam1": 2,
+            "scoreTeam2": "0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "matchdayName": "Superliga Jornada 7",
+    "isCurrentMatchday": false,
+    "isNextMatchday": false,
+    "matchdayMatchs": [
+      {
+        "team1": "River",
+        "team2": "Godoy Cruz",
+        "scoreTeam1": 3,
+        "scoreTeam2": "0",
+        "matchDate": "2023-03-12T19:15:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": 2,
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Franco",
+            "cleanName": "franco",
+            "scoreTeam1": 2,
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": 3,
+            "scoreTeam2": 1
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolas",
+            "scoreTeam1": 2,
+            "scoreTeam2": "0"
+          }
+        ]
+      },
+      {
+        "team1": "Estudiantes",
+        "team2": "Huracán",
+        "scoreTeam1": 2,
+        "scoreTeam2": 1,
+        "matchDate": "2023-03-12T19:15:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": "0",
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Franco",
+            "cleanName": "franco",
+            "scoreTeam1": "0",
+            "scoreTeam2": 1
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": 1,
+            "scoreTeam2": 2
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolas",
+            "scoreTeam1": 1,
+            "scoreTeam2": "0"
+          }
+        ]
+      },
+      {
+        "team1": "Banfield",
+        "team2": "Boca",
+        "scoreTeam1": 1,
+        "scoreTeam2": "0",
+        "matchDate": "2023-03-12T21:30:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": "0",
+            "scoreTeam2": 2
+          },
+          {
+            "name": "Franco",
+            "cleanName": "franco",
+            "scoreTeam1": "0",
+            "scoreTeam2": 1
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": 1,
+            "scoreTeam2": 1
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolas",
+            "scoreTeam1": "0",
+            "scoreTeam2": 1
+          }
+        ]
+      },
+      {
+        "team1": "Velez",
+        "team2": "Platense",
+        "scoreTeam1": 1,
+        "scoreTeam2": 1,
+        "matchDate": "2023-03-13T21:00:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": 1,
+            "scoreTeam2": 1
+          },
+          {
+            "name": "Franco",
+            "cleanName": "franco",
+            "scoreTeam1": 2,
+            "scoreTeam2": 1
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": 2,
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolas",
+            "scoreTeam1": 2,
+            "scoreTeam2": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "matchdayName": "Superliga Jornada 8",
+    "isCurrentMatchday": false,
+    "isNextMatchday": false,
+    "matchdayMatchs": [
+      {
+        "team1": "Gimnasia",
+        "team2": "Estudiantes",
+        "scoreTeam1": 2,
+        "scoreTeam2": 1,
+        "matchDate": "2023-03-19T16:30:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": "0",
+            "scoreTeam2": 1
+          },
+          {
+            "name": "Franco",
+            "cleanName": "franco",
+            "scoreTeam1": 1,
+            "scoreTeam2": 2
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": 2,
+            "scoreTeam2": 2
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolas",
+            "scoreTeam1": 1,
+            "scoreTeam2": 2
+          }
+        ]
+      },
+      {
+        "team1": "Boca",
+        "team2": "Instituto",
+        "scoreTeam1": 2,
+        "scoreTeam2": 3,
+        "matchDate": "2023-03-19T19:00:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": 1,
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Franco",
+            "cleanName": "franco",
+            "scoreTeam1": 2,
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": 1,
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolas",
+            "scoreTeam1": 2,
+            "scoreTeam2": 1
+          }
+        ]
+      },
+      {
+        "team1": "Sarmiento",
+        "team2": "River",
+        "scoreTeam1": "0",
+        "scoreTeam2": 2,
+        "matchDate": "2023-03-19T21:30:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": "0",
+            "scoreTeam2": 3
+          },
+          {
+            "name": "Franco",
+            "cleanName": "franco",
+            "scoreTeam1": "0",
+            "scoreTeam2": 2
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": "0",
+            "scoreTeam2": 4
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolas",
+            "scoreTeam1": 1,
+            "scoreTeam2": 2
+          }
+        ]
+      },
+      {
+        "team1": "Velez",
+        "team2": "Central Córdoba",
+        "scoreTeam1": 4,
+        "scoreTeam2": "0",
+        "matchDate": "2023-03-21T21:00:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": 2,
+            "scoreTeam2": 1
+          },
+          {
+            "name": "Franco",
+            "cleanName": "franco",
+            "scoreTeam1": 1,
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": 2,
+            "scoreTeam2": 1
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolas",
+            "scoreTeam1": 1,
+            "scoreTeam2": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "matchdayName": "Copa Argentina 32avos",
+    "isCurrentMatchday": false,
+    "isNextMatchday": false,
+    "matchdayMatchs": [
+      {
+        "team1": "Boca",
+        "team2": "Olimpo",
+        "scoreTeam1": 2,
+        "scoreTeam2": 1,
+        "matchDate": "2023-03-25T19:00:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": 3,
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Franco",
+            "cleanName": "franco",
+            "scoreTeam1": 2,
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": "",
+            "scoreTeam2": ""
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolas",
+            "scoreTeam1": 3,
+            "scoreTeam2": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "matchdayName": "Superliga Jornada 9",
+    "isCurrentMatchday": false,
+    "isNextMatchday": false,
+    "matchdayMatchs": [
+      {
+        "team1": "Defensa y Justicia",
+        "team2": "Velez",
+        "scoreTeam1": "0",
+        "scoreTeam2": "0",
+        "matchDate": "2023-03-30T20:00:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": 1,
+            "scoreTeam2": 2
+          },
+          {
+            "name": "Franco",
+            "cleanName": "franco",
+            "scoreTeam1": "0",
+            "scoreTeam2": 2
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": 2,
+            "scoreTeam2": 2
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolas",
+            "scoreTeam1": 2,
+            "scoreTeam2": "0"
+          }
+        ]
+      },
+      {
+        "team1": "Estudiantes",
+        "team2": "Newell's",
+        "scoreTeam1": 3,
+        "scoreTeam2": "0",
+        "matchDate": "2023-03-31T19:00:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": 1,
+            "scoreTeam2": 1
+          },
+          {
+            "name": "Franco",
+            "cleanName": "franco",
+            "scoreTeam1": 1,
+            "scoreTeam2": 1
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": 2,
+            "scoreTeam2": 1
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolas",
+            "scoreTeam1": 1,
+            "scoreTeam2": "0"
+          }
+        ]
+      },
+      {
+        "team1": "River",
+        "team2": "Unión",
+        "scoreTeam1": 1,
+        "scoreTeam2": "0",
+        "matchDate": "2023-03-31T21:30:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": 3,
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Franco",
+            "cleanName": "franco",
+            "scoreTeam1": 2,
+            "scoreTeam2": "0"
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": 4,
+            "scoreTeam2": 1
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolas",
+            "scoreTeam1": 2,
+            "scoreTeam2": "0"
+          }
+        ]
+      },
+      {
+        "team1": "Barracas Central",
+        "team2": "Boca",
+        "scoreTeam1": "0",
+        "scoreTeam2": 3,
+        "matchDate": "2023-04-01T15:30:00.000-03:00",
+        "predictions": [
+          {
+            "name": "Juany",
+            "cleanName": "juany",
+            "scoreTeam1": "0",
+            "scoreTeam2": 1
+          },
+          {
+            "name": "Franco",
+            "cleanName": "franco",
+            "scoreTeam1": 1,
+            "scoreTeam2": 1
+          },
+          {
+            "name": "Ulises",
+            "cleanName": "ulises",
+            "scoreTeam1": 2,
+            "scoreTeam2": 1
+          },
+          {
+            "name": "Nicolás",
+            "cleanName": "nicolas",
+            "scoreTeam1": "0",
+            "scoreTeam2": 2
+          }
+        ]
+      }
+    ]
+  }
+]

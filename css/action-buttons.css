@@ -1,0 +1,31 @@
+/* ----ACTION BUTTONS BLOCK---- */
+.action-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 300px;
+  margin: 20px auto;
+}
+
+.action-buttons__button {
+  width: 100%;
+}
+
+.action-buttons__info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+  font-size: 0.9em;
+  text-align: center;
+  min-height: 20px; /* Reserve space to prevent layout shift */
+}
+
+.action-buttons__info--green {
+  color: var(--info-green);
+}
+
+.action-buttons__info--red {
+  color: var(--info-red);
+}
