@@ -330,8 +330,8 @@
       {
         "team1": "River",
         "team2": "Monterrey",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "0",
+        "scoreTeam2": "0",
         "matchDate": "2025-06-21T22:00:00.000-03:00",
         "predictions": [
           {
