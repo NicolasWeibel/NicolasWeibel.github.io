@@ -777,16 +777,49 @@ const completeLeaderboardPositions = (iMatchdays, leaderboardPositions) => {
   }
 };
 
+/**
+ * @function getMatchdayIndexStatus
+ * @description Determines the current and next matchday indexes based on the current date.
+ *
+ * This function analyzes the matchday schedule and returns which matchday should be treated as
+ * "current" and which as "next" according to the following logic:
+ *
+ * - Case 1: If today's date falls within a matchday's date range → that matchday is current.
+ * - Case 2: If today is between the end of one matchday and the start of the next:
+ *      - If half the time between both matchdays has passed (plus 12 hours),
+ *        the next matchday becomes the new "current".
+ *      - Otherwise, the previous matchday remains as current.
+ * - Case 3: If today is before the start of the first matchday → the first is current.
+ * - Case 4: If today is after the last matchday → the last is current.
+ *
+ * Time comparison is done using normalized date values (set to 00:00 of each day) to avoid time-based discrepancies.
+ *
+ * @param {Array<Object>} matchdays - List of matchday objects, each containing a `matchdayMatchs` array with match dates.
+ * @returns {Object} - Object with the form:
+ *      {
+ *          currentIndex: number, // Index of the current matchday in the matchdays array
+ *          nextIndex: number|null // Index of the next matchday (if available), otherwise null
+ *      }
+ */
 const getMatchdayIndexStatus = (matchdays) => {
-  const now = new Date();
+  // 🔧 Helper: normalize date to 00:00 of that day
+  const normalizeToStartOfDay = (date) =>
+    new Date(date.getFullYear(), date.getMonth(), date.getDate()).getTime();
+
+  const now = normalizeToStartOfDay(new Date());
+
+  // 📅 Build start and end timestamps for each matchday
   const timestamps = matchdays.map((md) => {
-    const dates = md.matchdayMatchs.map((m) => new Date(m.matchDate).getTime());
+    const dates = md.matchdayMatchs.map((m) =>
+      normalizeToStartOfDay(new Date(m.matchDate))
+    );
     return {
       start: Math.min(...dates),
       end: Math.max(...dates),
     };
   });
 
+  // 🟢 Case 1: Today falls within a matchday → it's the current one
   for (let i = 0; i < timestamps.length; i++) {
     const { start, end } = timestamps[i];
     if (now >= start && now <= end) {
@@ -797,21 +830,57 @@ const getMatchdayIndexStatus = (matchdays) => {
     }
   }
 
+  // 🟡 Case 2: We're between the end of one matchday and the start of the next
   for (let i = 0; i < timestamps.length - 1; i++) {
     const { end: endPrev } = timestamps[i];
     const { start: startNext } = timestamps[i + 1];
+
     if (now > endPrev && now < startNext) {
-      return { currentIndex: i, nextIndex: i + 1 };
+      const halfTime = Math.round((startNext - endPrev) / 2);
+      const twelveHoursInMs = 12 * 60 * 60 * 1000;
+      const switchTime = normalizeToStartOfDay(
+        new Date(endPrev + halfTime + twelveHoursInMs)
+      );
+
+      // If we passed the halfway point → switch current to the next matchday
+      if (now >= switchTime) {
+        return {
+          currentIndex: i + 1,
+          nextIndex: i + 2 < matchdays.length ? i + 2 : null,
+        };
+      } else {
+        return { currentIndex: i, nextIndex: i + 1 };
+      }
     }
   }
 
+  // 🔵 Case 3: We're before all matchdays → first is current
   if (now < timestamps[0].start) {
-    return { currentIndex: 0, nextIndex: null };
+    return { currentIndex: 0, nextIndex: matchdays.length > 1 ? 1 : null };
   }
 
+  // 🔴 Case 4: We're after the last matchday → last is current
   return { currentIndex: matchdays.length - 1, nextIndex: null };
 };
 
+/**
+ * @function initializeMatchdayLeaderboardTable
+ * @description Initializes and renders the leaderboard and current matchday table.
+ *
+ * - Creates a `LeaderboardPositions` instance using the provided player list.
+ * - Determines the current and next matchday indexes dynamically based on real date comparison
+ *   (via `getMatchdayIndexStatus`), ignoring deprecated flags like `isCurrentMatchday`.
+ * - If `isCurrentMonth` is true, renders the current matchday's matches.
+ * - If `isCurrentMonth` is false, displays the last matchday from the dataset without showing labels like "(fecha actual)".
+ * - Aggregates points and statistics for each player across all matchdays.
+ * - Sorts players based on tournament criteria and displays the leaderboard table.
+ * - If a references list is provided (e.g., prizes), it is injected visually under the leaderboard with proper styling.
+ *
+ * @param {boolean} isCurrentMonth - Whether the current leaderboard is from the ongoing month or a previous one.
+ *                                   Affects which matchday gets displayed and whether it's marked as current.
+ * @param {Array<string>} players - List of player names to be tracked and shown in the leaderboard.
+ * @param {Array<Object>=} referencesList - Optional references array containing prize or annotation info for certain positions.
+ */
 const initializeMatchdayLeaderboardTable = (
   isCurrentMonth,
   players,
@@ -845,6 +914,23 @@ const fetchFiles = async (filePath) => {
   return data;
 };
 
+/**
+ * @function initializeMainPage
+ * @description Loads matchday data and initializes the leaderboard for the specified month context.
+ *
+ * - Fetches the list of matchdays from the provided JSON file URL.
+ * - Once matchdays are loaded, initializes the leaderboard table and matchday section.
+ * - Applies dynamic logic to determine the current and next matchday based on the real calendar date,
+ *   replacing the previous reliance on `isCurrentMatchday` and `isNextMatchday` flags.
+ * - Injects the provided references (e.g., prize information) into the leaderboard if available.
+ *
+ * @param {boolean} isCurrentMonth - Whether the page corresponds to the current active tournament month.
+ *                                   Affects which matchday is shown and whether labels like "(fecha actual)" appear.
+ * @param {string} matchdayTextUrl - Path to the JSON file containing matchday data for the selected month.
+ * @param {Array<string>} players - List of player names to render in the leaderboard.
+ * @param {Array<Object>=} referencesList - Optional list of references to annotate leaderboard positions.
+ *                                          Passed to leaderboard rendering functions for display and styling.
+ */
 const initializeMainPage = async (
   isCurrentMonth,
   matchdayTextUrl,
