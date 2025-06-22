@@ -86,7 +86,7 @@
 /* MATCH ELEMENT */
 .match {
   display: grid;
-  grid-template-columns: 1.8fr 3.1fr 1.4fr 3.1fr 0.6fr;
+  grid-template-columns: 1.8fr 3fr 1.6fr 3fr 0.6fr;
   background-color: var(--match-bg-color);
   height: 60px;
   padding: 2px;
@@ -200,7 +200,7 @@
 /* SINGLE PREDICTION ELEMENT */
 .prediction {
   display: grid;
-  grid-template-columns: 1.8fr 3fr 1.7fr 3fr 0.5fr;
+  grid-template-columns: 1.9fr 2.9fr 1.6fr 2.9fr 0.7fr;
   background-color: var(--text-light-color);
   height: 35px;
   border-radius: 8px;
