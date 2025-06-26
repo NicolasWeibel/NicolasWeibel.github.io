@@ -416,8 +416,8 @@
             {
                 "team1": "Inter Milan",
                 "team2": "River",
-                "scoreTeam1": "",
-                "scoreTeam2": "",
+                "scoreTeam1": "2",
+                "scoreTeam2": "0",
                 "matchDate": "2025-06-25T22:00:00.000-03:00",
                 "predictions": [
                     { "name": "Juany", "cleanName": "juany", "scoreTeam1": "2", "scoreTeam2": "2" },
