@@ -654,7 +654,7 @@ const leaderboardTextToCopy = () => {
   let copiedText = "*TABLA*\n```";
   copiedText += `\n${"#".padEnd(positionDigits + 1)}〡${"Nombre".padEnd(
     longestNameLength
-  )}〡Pts〡AT〡AP〡Er〡PJ`;
+  )}〡Pts|AT|AP|Er|PJ`;
 
   let displayPosition;
   let previous = null;
@@ -680,7 +680,7 @@ const leaderboardTextToCopy = () => {
     const e = player.incorrects.toString().padEnd(2);
     const pj = player.playedMatches.toString().padEnd(2);
 
-    copiedText += `\n${positionStr}〡${name}〡${pts}〡${at}〡${ap}〡${e}〡${pj}`;
+    copiedText += `\n${positionStr}〡${name}〡${pts}|${at}|${ap}|${e}|${pj}`;
 
     previous = player;
   });
@@ -910,7 +910,8 @@ const initializeMatchdayLeaderboardTable = (
 
 const fetchFiles = async (filePath) => {
   const response = await fetch(filePath);
-  const data = response.json();
+  const text = await response.text();
+  const data = JSON5.parse(text);
   return data;
 };
 
@@ -959,11 +960,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.getElementById("year").textContent = new Date().getFullYear();
-
-  // const monthSelectorSelect = document.getElementById("month-select-id");
-  // monthSelectorSelect.addEventListener("change", () => {
-  //   window.location.href = monthSelectorSelect.value;
-  // });
 
   const matchdayAndLeaderboardCopyButton = document.getElementById(
     "matchday-and-leaderboard-copy-button"
