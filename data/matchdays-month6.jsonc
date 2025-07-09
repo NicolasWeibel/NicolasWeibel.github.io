@@ -43,7 +43,7 @@
     ]
   },
   {
-    "matchdayName": "Mundial Clubes J1",
+    "matchdayName": "Jornada 1 - MdC",
     "matchdayMatchs": [
       {
         "team1": "Boca",
@@ -86,7 +86,7 @@
     ]
   },
   {
-    "matchdayName": "Mundial Clubes J2",
+    "matchdayName": "Jornada 2 - MdC",
     "matchdayMatchs": [
       {
         "team1": "Bayern Munich",
@@ -130,7 +130,7 @@
   },
 
   {
-    "matchdayName": "Mundial Clubes J3",
+    "matchdayName": "Jornada 3 - MdC",
     "matchdayMatchs": [
       {
         "team1": "Auckland City",
