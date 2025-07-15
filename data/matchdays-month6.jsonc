@@ -283,8 +283,8 @@
       {
         "team1": "Vélez",
         "team2": "Tigre",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "2",
+        "scoreTeam2": "1",
         "matchDate": "2025-07-14T21:15:00.000-03:00",
         // prettier-ignore
         "predictions": [
@@ -302,8 +302,8 @@
       {
         "team1": "Unión",
         "team2": "Estudiantes",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "1",
+        "scoreTeam2": "0",
         "matchDate": "2025-07-14T21:15:00.000-03:00",
         // prettier-ignore
         "predictions": [
