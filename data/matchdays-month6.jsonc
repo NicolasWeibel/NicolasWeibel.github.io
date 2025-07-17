@@ -401,28 +401,28 @@
       }
     ]
   },
-{
+  {
     "matchdayName": "Dieciseisavos - Copa Argentina",
     "matchdayMatchs": [
-        {
-            "team1": "Boca",
-            "team2": "Atlético Tucumán",
-            "scoreTeam1": "",
-            "scoreTeam2": "",
-            "matchDate": "2025-07-23T21:10:00-03:00",
-            // prettier-ignore
-            "predictions": [
-                { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
-                { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
-                { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
-                { "name": "Nicolás", "cleanName": "nicolás", "scoreTeam1": "", "scoreTeam2": "" },
-                { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
-                { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "", "scoreTeam2": "" },
-                { "name": "Seba", "cleanName": "seba", "scoreTeam1": "", "scoreTeam2": "" },
-                { "name": "Mati", "cleanName": "mati", "scoreTeam1": "", "scoreTeam2": "" },
-                { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "", "scoreTeam2": "" }
-            ]
-        }
+      {
+        "team1": "Boca",
+        "team2": "Atlético Tucumán",
+        "scoreTeam1": "",
+        "scoreTeam2": "",
+        "matchDate": "2025-07-23T21:10:00.000-03:00",
+        // prettier-ignore
+        "predictions": [
+          { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Seba", "cleanName": "seba", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Mati", "cleanName": "mati", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "", "scoreTeam2": "" }
+        ]
+      }
     ]
-}
+  }
 ]
