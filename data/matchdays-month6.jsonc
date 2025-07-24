@@ -424,5 +424,86 @@
       ]
     }
   ]
+},
+{
+  "matchdayName": "Fecha 3 - Clausura",
+  "matchdayMatchs": [
+    {
+      "team1": "Vélez",
+      "team2": "Instituto",
+      "scoreTeam1": "",
+      "scoreTeam2": "",
+      "matchDate": "2025-07-26T19:00:00-03:00",
+      // prettier-ignore
+      "predictions": [
+        { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Seba", "cleanName": "seba", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Mati", "cleanName": "mati", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "", "scoreTeam2": "" }
+      ]
+    },
+    {
+      "team1": "Racing",
+      "team2": "Estudiantes",
+      "scoreTeam1": "",
+      "scoreTeam2": "",
+      "matchDate": "2025-07-26T21:15:00-03:00",
+      // prettier-ignore
+      "predictions": [
+        { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Seba", "cleanName": "seba", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Mati", "cleanName": "mati", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "", "scoreTeam2": "" }
+      ]
+    },
+    {
+      "team1": "Huracán",
+      "team2": "Boca",
+      "scoreTeam1": "",
+      "scoreTeam2": "",
+      "matchDate": "2025-07-27T18:30:00-03:00",
+      // prettier-ignore
+      "predictions": [
+        { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Seba", "cleanName": "seba", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Mati", "cleanName": "mati", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "", "scoreTeam2": "" }
+      ]
+    },
+    {
+      "team1": "River",
+      "team2": "San Lorenzo",
+      "scoreTeam1": "",
+      "scoreTeam2": "",
+      "matchDate": "2025-07-27T20:30:00-03:00",
+      // prettier-ignore
+      "predictions": [
+        { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Seba", "cleanName": "seba", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Mati", "cleanName": "mati", "scoreTeam1": "", "scoreTeam2": "" },
+        { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "", "scoreTeam2": "" }
+      ]
+    }
+  ]
 }
 ]
