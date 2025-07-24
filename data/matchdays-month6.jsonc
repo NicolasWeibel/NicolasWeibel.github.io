@@ -407,8 +407,8 @@
     {
       "team1": "Boca",
       "team2": "Atlético Tucumán",
-      "scoreTeam1": "",
-      "scoreTeam2": "",
+      "scoreTeam1": "1",
+      "scoreTeam2": "2",
       "matchDate": "2025-07-23T21:10:00-03:00",
       // prettier-ignore
       "predictions": [
