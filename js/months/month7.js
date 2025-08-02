@@ -1,12 +1,12 @@
-const isCurrentMonth = false;
-const matchdayTextUrl = "data/matchdays-month6.jsonc";
+const isCurrentMonth = true;
+const matchdayTextUrl = "data/matchdays-month7.jsonc";
 const players = [
   "Juany",
   "Toto",
   "Ulises",
   "Nicolás",
   "Alejo",
-  "Vilchez",
+  "Pelado",
   "Seba",
   "Mati",
   "Joaco",

@@ -1,0 +1,26 @@
+[
+  {
+    "matchdayName": "Dieciseisavos - Copa Argentina",
+    "matchdayMatchs": [
+      {
+        "team1": "San Martín de Tucumán",
+        "team2": "River",
+        "scoreTeam1": "",
+        "scoreTeam2": "",
+        "matchDate": "2025-08-02T21:10:00.000-03:00",
+        // prettier-ignore
+        "predictions": [
+          { "name": "Juany", "cleanName": "juany", "scoreTeam1": "1", "scoreTeam2": "3" },
+          { "name": "Toto", "cleanName": "toto", "scoreTeam1": "1", "scoreTeam2": "1" },
+          { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "0", "scoreTeam2": "3" },
+          { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "0", "scoreTeam2": "2" },
+          { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "1", "scoreTeam2": "2" },
+          { "name": "Pelado", "cleanName": "pelado", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Seba", "cleanName": "seba", "scoreTeam1": "1", "scoreTeam2": "3" },
+          { "name": "Mati", "cleanName": "mati", "scoreTeam1": "0", "scoreTeam2": "2" },
+          { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "0", "scoreTeam2": "3" }
+        ]
+      }
+    ]
+  }
+]
