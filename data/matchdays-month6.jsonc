@@ -501,7 +501,7 @@
         { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "2", "scoreTeam2": "0" },
         { "name": "Seba", "cleanName": "seba", "scoreTeam1": "3", "scoreTeam2": "1" },
         { "name": "Mati", "cleanName": "mati", "scoreTeam1": "2", "scoreTeam2": "0" },
-        { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "2", "scoreTeam2": "0" }
+        { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "", "scoreTeam2": "" } // 2 - 0
       ]
     }
   ]
