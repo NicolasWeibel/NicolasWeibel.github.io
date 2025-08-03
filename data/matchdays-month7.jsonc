@@ -15,10 +15,12 @@
           { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "0", "scoreTeam2": "3" },
           { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "0", "scoreTeam2": "2" },
           { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "1", "scoreTeam2": "2" },
-          { "name": "Pelado", "cleanName": "pelado", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "0", "scoreTeam2": "1" },
           { "name": "Seba", "cleanName": "seba", "scoreTeam1": "1", "scoreTeam2": "3" },
           { "name": "Mati", "cleanName": "mati", "scoreTeam1": "0", "scoreTeam2": "2" },
-          { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "0", "scoreTeam2": "3" }
+          { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "0", "scoreTeam2": "3" },
+          { "name": "Lucho", "cleanName": "lucho", "scoreTeam1": "0", "scoreTeam2": "2" },
+          { "name": "Pelado", "cleanName": "pelado", "scoreTeam1": "", "scoreTeam2": "" }
         ]
       }
     ]

@@ -6,10 +6,12 @@ const players = [
   "Ulises",
   "Nicolás",
   "Alejo",
-  "Pelado",
+  "Vilchez",
   "Seba",
   "Mati",
   "Joaco",
+  "Lucho",
+  "Pelado",
 ];
 
 const referencesList = [
