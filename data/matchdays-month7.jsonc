@@ -209,8 +209,8 @@
       {
         "team1": "Banfield",
         "team2": "Estudiantes",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "3",
+        "scoreTeam2": "2",
         "matchDate": "2025-08-17T16:15:00.000-03:00",
         // prettier-ignore
         "predictions": [
@@ -230,8 +230,8 @@
       {
         "team1": "River",
         "team2": "Godoy Cruz",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "4",
+        "scoreTeam2": "2",
         "matchDate": "2025-08-17T18:30:00.000-03:00",
         // prettier-ignore
         "predictions": [
