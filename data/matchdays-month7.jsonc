@@ -251,8 +251,8 @@
       {
         "team1": "Independiente Rivadavia",
         "team2": "Boca",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "0",
+        "scoreTeam2": "3",
         "matchDate": "2025-08-17T20:30:00.000-03:00",
         // prettier-ignore
         "predictions": [
