@@ -319,8 +319,8 @@
       {
         "team1": "River",
         "team2": "Libertad",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "1",
+        "scoreTeam2": "1",
         "matchDate": "2025-08-21T21:30:00.000-03:00",
         // prettier-ignore
         "predictions": [
