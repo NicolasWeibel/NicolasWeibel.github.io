@@ -16,7 +16,7 @@ const players = [
 
 const referencesList = [
   {
-    text: "- 1° gana $12.000",
+    text: "- 1° gana $14.000",
     positions: [1],
     // Usará clase --first
   },
@@ -29,11 +29,15 @@ const referencesList = [
     positions: [3],
   },
   {
-    text: "- 4° gana $4.000",
+    text: "- 4° gana $6.000",
     positions: [4],
   },
   {
-    text: "- 5° gana $2.000",
+    text: "- 5° gana $4.000",
+    positions: [5],
+  },
+  {
+    text: "- 6° gana $2.000",
     positions: [5],
   },
 ];
