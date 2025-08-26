@@ -366,8 +366,8 @@
       {
         "team1": "Godoy Cruz",
         "team2": "Vélez",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "0",
+        "scoreTeam2": "2",
         "matchDate": "2025-08-25T17:00:00.000-03:00",
         // prettier-ignore
         "predictions": [
@@ -387,8 +387,8 @@
       {
         "team1": "Estudiantes",
         "team2": "Aldosivi",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "1",
+        "scoreTeam2": "0",
         "matchDate": "2025-08-25T19:15:00.000-03:00",
         // prettier-ignore
         "predictions": [
