@@ -408,8 +408,8 @@
       {
         "team1": "Lanús",
         "team2": "River",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "1",
+        "scoreTeam2": "1",
         "matchDate": "2025-08-25T21:15:00.000-03:00",
         // prettier-ignore
         "predictions": [
