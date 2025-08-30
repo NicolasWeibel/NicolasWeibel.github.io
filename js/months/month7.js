@@ -38,7 +38,7 @@ const referencesList = [
   },
   {
     text: "- 6° gana $2.000",
-    positions: [5],
+    positions: [6],
   },
 ];
 
