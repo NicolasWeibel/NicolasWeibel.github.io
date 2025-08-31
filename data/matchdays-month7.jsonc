@@ -502,8 +502,8 @@
       {
         "team1": "Aldosivi",
         "team2": "Boca",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "0",
+        "scoreTeam2": "2",
         "matchDate": "2025-08-31T14:30:00.000-03:00",
         // prettier-ignore
         "predictions": [
