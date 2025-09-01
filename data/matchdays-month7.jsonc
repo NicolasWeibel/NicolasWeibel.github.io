@@ -523,8 +523,8 @@
       {
         "team1": "River",
         "team2": "San Martín (SJ)",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "2",
+        "scoreTeam2": "0",
         "matchDate": "2025-08-31T19:15:00.000-03:00",
         // prettier-ignore
         "predictions": [
