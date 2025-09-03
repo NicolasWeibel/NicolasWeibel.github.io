@@ -1,5 +1,5 @@
-const isCurrentMonth = false;
-const matchdayTextUrl = "data/matchdays-month7.jsonc";
+const isCurrentMonth = true;
+const matchdayTextUrl = "data/matchdays-month8.jsonc";
 const players = [
   "Juany",
   "Toto",

@@ -179,7 +179,7 @@
 
 /* PREDICTION CONTAINER BLOCK */
 .prediction-container {
-  transition: height 0.5s ease-out;
+  transition: height 0.3s ease-out;
   height: 0;
   overflow: hidden;
 }
