@@ -5,8 +5,8 @@
       {
         "team1": "Argentina",
         "team2": "Venezuela",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "3",
+        "scoreTeam2": "0",
         "matchDate": "2025-09-04T20:30:00.000-03:00",
         // prettier-ignore
         "predictions": [
