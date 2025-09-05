@@ -101,7 +101,7 @@
         "predictions": [
           { "name": "Juany", "cleanName": "juany", "scoreTeam1": "0", "scoreTeam2": "1" },
           { "name": "Toto", "cleanName": "toto", "scoreTeam1": "1", "scoreTeam2": "1" },
-          { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "0", "scoreTeam2": "2" },
+          { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
           { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "0", "scoreTeam2": "0" },
           { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "0", "scoreTeam2": "1" },
           { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "0", "scoreTeam2": "1" },
