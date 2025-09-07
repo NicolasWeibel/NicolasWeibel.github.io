@@ -40,6 +40,7 @@ const referencesList = [
 const tieBreakerCriteria = [
   { key: "points", order: "desc" },
   { key: "exactHits", order: "desc" },
+  // { key: "goalsErrorSum", order: "asc" },
   { key: "incorrects", order: "asc" },
 ];
 
