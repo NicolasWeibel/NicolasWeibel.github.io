@@ -6,16 +6,51 @@ let leaderboardPositions;
 // 1. CORE CLASSES
 // ======================
 
+/**
+ * Player
+ * Represents a participant in the predictions competition and accumulates scoring
+ * and tie-break metrics.
+ *
+ * - Only one additional tie-break metric is stored: goalsErrorSum.
+ *   goalsErrorSum = Σ (|predicted_team1 - actual_team1| + |predicted_team2 - actual_team2|)
+ *
+ * This class is intentionally focused and minimal: it stores counters used by the
+ * leaderboard rendering and sorting procedures.
+ */
 class Player {
   constructor(name) {
+    /** @type {string} */
     this.name = name;
+
+    /** @type {number} - tournament points (3 / 1 / 0 scheme) */
     this.points = 0;
+
+    /** @type {number} - exact score predictions count */
     this.exactHits = 0;
+
+    /** @type {number} - partial (correct outcome) predictions count */
     this.partialHits = 0;
+
+    /** @type {number} - incorrect predictions count */
     this.incorrects = 0;
+
+    /** @type {number} - played matches count */
     this.playedMatches = 0;
+
+    /**
+     * @type {number}
+     * Accumulates the per-match absolute error for both teams.
+     * Lower values indicate better goal-level accuracy.
+     */
+    this.goalsErrorSum = 0;
   }
 
+  /**
+   * Add tournament points and update primary counters derived from the point result.
+   *
+   * @param {number} points - Points awarded for a prediction (3 | 1 | 0 | -1 for not made)
+   *                         -1 is treated as "prediction not made" and does not increment playedMatches.
+   */
   sumPoints(points) {
     switch (points) {
       case 3:
@@ -28,32 +63,247 @@ class Player {
         this.partialHits += 1;
         this.playedMatches += 1;
         break;
-      case -1: // Prediction not made
+      case -1:
+        // Prediction missing: do not change counters except leaving playedMatches unchanged
         break;
-      default: // points === 0 (incorrect)
+      default:
+        // Incorrect prediction (0 points)
         this.incorrects += 1;
         this.playedMatches += 1;
         break;
     }
   }
+
+  /**
+   * Accumulate tie-break metric(s) from a single match when both actual and predicted scores exist.
+   *
+   * Only updates `goalsErrorSum` (per user's request). The method is resilient to
+   * non-numeric inputs and will early-return if any required value is missing or invalid.
+   *
+   * @param {number|string} actual1
+   * @param {number|string} actual2
+   * @param {number|string} pred1
+   * @param {number|string} pred2
+   * @returns {void}
+   */
+  addPredictionStats(actual1, actual2, pred1, pred2) {
+    // If the prediction is empty or not provided, skip accumulation.
+    if (pred1 === "" || pred2 === "" || pred1 == null || pred2 == null) return;
+
+    const a1 = Number(actual1);
+    const a2 = Number(actual2);
+    const p1 = Number(pred1);
+    const p2 = Number(pred2);
+
+    // Validate numeric conversion
+    if (
+      !Number.isFinite(a1) ||
+      !Number.isFinite(a2) ||
+      !Number.isFinite(p1) ||
+      !Number.isFinite(p2)
+    ) {
+      return;
+    }
+
+    // goalsErrorSum: absolute error per team, summed
+    this.goalsErrorSum += Math.abs(p1 - a1) + Math.abs(p2 - a2);
+  }
 }
 
+/**
+ * LeaderboardPositions
+ *
+ * Manages a collection of Player instances and provides a configurable sorting
+ * mechanism using a prioritized array of tie-breaker criteria.
+ *
+ * tieBreakers format:
+ *   [
+ *     { key: "points", order: "desc" },
+ *     { key: "exactHits", order: "desc" },
+ *     { key: "incorrects", order: "asc" }
+ *   ]
+ *
+ * Keys are case-insensitive and a small set of synonyms in English/Spanish is supported.
+ */
 class LeaderboardPositions {
-  constructor(players) {
+  /**
+   * @param {string[]} players - Array of player names
+   * @param {Array<{key:string, order:string}>|null} tieBreakers - Sorting criteria (optional)
+   */
+  constructor(players, tieBreakers = null) {
     this.leaderboardPlayers = players.map((name) => new Player(name));
+
+    // Default tie-breaker chain keeps backward compatibility with previous behaviour:
+    this.tieBreakers = tieBreakers || [
+      { key: "points", order: "desc" },
+      { key: "exactHits", order: "desc" },
+      { key: "incorrects", order: "asc" },
+    ];
   }
 
+  /**
+   * Map a canonical key name (English / Spanish synonyms supported) to the player's property value.
+   * Returns numbers for quantitative metrics and strings for name.
+   *
+   * @param {Player} player
+   * @param {string} key
+   * @returns {number|string|undefined}
+   */
+  _getMetricValue(player, key) {
+    const k = String(key).toLowerCase();
+
+    switch (k) {
+      case "points":
+      case "puntos":
+        return player.points;
+      case "exacthits":
+      case "exh":
+      case "aciertototal":
+      case "aciertosexactos":
+        return player.exactHits;
+      case "partialhits":
+      case "ap":
+      case "parcial":
+        return player.partialHits;
+      case "incorrects":
+      case "errores":
+        return player.incorrects;
+      case "goalserrorsum":
+      case "goleserrorsum":
+      case "goleserror":
+        return player.goalsErrorSum;
+      case "playedmatches":
+      case "pj":
+        return player.playedMatches;
+      default:
+        // Fallback: try direct property access if someone passes a raw property key
+        return player[key];
+    }
+  }
+
+  /**
+   * Sort the internal player array in-place using the configured tie-breaker chain.
+   *
+   * - Numeric values are compared numerically.
+   * - String values are compared using localeCompare.
+   * - Missing numeric values are treated as 0.
+   *
+   * The sorting is stable with respect to the tie-breaker order provided.
+   */
   sortPositions() {
+    const tieBreakers = this.tieBreakers;
+
     this.leaderboardPlayers.sort((a, b) => {
-      return (
-        b.points - a.points || // Sort by points (descending)
-        b.exactHits - a.exactHits || // Then by exact hits (descending)
-        a.incorrects - b.incorrects || // Then by incorrects (ascending)
-        a.name.localeCompare(b.name) // Finally by name (ascending)
-      );
+      for (const tb of tieBreakers) {
+        const key = typeof tb === "string" ? tb : tb.key;
+        const order = typeof tb === "string" ? "desc" : tb.order || "desc";
+
+        const va = this._getMetricValue(a, key);
+        const vb = this._getMetricValue(b, key);
+
+        // If either value is a string, use localeCompare (string comparison).
+        if (typeof va === "string" || typeof vb === "string") {
+          const sa = String(va || "");
+          const sb = String(vb || "");
+          if (sa === sb) continue;
+          return order === "asc" ? sa.localeCompare(sb) : sb.localeCompare(sa);
+        }
+
+        // Treat non-finite numbers as zero to avoid NaN comparison issues.
+        const na = Number.isFinite(va) ? va : 0;
+        const nb = Number.isFinite(vb) ? vb : 0;
+
+        if (na !== nb) {
+          return order === "desc" ? nb - na : na - nb;
+        }
+        // values equal for this criterion → continue to next tie-breaker
+      }
+
+      // If all tie-breakers produce equality, fall back to name ascending
+      return a.name.localeCompare(b.name);
     });
   }
 }
+
+/**
+ * Determine whether two players are tied according to a tie-breaker chain.
+ *
+ * The function uses, in priority:
+ *  1. Provided `tieBreakers` argument (if any),
+ *  2. `leaderboardPositions.tieBreakers` (if leaderboardPositions exists),
+ *  3. A sensible default: [{key: "points"}, {key: "exactHits"}, {key: "incorrects"}].
+ *
+ * Comparison semantics mirror the sorting logic:
+ *  - String metrics are compared as raw strings.
+ *  - Numeric metrics treat non-finite values as 0.
+ *
+ * @param {Object} a - Player object A
+ * @param {Object} b - Player object B
+ * @param {Array<{key:string, order?:string}>=} tieBreakersOverride - optional tie-breaker chain
+ * @returns {boolean} true if players are equal for all criteria in the chain
+ */
+const arePlayersTiedByTieBreakers = (a, b, tieBreakersOverride = null) => {
+  // Determine chain to use
+  const chain =
+    tieBreakersOverride && tieBreakersOverride.length
+      ? tieBreakersOverride
+      : leaderboardPositions &&
+        leaderboardPositions.tieBreakers &&
+        leaderboardPositions.tieBreakers.length
+      ? leaderboardPositions.tieBreakers
+      : [{ key: "points" }, { key: "exactHits" }, { key: "incorrects" }];
+
+  // Helper to get metric value (use existing LeaderboardPositions getter if available)
+  const getMetric = (player, key) => {
+    if (
+      leaderboardPositions &&
+      typeof leaderboardPositions._getMetricValue === "function"
+    ) {
+      return leaderboardPositions._getMetricValue(player, key);
+    }
+    // Fallback: basic mapping (keeps behavior for small set of keys)
+    const k = String(key).toLowerCase();
+    switch (k) {
+      case "points":
+      case "puntos":
+        return player.points;
+      case "exacthits":
+      case "exh":
+      case "aciertototal":
+        return player.exactHits;
+      case "incorrects":
+      case "errores":
+        return player.incorrects;
+      case "goalserrorsum":
+      case "goleserrorsum":
+      case "goleserror":
+        return player.goalsErrorSum;
+      default:
+        return player[key];
+    }
+  };
+
+  for (const tb of chain) {
+    const key = typeof tb === "string" ? tb : tb.key;
+    const va = getMetric(a, key);
+    const vb = getMetric(b, key);
+
+    // String comparison
+    if (typeof va === "string" || typeof vb === "string") {
+      const sa = String(va || "");
+      const sb = String(vb || "");
+      if (sa !== sb) return false;
+      continue;
+    }
+
+    // Numeric comparison (treat non-finite as 0)
+    const na = Number.isFinite(va) ? va : 0;
+    const nb = Number.isFinite(vb) ? vb : 0;
+    if (na !== nb) return false;
+  }
+
+  return true;
+};
 
 // ======================
 // 2. PREDICTION LOGIC
@@ -368,27 +618,14 @@ const getPositionClassNameByIndex = (index) => {
 };
 
 /**
- * @function completeLeaderboard
- * @description Renders the leaderboard table in the DOM using the provided player data.
+ * completeLeaderboard
  *
- * - Dynamically creates and appends table rows for each player.
- * - Displays position, name, and stats: total points, exact hits, partial hits, incorrects, and played matches.
- * - Handles shared rankings: if multiple players have identical stats, they share the same displayed position.
- * - For each row:
- *      - Applies a position-based class to the position cell:
- *          - If the reference for that position includes a custom color, a dynamic class (e.g., --custom-2) is applied.
- *          - Otherwise, a default class is applied based on position order (e.g., --first, --second, --third...).
- * - The applied classes allow styling consistency between the leaderboard table and the reference display.
+ * Renders the leaderboard table rows. When calculating the displayed position
+ * number, the function now uses the configured tie-breaker chain to decide
+ * whether two adjacent players should share the same displayed position.
  *
- * @param {Array<Object>} orderedLeaderboardPlayers - Array of player objects sorted by ranking criteria.
- *      Each player object includes: name, points, exactHits, partialHits, incorrects, playedMatches.
- * @param {Array<Object>} referencesList - Optional array of reference objects:
- *      {
- *          text: string,              // Displayed text
- *          positions: number[],       // Array of affected positions
- *          color?: string,            // Optional custom background color
- *          textColorLight?: boolean   // Optional flag for light text on dark background
- *      }
+ * @param {Array<Object>} orderedLeaderboardPlayers - players already ordered by ranking criteria
+ * @param {Array<Object>=} referencesList - optional reference entries for styling/legends
  */
 const completeLeaderboard = (
   orderedLeaderboardPlayers,
@@ -402,14 +639,10 @@ const completeLeaderboard = (
 
   for (let i = 0; i < orderedLeaderboardPlayers.length; i++) {
     const player = orderedLeaderboardPlayers[i];
-    if (
-      !(
-        previous &&
-        player.points === previous.points &&
-        player.exactHits === previous.exactHits &&
-        player.incorrects === previous.incorrects
-      )
-    ) {
+
+    // If previous is present and players are tied according to the tie-breaker chain,
+    // keep the same displayed position number. Otherwise set to current index + 1.
+    if (!(previous && arePlayersTiedByTieBreakers(player, previous))) {
       positionCounter = i + 1;
     }
 
@@ -444,6 +677,7 @@ const completeLeaderboard = (
     appendCell(player.exactHits);
     appendCell(player.partialHits);
     appendCell(player.incorrects);
+    appendCell(player.goalsErrorSum);
     appendCell(player.playedMatches);
 
     tableBody.appendChild(tr);
@@ -652,35 +886,29 @@ const leaderboardTextToCopy = () => {
   const positionDigits = players.length.toString().length;
 
   let copiedText = "*TABLA*\n```";
-  copiedText += `\n${"#".padEnd(positionDigits + 1)}〡${"Nombre".padEnd(
+  copiedText += `\n${"#".padEnd(positionDigits)}〡${"Nombre".padEnd(
     longestNameLength
-  )}〡Pts|AT|AP|Er|PJ`;
+  )}〡Pts|AT|Er|DG|PJ`;
 
   let displayPosition;
   let previous = null;
 
   players.forEach((player, index) => {
     // Keep same position number if tied with previous player in points, exact hits, and incorrects
-    if (
-      !(
-        previous &&
-        player.points === previous.points &&
-        player.exactHits === previous.exactHits &&
-        player.incorrects === previous.incorrects
-      )
-    ) {
+    if (!(previous && arePlayersTiedByTieBreakers(player, previous))) {
       displayPosition = index + 1;
     }
 
-    const positionStr = `${displayPosition}°`.padEnd(positionDigits + 1);
+    const positionStr = `${displayPosition}`.padEnd(positionDigits);
     const name = player.name.padEnd(longestNameLength);
     const pts = player.points.toString().padEnd(3);
     const at = player.exactHits.toString().padEnd(2);
-    const ap = player.partialHits.toString().padEnd(2);
+    // const ap = player.partialHits.toString().padEnd(2);
     const e = player.incorrects.toString().padEnd(2);
+    const dg = player.goalsErrorSum.toString().padEnd(2);
     const pj = player.playedMatches.toString().padEnd(2);
 
-    copiedText += `\n${positionStr}〡${name}〡${pts}|${at}|${ap}|${e}|${pj}`;
+    copiedText += `\n${positionStr}〡${name}〡${pts}|${at}|${e}|${dg}|${pj}`;
 
     previous = player;
   });
@@ -754,24 +982,57 @@ const createSpecificMatchdayTable = (matchdayIndex) => {
   createMatchdayTable(matchdays[matchdayIndex], matchdayIndex, isCurrentMonth);
 };
 
+/**
+ * completeLeaderboardPositions
+ *
+ * Accumulates tournament points and tie-break metrics for all predictions in a
+ * matchday identified by index `iMatchdays`.
+ *
+ * Note: This function expects the global `matchdays` variable to be populated.
+ *
+ * @param {number|string} iMatchdays - index (or index-like string) into `matchdays` array
+ * @param {LeaderboardPositions} leaderboardPositions - instance to update
+ */
 const completeLeaderboardPositions = (iMatchdays, leaderboardPositions) => {
-  for (const match of matchdays[iMatchdays]["matchdayMatchs"]) {
-    const scoreTeam1 = match["scoreTeam1"];
-    const scoreTeam2 = match["scoreTeam2"];
+  const md = matchdays[iMatchdays];
+  if (!md || !Array.isArray(md.matchdayMatchs)) return;
 
+  for (const match of md.matchdayMatchs) {
+    const scoreTeam1 = match.scoreTeam1;
+    const scoreTeam2 = match.scoreTeam2;
+
+    // Only process matches that have final scores
     if (scoreTeam1 !== "" && scoreTeam2 !== "") {
-      for (const iPredictions in match["predictions"]) {
-        const predictionScoreTeam1 =
-          match["predictions"][iPredictions]["scoreTeam1"];
-        const predictionScoreTeam2 =
-          match["predictions"][iPredictions]["scoreTeam2"];
+      for (
+        let iPredictions = 0;
+        iPredictions < match.predictions.length;
+        iPredictions++
+      ) {
+        const prediction = match.predictions[iPredictions];
+        const predictionScoreTeam1 = prediction.scoreTeam1;
+        const predictionScoreTeam2 = prediction.scoreTeam2;
+
         const points = predictionHit(
           scoreTeam1,
           scoreTeam2,
           predictionScoreTeam1,
           predictionScoreTeam2
         );
-        leaderboardPositions.leaderboardPlayers[iPredictions].sumPoints(points);
+
+        const playerInstance =
+          leaderboardPositions.leaderboardPlayers[iPredictions];
+        if (!playerInstance) continue;
+
+        // Add tournament points and counters
+        playerInstance.sumPoints(points);
+
+        // Accumulate goalsErrorSum metric (if prediction exists)
+        playerInstance.addPredictionStats(
+          Number(scoreTeam1),
+          Number(scoreTeam2),
+          predictionScoreTeam1,
+          predictionScoreTeam2
+        );
       }
     }
   }
@@ -864,29 +1125,24 @@ const getMatchdayIndexStatus = (matchdays) => {
 };
 
 /**
- * @function initializeMatchdayLeaderboardTable
- * @description Initializes and renders the leaderboard and current matchday table.
+ * initializeMatchdayLeaderboardTable
  *
- * - Creates a `LeaderboardPositions` instance using the provided player list.
- * - Determines the current and next matchday indexes dynamically based on real date comparison
- *   (via `getMatchdayIndexStatus`), ignoring deprecated flags like `isCurrentMatchday`.
- * - If `isCurrentMonth` is true, renders the current matchday's matches.
- * - If `isCurrentMonth` is false, displays the last matchday from the dataset without showing labels like "(fecha actual)".
- * - Aggregates points and statistics for each player across all matchdays.
- * - Sorts players based on tournament criteria and displays the leaderboard table.
- * - If a references list is provided (e.g., prizes), it is injected visually under the leaderboard with proper styling.
+ * - Builds LeaderboardPositions with optional `tieBreakerCriteria`.
+ * - Renders the current (or last) matchday.
+ * - Aggregates points & tie-break metrics across available matchdays.
  *
- * @param {boolean} isCurrentMonth - Whether the current leaderboard is from the ongoing month or a previous one.
- *                                   Affects which matchday gets displayed and whether it's marked as current.
- * @param {Array<string>} players - List of player names to be tracked and shown in the leaderboard.
- * @param {Array<Object>=} referencesList - Optional references array containing prize or annotation info for certain positions.
+ * @param {boolean} isCurrentMonth - if true, determine and show the current matchday; if false show last matchday
+ * @param {string[]} players - player names array
+ * @param {Array<Object>} referencesList - optional visual references for the leaderboard
+ * @param {Array<{key:string, order:string}>|null} tieBreakerCriteria - optional tie-breaker configuration
  */
 const initializeMatchdayLeaderboardTable = (
   isCurrentMonth,
   players,
-  referencesList
+  referencesList,
+  tieBreakerCriteria = null
 ) => {
-  leaderboardPositions = new LeaderboardPositions(players);
+  leaderboardPositions = new LeaderboardPositions(players, tieBreakerCriteria);
 
   const { currentIndex, nextIndex } = getMatchdayIndexStatus(matchdays);
 
@@ -896,10 +1152,12 @@ const initializeMatchdayLeaderboardTable = (
     createSpecificMatchdayTable(matchdays.length - 1);
   }
 
+  // Aggregate stats across matchdays
   for (const iMatchdays in matchdays) {
     completeLeaderboardPositions(iMatchdays, leaderboardPositions);
   }
 
+  // Sort and render the leaderboard table
   leaderboardPositions.sortPositions();
   completeLeaderboard(leaderboardPositions.leaderboardPlayers, referencesList);
 
@@ -916,31 +1174,31 @@ const fetchFiles = async (filePath) => {
 };
 
 /**
- * @function initializeMainPage
- * @description Loads matchday data and initializes the leaderboard for the specified month context.
+ * initializeMainPage
  *
- * - Fetches the list of matchdays from the provided JSON file URL.
- * - Once matchdays are loaded, initializes the leaderboard table and matchday section.
- * - Applies dynamic logic to determine the current and next matchday based on the real calendar date,
- *   replacing the previous reliance on `isCurrentMatchday` and `isNextMatchday` flags.
- * - Injects the provided references (e.g., prize information) into the leaderboard if available.
+ * Loads the matchday data file (JSON/JSONC) and initializes the main view.
  *
- * @param {boolean} isCurrentMonth - Whether the page corresponds to the current active tournament month.
- *                                   Affects which matchday is shown and whether labels like "(fecha actual)" appear.
- * @param {string} matchdayTextUrl - Path to the JSON file containing matchday data for the selected month.
- * @param {Array<string>} players - List of player names to render in the leaderboard.
- * @param {Array<Object>=} referencesList - Optional list of references to annotate leaderboard positions.
- *                                          Passed to leaderboard rendering functions for display and styling.
+ * @param {boolean} isCurrentMonth
+ * @param {string} matchdayTextUrl - path to the month data (JSON/JSONC)
+ * @param {string[]} players
+ * @param {Array<Object>=} referencesList
+ * @param {Array<{key:string, order:string}>|null} tieBreakerCriteria
  */
 const initializeMainPage = async (
   isCurrentMonth,
   matchdayTextUrl,
   players,
-  referencesList = null
+  referencesList = null,
+  tieBreakerCriteria = null
 ) => {
   matchdays = await fetchFiles(matchdayTextUrl);
 
-  initializeMatchdayLeaderboardTable(isCurrentMonth, players, referencesList);
+  initializeMatchdayLeaderboardTable(
+    isCurrentMonth,
+    players,
+    referencesList,
+    tieBreakerCriteria
+  );
 };
 
 // ======================
