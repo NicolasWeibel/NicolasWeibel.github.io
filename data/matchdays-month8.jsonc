@@ -94,8 +94,8 @@
       {
         "team1": "Estudiantes",
         "team2": "River",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "1",
+        "scoreTeam2": "2",
         "matchDate": "2025-09-13T19:00:00.000-03:00",
         // prettier-ignore
         "predictions": [
@@ -115,8 +115,8 @@
       {
         "team1": "Rosario Central",
         "team2": "Boca",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "1",
+        "scoreTeam2": "1",
         "matchDate": "2025-09-14T17:30:00.000-03:00",
         // prettier-ignore
         "predictions": [
