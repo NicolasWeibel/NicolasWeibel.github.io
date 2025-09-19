@@ -162,8 +162,8 @@
       {
         "team1": "River",
         "team2": "Palmeiras",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "1",
+        "scoreTeam2": "2",
         "matchDate": "2025-09-17T21:30:00.000-03:00",
         // prettier-ignore
         "predictions": [
@@ -183,8 +183,8 @@
       {
         "team1": "Flamengo",
         "team2": "Estudiantes",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "2",
+        "scoreTeam2": "1",
         "matchDate": "2025-09-18T21:30:00.000-03:00",
         // prettier-ignore
         "predictions": [
