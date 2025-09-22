@@ -251,8 +251,8 @@
       {
         "team1": "Boca",
         "team2": "Central Córdoba",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "2",
+        "scoreTeam2": "2",
         "matchDate": "2025-09-21T21:15:00.000-03:00",
         // prettier-ignore
         "predictions": [
