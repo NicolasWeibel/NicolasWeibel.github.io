@@ -292,7 +292,7 @@
       }
     ]
   },
-  { 
+  {
     "matchdayName": "Cuartos Vuelta - Libertadores",
     "matchdayMatchs": [
       {
@@ -303,17 +303,17 @@
         "matchDate": "2025-09-23T19:00:00.000-03:00",
         // prettier-ignore
         "predictions": [
-          { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Seba", "cleanName": "seba", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Mati", "cleanName": "mati", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Lucho", "cleanName": "lucho", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Pelado", "cleanName": "pelado", "scoreTeam1": "", "scoreTeam2": "" }
+          { "name": "Juany", "cleanName": "juany", "scoreTeam1": "2", "scoreTeam2": "1" },
+          { "name": "Toto", "cleanName": "toto", "scoreTeam1": "2", "scoreTeam2": "1" },
+          { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "2", "scoreTeam2": "1" },
+          { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "1", "scoreTeam2": "1" },
+          { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "1", "scoreTeam2": "0" },
+          { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "2", "scoreTeam2": "1" },
+          { "name": "Seba", "cleanName": "seba", "scoreTeam1": "3", "scoreTeam2": "1" },
+          { "name": "Mati", "cleanName": "mati", "scoreTeam1": "2", "scoreTeam2": "0" },
+          { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "2", "scoreTeam2": "1" },
+          { "name": "Lucho", "cleanName": "lucho", "scoreTeam1": "1", "scoreTeam2": "2" },
+          { "name": "Pelado", "cleanName": "pelado", "scoreTeam1": "2", "scoreTeam2": "0" }
         ]
       },
       {
@@ -324,17 +324,17 @@
         "matchDate": "2025-09-24T21:30:00.000-03:00",
         // prettier-ignore
         "predictions": [
-          { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Seba", "cleanName": "seba", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Mati", "cleanName": "mati", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Lucho", "cleanName": "lucho", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Pelado", "cleanName": "pelado", "scoreTeam1": "", "scoreTeam2": "" }
+          { "name": "Juany", "cleanName": "juany", "scoreTeam1": "3", "scoreTeam2": "1" },
+          { "name": "Toto", "cleanName": "toto", "scoreTeam1": "2", "scoreTeam2": "1" },
+          { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "1", "scoreTeam2": "2" },
+          { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "2", "scoreTeam2": "1" },
+          { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "2", "scoreTeam2": "0" },
+          { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "2", "scoreTeam2": "1" },
+          { "name": "Seba", "cleanName": "seba", "scoreTeam1": "1", "scoreTeam2": "2" },
+          { "name": "Mati", "cleanName": "mati", "scoreTeam1": "2", "scoreTeam2": "0" },
+          { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "1", "scoreTeam2": "1" },
+          { "name": "Lucho", "cleanName": "lucho", "scoreTeam1": "2", "scoreTeam2": "0" },
+          { "name": "Pelado", "cleanName": "pelado", "scoreTeam1": "3", "scoreTeam2": "1" }
         ]
       },
       {
@@ -345,17 +345,17 @@
         "matchDate": "2025-09-25T21:30:00.000-03:00",
         // prettier-ignore
         "predictions": [
-          { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Seba", "cleanName": "seba", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Mati", "cleanName": "mati", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Lucho", "cleanName": "lucho", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Pelado", "cleanName": "pelado", "scoreTeam1": "", "scoreTeam2": "" }
+          { "name": "Juany", "cleanName": "juany", "scoreTeam1": "0", "scoreTeam2": "2" },
+          { "name": "Toto", "cleanName": "toto", "scoreTeam1": "1", "scoreTeam2": "2" },
+          { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "1", "scoreTeam2": "0" },
+          { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "1", "scoreTeam2": "1" },
+          { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "0", "scoreTeam2": "1" },
+          { "name": "Vilchez", "cleanName": "vilchez", "scoreTeam1": "0", "scoreTeam2": "1" },
+          { "name": "Seba", "cleanName": "seba", "scoreTeam1": "1", "scoreTeam2": "0" },
+          { "name": "Mati", "cleanName": "mati", "scoreTeam1": "1", "scoreTeam2": "2" },
+          { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "2", "scoreTeam2": "1" },
+          { "name": "Lucho", "cleanName": "lucho", "scoreTeam1": "1", "scoreTeam2": "1" },
+          { "name": "Pelado", "cleanName": "pelado", "scoreTeam1": "0", "scoreTeam2": "2" }
         ]
       }
     ]
