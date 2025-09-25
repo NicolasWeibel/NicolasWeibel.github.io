@@ -319,8 +319,8 @@
       {
         "team1": "Palmeiras",
         "team2": "River",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "3",
+        "scoreTeam2": "1",
         "matchDate": "2025-09-24T21:30:00.000-03:00",
         // prettier-ignore
         "predictions": [
