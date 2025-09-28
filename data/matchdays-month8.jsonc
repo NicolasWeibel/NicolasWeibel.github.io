@@ -408,8 +408,8 @@
       {
         "team1": "River",
         "team2": "Deportivo Riestra",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "1",
+        "scoreTeam2": "2",
         "matchDate": "2025-09-28T18:00:00.000-03:00",
         // prettier-ignore
         "predictions": [
