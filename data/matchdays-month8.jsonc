@@ -387,8 +387,8 @@
       {
         "team1": "Racing",
         "team2": "Independiente",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "0",
+        "scoreTeam2": "0",
         "matchDate": "2025-09-28T15:15:00.000-03:00",
         // prettier-ignore
         "predictions": [
