@@ -86,8 +86,8 @@
       {
         "team1": "Racing",
         "team2": "Independiente Rivadavia",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "0",
+        "scoreTeam2": "0",
         "matchDate": "2025-10-06T21:00:00.000-03:00",
         // prettier-ignore
         "predictions": [
