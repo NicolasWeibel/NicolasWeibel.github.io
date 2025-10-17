@@ -167,8 +167,8 @@
       {
         "team1": "River",
         "team2": "Sarmiento",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "0",
+        "scoreTeam2": "1",
         "matchDate": "2025-10-12T19:15:00.000-03:00",
         // prettier-ignore
         "predictions": [
@@ -186,8 +186,8 @@
       {
         "team1": "Puerto Rico",
         "team2": "Argentina",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "0",
+        "scoreTeam2": "6",
         "matchDate": "2025-10-14T20:00:00.000-03:00",
         // prettier-ignore
         "predictions": [
@@ -200,6 +200,87 @@
           { "name": "Mati", "cleanName": "mati", "scoreTeam1": "0", "scoreTeam2": "3" },
           { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "0", "scoreTeam2": "3" },
           { "name": "Pelado", "cleanName": "pelado", "scoreTeam1": "0", "scoreTeam2": "4" }
+        ]
+      }
+    ]
+  },
+  { 
+    "matchdayName": "Fecha 13 - Clausura",
+    "matchdayMatchs": [
+      {
+        "team1": "Racing",
+        "team2": "Aldosivi",
+        "scoreTeam1": "",
+        "scoreTeam2": "",
+        "matchDate": "2025-10-17T19:00:00.000-03:00",
+        // prettier-ignore
+        "predictions": [
+          { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Seba", "cleanName": "seba", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Mati", "cleanName": "mati", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Pelado", "cleanName": "pelado", "scoreTeam1": "", "scoreTeam2": "" }
+        ]
+      },
+      {
+        "team1": "Boca",
+        "team2": "Belgrano",
+        "scoreTeam1": "",
+        "scoreTeam2": "",
+        "matchDate": "2025-10-18T17:00:00.000-03:00",
+        // prettier-ignore
+        "predictions": [
+          { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Seba", "cleanName": "seba", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Mati", "cleanName": "mati", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Pelado", "cleanName": "pelado", "scoreTeam1": "", "scoreTeam2": "" }
+        ]
+      },
+      {
+        "team1": "Talleres",
+        "team2": "River",
+        "scoreTeam1": "",
+        "scoreTeam2": "",
+        "matchDate": "2025-10-18T20:30:00.000-03:00",
+        // prettier-ignore
+        "predictions": [
+          { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Seba", "cleanName": "seba", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Mati", "cleanName": "mati", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Pelado", "cleanName": "pelado", "scoreTeam1": "", "scoreTeam2": "" }
+        ]
+      },
+      {
+        "team1": "Estudiantes",
+        "team2": "Gimnasia",
+        "scoreTeam1": "",
+        "scoreTeam2": "",
+        "matchDate": "2025-10-19T15:00:00.000-03:00",
+        // prettier-ignore
+        "predictions": [
+          { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Seba", "cleanName": "seba", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Mati", "cleanName": "mati", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Pelado", "cleanName": "pelado", "scoreTeam1": "", "scoreTeam2": "" }
         ]
       }
     ]
