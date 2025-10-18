@@ -229,8 +229,8 @@
       {
         "team1": "Boca",
         "team2": "Belgrano",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "1",
+        "scoreTeam2": "2",
         "matchDate": "2025-10-18T17:00:00.000-03:00",
         // prettier-ignore
         "predictions": [
