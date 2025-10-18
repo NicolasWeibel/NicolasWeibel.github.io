@@ -284,5 +284,53 @@
         ]
       }
     ]
+  },
+  {
+    "matchdayName": "Final - Mundial Sub-20",
+    "matchdayMatchs": [
+      {
+        "team1": "Argentina",
+        "team2": "Marruecos",
+        "scoreTeam1": "",
+        "scoreTeam2": "",
+        "matchDate": "2025-10-19T20:00:00.000-03:00",
+        // prettier-ignore
+        "predictions": [
+          { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Seba", "cleanName": "seba", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Mati", "cleanName": "mati", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Pelado", "cleanName": "pelado", "scoreTeam1": "", "scoreTeam2": "" }
+        ]
+      }
+    ]
+  },
+  {
+    "matchdayName": "Semifinales Ida - Libertadores",
+    "matchdayMatchs": [
+      {
+        "team1": "Flamengo",
+        "team2": "Racing",
+        "scoreTeam1": "",
+        "scoreTeam2": "",
+        "matchDate": "2025-10-22T21:30:00.000-03:00",
+        // prettier-ignore
+        "predictions": [
+          { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Seba", "cleanName": "seba", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Mati", "cleanName": "mati", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Pelado", "cleanName": "pelado", "scoreTeam1": "", "scoreTeam2": "" }
+        ]
+      }
+    ]
   }
 ]
