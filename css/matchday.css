@@ -107,7 +107,7 @@
   background-color: var(--secondary-bg-color);
   color: var(--text-light-color);
   font-size: 0.75em;
-  font-size: clamp(0.35em, 3.3vw, 0.75em);
+  font-size: clamp(0.35em, 3.2vw, 0.75em);
   text-align: center;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
