@@ -291,8 +291,8 @@
       {
         "team1": "Argentina",
         "team2": "Marruecos",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "0",
+        "scoreTeam2": "2",
         "matchDate": "2025-10-19T20:00:00.000-03:00",
         // prettier-ignore
         "predictions": [
