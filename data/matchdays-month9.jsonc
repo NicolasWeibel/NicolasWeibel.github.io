@@ -425,8 +425,8 @@
       {
         "team1": "Palmeiras",
         "team2": "LDU Quito",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "4",
+        "scoreTeam2": "0",
         "matchDate": "2025-10-30T21:30:00.000-03:00",
         // prettier-ignore
         "predictions": [
