@@ -28,8 +28,8 @@ const players = [
 ];
 
 const referencesList = [
-  { text: "- 1° gana $16.000", positions: [1] },
-  { text: "- 2° gana $12.000", positions: [2] },
+  { text: "- 1° gana $14.000", positions: [1] },
+  { text: "- 2° gana $10.000", positions: [2] },
   { text: "- 3° gana $8.000", positions: [3] },
   { text: "- 4° gana $6.000", positions: [4] },
   { text: "- 5° gana $4.000", positions: [5] },
