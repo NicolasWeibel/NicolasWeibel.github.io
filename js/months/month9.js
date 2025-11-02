@@ -11,7 +11,7 @@
  *  4) incorrects (asc)        -> fewer incorrects is better
  */
 
-const isCurrentMonth = true;
+const isCurrentMonth = false;
 const matchdayTextUrl = "data/matchdays-month9.jsonc";
 const players = [
   "Juany",
