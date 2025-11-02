@@ -25,7 +25,6 @@ const players = [
   "Pelado",
   "Lucho",
   "Jabalí",
-  "Vilchez",
 ];
 
 const referencesList = [
