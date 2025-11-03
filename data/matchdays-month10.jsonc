@@ -5,8 +5,8 @@
       {
         "team1": "Estudiantes",
         "team2": "Boca",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "1",
+        "scoreTeam2": "2",
         "matchDate": "2025-11-02T16:00:00.000-03:00",
         // prettier-ignore
         "predictions": [
@@ -26,8 +26,8 @@
       {
         "team1": "River",
         "team2": "Gimnasia",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "0",
+        "scoreTeam2": "1",
         "matchDate": "2025-11-02T20:30:00.000-03:00",
         // prettier-ignore
         "predictions": [
