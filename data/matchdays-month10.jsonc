@@ -68,11 +68,11 @@
     ]
   },
   {
-    "matchdayName": "FINAL - COPA ARGENTINA",
+    "matchdayName": "Final - Copa Argentina",
     "matchdayMatchs": [
       {
-        "team1": "INDEPENDIENTE RIVADAVIA",
-        "team2": "ARGENTINOS JUNIORS",
+        "team1": "Independiente Rivadavia",
+        "team2": "Argentinos Juniors",
         "scoreTeam1": "2",
         "scoreTeam2": "2",
         "matchDate": "2025-11-05T21:10:00.000-03:00",
