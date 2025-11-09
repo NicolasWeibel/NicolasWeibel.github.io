@@ -120,8 +120,8 @@
       {
         "team1": "Boca",
         "team2": "River",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "2",
+        "scoreTeam2": "0",
         "matchDate": "2025-11-09T16:30:00.000-03:00",
         // prettier-ignore
         "predictions": [
