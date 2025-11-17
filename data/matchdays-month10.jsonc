@@ -167,22 +167,22 @@
       {
         "team1": "Angola",
         "team2": "Argentina",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "0",
+        "scoreTeam2": "2",
         "matchDate": "2025-11-14T13:00:00.000-03:00",
         // prettier-ignore
         "predictions": [
-          { "name": "Juany", "cleanName": "juany", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Toto", "cleanName": "toto", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "", "scoreTeam2": "" },
+          { "name": "Juany", "cleanName": "juany", "scoreTeam1": "0", "scoreTeam2": "4" },
+          { "name": "Toto", "cleanName": "toto", "scoreTeam1": "1", "scoreTeam2": "3" },
+          { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "0", "scoreTeam2": "6" },
+          { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "0", "scoreTeam2": "3" },
           { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Seba", "cleanName": "seba", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Mati", "cleanName": "mati", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Pelado", "cleanName": "pelado", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Lucho", "cleanName": "lucho", "scoreTeam1": "", "scoreTeam2": "" },
-          { "name": "Jabalí", "cleanName": "jabali", "scoreTeam1": "", "scoreTeam2": "" }
+          { "name": "Seba", "cleanName": "seba", "scoreTeam1": "1", "scoreTeam2": "4" },
+          { "name": "Mati", "cleanName": "mati", "scoreTeam1": "0", "scoreTeam2": "4" },
+          { "name": "Joaco", "cleanName": "joaco", "scoreTeam1": "0", "scoreTeam2": "7" },
+          { "name": "Pelado", "cleanName": "pelado", "scoreTeam1": "0", "scoreTeam2": "5" },
+          { "name": "Lucho", "cleanName": "lucho", "scoreTeam1": "0", "scoreTeam2": "5" },
+          { "name": "Jabalí", "cleanName": "jabali", "scoreTeam1": "0", "scoreTeam2": "4" }
         ]
       }
     ]
