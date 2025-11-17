@@ -241,7 +241,7 @@
         // prettier-ignore
         "predictions": [
           { "name": "Juany", "cleanName": "juany", "scoreTeam1": "1", "scoreTeam2": "0" },
-          { "name":."Toto", "cleanName": "toto", "scoreTeam1": "2", "scoreTeam2": "1" },
+          { "name": "Toto", "cleanName": "toto", "scoreTeam1": "2", "scoreTeam2": "1" },
           { "name": "Ulises", "cleanName": "ulises", "scoreTeam1": "1", "scoreTeam2": "1" },
           { "name": "Nicolás", "cleanName": "nicolas", "scoreTeam1": "2", "scoreTeam2": "1" },
           { "name": "Alejo", "cleanName": "alejo", "scoreTeam1": "0", "scoreTeam2": "0" },
