@@ -366,8 +366,8 @@
       {
         "team1": "Racing",
         "team2": "River",
-        "scoreTeam1": "",
-        "scoreTeam2": "",
+        "scoreTeam1": "3",
+        "scoreTeam2": "2",
         "matchDate": "2025-11-24T19:15:00.000-03:00",
         // prettier-ignore
         "predictions": [
