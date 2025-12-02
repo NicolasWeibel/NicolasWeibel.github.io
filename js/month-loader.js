@@ -1,4 +1,4 @@
-const actualMonth = "10";
+const actualMonth = "11";
 
 document.addEventListener("DOMContentLoaded", () => {
   const monthSelector = document.getElementById("month-select-id");
